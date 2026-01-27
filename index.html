@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>LUADA Ratgeber – Wissen rund um Sicherheit im Alter</title>
+  <meta name="description" content="Informative Artikel zu Stürzen im Alter, Notrufuhren und Sicherheit für Senioren. Fundiertes Wissen für Angehörige und Betroffene.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ratgeber.luada.de/">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LUADA Ratgeber – Wissen rund um Sicherheit im Alter">
+  <meta property="og:description" content="Informative Artikel zu Stürzen im Alter, Notrufuhren und Sicherheit für Senioren.">
+  <meta property="og:url" content="https://ratgeber.luada.de/">
+  <meta property="og:site_name" content="LUADA Ratgeber">
+  <meta property="og:locale" content="de_DE">
+  
+  <!-- Preconnect für Performance -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/article.css">
+  
+  <!-- Additional Styles for Homepage -->
+  <style>
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: white;
+      padding: var(--spacing-xxl) var(--spacing-md);
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .hero p {
+      font-size: 1.125rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .articles-section {
+      padding: var(--spacing-xxl) var(--spacing-md);
+    }
+    
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-lg);
+      color: var(--color-text);
+    }
+    
+    .articles-grid {
+      display: grid;
+      gap: var(--spacing-lg);
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 768px) {
+      .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    
+    .article-card__image {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-light);
+      font-size: 0.875rem;
+    }
+    
+    .article-card__content {
+      padding: var(--spacing-md);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .article-card__category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .article-card__title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: var(--spacing-xs);
+      color: var(--color-text);
+    }
+    
+    .article-card__excerpt {
+      font-size: 0.9375rem;
+      color: var(--color-text-light);
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    
+    .article-card__meta {
+      font-size: 0.8125rem;
+      color: var(--color-text-light);
+      margin-top: var(--spacing-sm);
+      padding-top: var(--spacing-sm);
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .about-section {
+      background: var(--color-background-alt);
+      padding: var(--spacing-xxl) var(--spacing-md);
+    }
+    
+    .about-content {
+      max-width: var(--max-width-content);
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .about-content h2 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .about-content p {
+      color: var(--color-text-light);
+      margin-bottom: var(--spacing-md);
+    }
+  </style>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LUADA Ratgeber",
+    "description": "Informative Artikel zu Stürzen im Alter, Notrufuhren und Sicherheit für Senioren.",
+    "url": "https://ratgeber.luada.de",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LUADA GmbH",
+      "url": "https://luada.de"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip Link für Accessibility -->
+  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">LUADA Ratgeber</a>
+      <nav class="header-nav" aria-label="Hauptnavigation">
+        <a href="/">Startseite</a>
+        <a href="/themen/">Themen</a>
+        <a href="/ueber-uns/">Über uns</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Wissen für mehr Sicherheit im Alter</h1>
+        <p>
+          Fundierte Artikel zu Gesundheit, Sturzprävention und modernen Notrufhilfen. 
+          Für Senioren und ihre Angehörigen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles-section">
+      <div class="container container--wide">
+        <h2 class="section-title">Aktuelle Artikel</h2>
+        
+        <div class="articles-grid">
+          
+          <!-- Article Card 1 -->
+          <a href="/editorial/stuerze-im-alter/" class="article-card" data-track="link">
+            <div class="article-card__image" aria-hidden="true">
+              [Bildplatzhalter]
+            </div>
+            <div class="article-card__content">
+              <span class="article-card__category">Gesundheit & Sicherheit</span>
+              <h3 class="article-card__title">Stürze im Alter – die unterschätzte Gefahr</h3>
+              <p class="article-card__excerpt">
+                Jedes Jahr stürzen Millionen Senioren. Warum schnelle Hilfe entscheidend ist 
+                und was Angehörige tun können.
+              </p>
+              <div class="article-card__meta">
+                <time datetime="2026-01-27">27. Januar 2026</time> · 5 Min. Lesezeit
+              </div>
+            </div>
+          </a>
+          
+          <!-- Article Card 2 -->
+          <a href="/editorial/notrufuhr-vs-hausnotruf/" class="article-card" data-track="link">
+            <div class="article-card__image" aria-hidden="true">
+              [Bildplatzhalter]
+            </div>
+            <div class="article-card__content">
+              <span class="article-card__category">Ratgeber</span>
+              <h3 class="article-card__title">Notrufuhr vs. Hausnotruf – Was ist die bessere Wahl?</h3>
+              <p class="article-card__excerpt">
+                Klassisch oder mobil? Wir vergleichen beide Systeme und helfen bei der Entscheidung.
+              </p>
+              <div class="article-card__meta">
+                <time datetime="2026-01-20">20. Januar 2026</time> · 6 Min. Lesezeit
+              </div>
+            </div>
+          </a>
+          
+          <!-- Article Card 3 (Platzhalter) -->
+          <a href="/editorial/fit-im-alter/" class="article-card" data-track="link">
+            <div class="article-card__image" aria-hidden="true">
+              [Bildplatzhalter]
+            </div>
+            <div class="article-card__content">
+              <span class="article-card__category">Gesundheit</span>
+              <h3 class="article-card__title">Fit im Alter: Übungen für mehr Gleichgewicht</h3>
+              <p class="article-card__excerpt">
+                Einfache Übungen, die das Gleichgewicht stärken und das Sturzrisiko reduzieren.
+              </p>
+              <div class="article-card__meta">
+                <time datetime="2026-01-15">15. Januar 2026</time> · 4 Min. Lesezeit
+              </div>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="about-content">
+        <h2>Über den LUADA Ratgeber</h2>
+        <p>
+          Der LUADA Ratgeber bietet fundierte Informationen rund um Sicherheit, 
+          Gesundheit und Lebensqualität im Alter. Unser Ziel: Wissen vermitteln, 
+          das Senioren und ihren Angehörigen hilft, informierte Entscheidungen zu treffen.
+        </p>
+        <p>
+          Alle Artikel werden sorgfältig recherchiert und regelmäßig aktualisiert.
+        </p>
+        <a href="https://luada.de" class="btn btn--primary" data-track="cta">
+          Mehr über LUADA erfahren
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer-Navigation">
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/kontakt/" data-track="contact" data-contact-type="footer">Kontakt</a>
+        <a href="https://luada.de" data-track="link">luada.de</a>
+      </nav>
+      <p class="footer-copyright">
+        © 2026 LUADA GmbH. Alle Rechte vorbehalten.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Tracking Script -->
+  <script src="assets/js/tracking.js"></script>
+</body>
+</html>

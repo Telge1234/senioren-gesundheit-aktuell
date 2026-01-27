@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Trailing slash normalization (optional - Cloudflare kann das auch automatisch)
+# /editorial/stuerze-im-alter  /editorial/stuerze-im-alter/  301
+
+# Beispiel für alte URLs (falls nötig)
+# /alte-url  /neue-url  301
