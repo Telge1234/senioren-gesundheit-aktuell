@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" style="background: transparent">
+  <!-- Logo background -->
+  <rect x="10" y="10" width="60" height="60" rx="12" fill="#1a5f7a"/>
+  
+  <!-- Medical cross -->
+  <rect x="32" y="25" width="16" height="6" rx="3" fill="white"/>
+  <rect x="37" y="20" width="6" height="16" rx="3" fill="white"/>
+  
+  <!-- Heartbeat line -->
+  <path d="M 15 55 L 25 55 L 30 45 L 35 65 L 40 50 L 45 55 L 55 55" 
+        stroke="white" stroke-width="2" fill="none" opacity="0.8"/>
+  
+  <!-- Text part -->
+  <text x="85" y="35" fill="#1a5f7a" font-family="Source Serif Pro, serif" font-size="18" font-weight="600">
+    Senioren
+  </text>
+  <text x="85" y="55" fill="#1a5f7a" font-family="Source Serif Pro, serif" font-size="18" font-weight="600">
+    Gesundheit
+  </text>
+  <text x="85" y="68" fill="#5a6c7d" font-family="Inter, sans-serif" font-size="12" font-weight="400">
+    AKTUELL
+  </text>
+  
+  <!-- Decorative element -->
+  <circle cx="175" cy="40" r="3" fill="#e07b39" opacity="0.6"/>
+</svg>

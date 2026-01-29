@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" style="background: linear-gradient(135deg, #1a5f7a 0%, #2563eb 100%)">
+  <!-- Background pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  
+  <!-- Central icon -->
+  <g transform="translate(600, 300)">
+    <!-- Medizinisches Kreuz -->
+    <rect x="-40" y="-10" width="80" height="20" rx="10" fill="white" opacity="0.9"/>
+    <rect x="-10" y="-40" width="20" height="80" rx="10" fill="white" opacity="0.9"/>
+    
+    <!-- Herzschlag-Linie -->
+    <path d="M -150 0 L -100 0 L -80 -30 L -60 30 L -40 -20 L -20 0 L 20 0 L 40 -20 L 60 30 L 80 -30 L 100 0 L 150 0" 
+          stroke="white" stroke-width="3" fill="none" opacity="0.7"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="200" cy="150" r="3" fill="white" opacity="0.6"/>
+  <circle cx="1000" cy="450" r="3" fill="white" opacity="0.6"/>
+  <circle cx="300" cy="450" r="2" fill="white" opacity="0.4"/>
+  <circle cx="900" cy="150" r="2" fill="white" opacity="0.4"/>
+  
+  <text x="600" y="500" text-anchor="middle" fill="white" opacity="0.8" font-family="Arial, sans-serif" font-size="24">
+    Gesundheit & Sicherheit im Alter
+  </text>
+</svg>
