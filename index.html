@@ -3,347 +3,665 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <title>Senioren Gesundheit Aktuell – Ihr Magazin für Gesundheit im Alter</title>
   <meta name="description" content="Das führende Gesundheitsmagazin für Senioren: Expertenwissen zu Sturzprävention, Notrufhilfen, Gesundheitsvorsorge und mehr.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://senioren-gesundheit-aktuell.de/">
-
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Senioren Gesundheit Aktuell – Ihr Magazin für Gesundheit im Alter">
-  <meta property="og:description" content="Fundierte Gesundheitsratgeber für Senioren und Angehörige.">
-  <meta property="og:url" content="https://senioren-gesundheit-aktuell.de/">
+  <meta property="og:title" content="Senioren Gesundheit Aktuell">
   <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --red:#c0392b; --red-dark:#96281b; --navy:#1a2e4a; --gold:#c9860a;
-      --text:#1a1a1a; --text-mid:#444; --text-light:#666; --border:#ddd;
-      --bg-light:#f7f5f0; --bg-warm:#fdf8f0; --white:#fff;
-      --serif:'Playfair Display',Georgia,serif; --sans:'Source Sans 3',system-ui,sans-serif;
-      --max-w:1240px; --shadow:0 2px 12px rgba(0,0,0,.10); --shadow-lg:0 8px 30px rgba(0,0,0,.14);
-    }
-    html{scroll-behavior:smooth}
-    body{font-family:var(--sans);color:var(--text);background:var(--bg-light);line-height:1.65}
-    img{display:block;max-width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
-    ul{list-style:none}
-    .container{max-width:var(--max-w);margin:0 auto;padding:0 1.25rem}
-    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-    .tag{display:inline-block;background:var(--red);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.2em .55em;border-radius:2px}
-    .tag--gold{background:var(--gold)}.tag--navy{background:var(--navy)}
+/* ===================== RESET ===================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;color:#1c1c1e;background:#f5f4f0;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
 
-    /* TOP BAR */
-    .topbar{background:var(--navy);color:rgba(255,255,255,.8);font-size:.8rem;padding:.4rem 0}
-    .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:1rem}
-    .topbar a{color:rgba(255,255,255,.75);transition:color .2s}.topbar a:hover{color:#fff}
-    .topbar-links{display:flex;gap:1.25rem}.topbar-date{opacity:.7}
+/* ===================== TOKENS ===================== */
+:root{
+  --crimson:#b91c1c;
+  --crimson-d:#991b1b;
+  --navy:#0f2444;
+  --navy-mid:#1e3a5f;
+  --gold:#b45309;
+  --emerald:#065f46;
+  --sky:#0284c7;
+  --txt:#1c1c1e;
+  --txt-2:#4b5563;
+  --txt-3:#9ca3af;
+  --border:#e5e7eb;
+  --surface:#ffffff;
+  --bg:#f5f4f0;
+  --bg-warm:#fdf8f2;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --w:1260px;
+  --r:8px;
+  --sh:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
+  --sh-lg:0 8px 24px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06);
+}
 
-    /* TICKER */
-    .ticker-bar{background:var(--red);color:#fff;font-size:.85rem;font-weight:500;padding:.45rem 0;overflow:hidden}
-    .ticker-inner{display:flex;align-items:center;gap:1.5rem}
-    .ticker-label{background:rgba(0,0,0,.25);padding:.15em .65em;border-radius:2px;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
-    .ticker-scroll{flex:1;overflow:hidden}
-    .ticker-scroll ul{display:flex;gap:3rem;animation:ticker-move 30s linear infinite;white-space:nowrap}
-    .ticker-scroll ul:hover{animation-play-state:paused}
-    .ticker-scroll li::before{content:'▸ ';opacity:.7}
-    @keyframes ticker-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* ===================== UTILS ===================== */
+.wrap{max-width:var(--w);margin:0 auto;padding:0 1.25rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 
-    /* MASTHEAD */
-    .masthead{background:var(--white);border-bottom:3px solid var(--red);padding:1.25rem 0 1rem}
-    .masthead .container{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-    .logo{display:flex;flex-direction:column;line-height:1}
-    .logo-main{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:var(--red);letter-spacing:-.01em}
-    .logo-sub{font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text-mid);margin-top:.15rem;border-top:1px solid var(--border);padding-top:.25rem}
-    .masthead-ad{background:var(--bg-warm);border:1px solid var(--border);border-radius:4px;padding:.5rem 1.25rem;font-size:.8rem;color:var(--text-light);text-align:center;min-width:220px}
-    .masthead-ad strong{display:block;font-size:1rem;color:var(--text);font-family:var(--serif)}
+.badge{
+  display:inline-flex;align-items:center;gap:.25rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  padding:.25em .6em;border-radius:3px;
+  background:var(--crimson);color:#fff;
+}
+.badge-gold{background:var(--gold)}
+.badge-navy{background:var(--navy)}
+.badge-sky{background:var(--sky)}
+.badge-green{background:var(--emerald)}
 
-    /* NAV */
-    .main-nav{background:var(--navy)}
-    .main-nav .container{display:flex;align-items:center;gap:0}
-    .main-nav a{display:block;color:rgba(255,255,255,.88);font-size:.88rem;font-weight:500;padding:.75rem 1.1rem;transition:background .2s,color .2s;white-space:nowrap}
-    .main-nav a:hover,.main-nav a.active{background:var(--red);color:#fff}
-    .main-nav a.nav-highlight{color:#fde68a;font-weight:700}
-    .nav-search{margin-left:auto;display:flex;align-items:center;padding:.5rem .75rem}
-    .nav-search input{border:none;border-radius:3px 0 0 3px;padding:.35rem .75rem;font-size:.85rem;width:170px;outline:none}
-    .nav-search button{background:var(--red);border:none;color:#fff;padding:.35rem .75rem;border-radius:0 3px 3px 0;cursor:pointer;font-size:.85rem}
-    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:.5rem .75rem;margin-left:auto}
-    @media(max-width:768px){
-      .nav-toggle{display:block}
-      .main-nav-links{display:none}
-      .main-nav-links.open{display:flex;flex-direction:column}
-      .main-nav .container{flex-wrap:wrap}
-      .nav-search{display:none}
-    }
+/* ===================== TOP STRIP ===================== */
+.top-strip{
+  background:var(--navy);
+  color:rgba(255,255,255,.75);
+  font-size:.75rem;
+  padding:.35rem 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.top-strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.top-strip a{color:rgba(255,255,255,.7);transition:color .15s}
+.top-strip a:hover{color:#fff}
+.top-links{display:flex;gap:1.5rem}
+.top-date{opacity:.6;font-size:.72rem}
 
-    /* HERO */
-    .hero-feature{background:var(--white);padding:2rem 0;border-bottom:1px solid var(--border)}
-    .hero-grid{display:grid;grid-template-columns:1.8fr 1fr;gap:2rem;align-items:start}
-    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
-    .hero-main{position:relative}
-    .hero-img-wrap{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:16/9}
-    .hero-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-    .hero-img-wrap:hover img{transform:scale(1.02)}
-    .hero-img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,20,40,.85) 0%,transparent 100%);padding:2.5rem 1.5rem 1.5rem;color:#fff}
-    .hero-img-overlay .tag{margin-bottom:.6rem}
-    .hero-img-overlay h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;line-height:1.2;margin-bottom:.5rem}
-    .hero-img-overlay p{font-size:.95rem;opacity:.9}
-    .hero-img-overlay .hero-meta{font-size:.8rem;opacity:.75;margin-top:.75rem;display:flex;gap:.75rem}
-    .hero-side{display:flex;flex-direction:column;gap:1rem}
-    .hero-side-card{display:flex;gap:.85rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-    .hero-side-card:last-child{border-bottom:none;padding-bottom:0}
-    .hero-side-img{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0}
-    .hero-side-body .tag{margin-bottom:.3rem}
-    .hero-side-body h3{font-family:var(--serif);font-size:.95rem;font-weight:600;line-height:1.3;color:var(--text);transition:color .2s}
-    .hero-side-card:hover h3{color:var(--red)}
-    .hero-side-body .meta{font-size:.75rem;color:var(--text-light);margin-top:.25rem}
+/* ===================== TICKER ===================== */
+.ticker{
+  background:var(--crimson);
+  color:#fff;
+  font-size:.8rem;
+  font-weight:500;
+  padding:.4rem 0;
+  overflow:hidden;
+}
+.ticker-wrap{display:flex;align-items:center;gap:0;overflow:hidden}
+.ticker-flag{
+  background:rgba(0,0,0,.2);
+  padding:.2em .75em;
+  font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  white-space:nowrap;flex-shrink:0;margin-right:1rem;
+}
+.ticker-track{
+  flex:1;overflow:hidden;
+}
+.ticker-items{
+  display:flex;gap:2.5rem;
+  animation:tick 35s linear infinite;
+  white-space:nowrap;
+}
+.ticker-items:hover{animation-play-state:paused}
+.ticker-items span::before{content:'— '}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    /* STATS BAR */
-    .stats-bar{background:var(--navy);color:#fff;padding:1.75rem 0}
-    .stats-bar .container{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
-    @media(max-width:640px){.stats-bar .container{grid-template-columns:repeat(2,1fr)}}
-    .stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:#fde68a;line-height:1}
-    .stat-desc{font-size:.82rem;opacity:.8;margin-top:.35rem}
+/* ===================== MASTHEAD ===================== */
+.masthead{
+  background:var(--surface);
+  padding:1.25rem 0 1rem;
+  border-bottom:3px solid var(--crimson);
+}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.site-logo{display:flex;flex-direction:column;gap:.2rem;line-height:1}
+.site-logo-name{
+  font-family:var(--serif);
+  font-size:clamp(1.55rem,3.5vw,2.2rem);
+  font-weight:700;
+  color:var(--crimson);
+  letter-spacing:-.015em;
+}
+.site-logo-claim{
+  font-size:.72rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--txt-2);padding-top:.3rem;border-top:1px solid var(--border);
+}
+.masthead-cta{
+  background:var(--bg-warm);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:.6rem 1.25rem;
+  text-align:center;
+  min-width:200px;
+}
+.masthead-cta strong{display:block;font-family:var(--serif);font-size:.95rem;color:var(--txt);margin-bottom:.15rem}
+.masthead-cta span{font-size:.75rem;color:var(--txt-2)}
 
-    /* SECTION LABEL */
-    .section-label{display:flex;align-items:center;gap:.75rem;margin:2.25rem 0 1.25rem}
-    .section-label span{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text)}
-    .section-label::after{content:'';flex:1;height:2px;background:var(--border)}
-    .section-label .sl-accent{width:28px;height:4px;background:var(--red);border-radius:2px;flex-shrink:0}
+/* ===================== NAVIGATION ===================== */
+.nav-bar{
+  background:var(--navy);
+  position:sticky;
+  top:0;
+  z-index:200;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+.nav-inner{
+  display:flex;
+  align-items:stretch;
+  min-height:48px;
+}
+/* Desktop links */
+.nav-links{
+  display:flex;
+  align-items:stretch;
+  flex:1;
+}
+.nav-links a{
+  display:flex;
+  align-items:center;
+  padding:0 1rem;
+  color:rgba(255,255,255,.85);
+  font-size:.85rem;
+  font-weight:500;
+  white-space:nowrap;
+  transition:background .15s,color .15s;
+  border-bottom:3px solid transparent;
+}
+.nav-links a:hover{background:rgba(255,255,255,.07);color:#fff}
+.nav-links a.active{color:#fff;border-bottom-color:var(--crimson)}
+.nav-links a.hot{color:#fcd34d;font-weight:600}
+.nav-search-wrap{
+  display:flex;align-items:center;
+  padding:.35rem .75rem;
+  border-left:1px solid rgba(255,255,255,.1);
+  margin-left:auto;
+}
+.nav-search-wrap input{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:6px 0 0 6px;
+  padding:.3rem .75rem;
+  color:#fff;font-size:.8rem;width:150px;
+  outline:none;transition:background .2s,width .3s;
+}
+.nav-search-wrap input::placeholder{color:rgba(255,255,255,.5)}
+.nav-search-wrap input:focus{background:rgba(255,255,255,.18);width:190px}
+.nav-search-wrap button{
+  background:var(--crimson);border:none;
+  color:#fff;padding:.3rem .65rem;
+  border-radius:0 6px 6px 0;font-size:.82rem;
+  transition:background .15s;
+}
+.nav-search-wrap button:hover{background:var(--crimson-d)}
 
-    /* CONTENT LAYOUT */
-    .content-layout{padding:2rem 0 3rem}
-    .content-grid{display:grid;grid-template-columns:1fr 310px;gap:2.5rem;align-items:start}
-    @media(max-width:1024px){.content-grid{grid-template-columns:1fr}}
+/* Mobile toggle */
+.nav-toggle{
+  display:none;
+  background:none;border:none;color:#fff;
+  font-size:1.3rem;padding:0 1rem;
+  align-self:stretch;align-items:center;
+  transition:background .15s;
+}
+.nav-toggle:hover{background:rgba(255,255,255,.08)}
 
-    /* PROMO BANNER */
-    .promo-banner{background:var(--navy);color:#fff;border-radius:4px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:260px;margin-bottom:2rem}
-    @media(max-width:700px){.promo-banner{grid-template-columns:1fr}}
-    .promo-text{padding:2rem 2rem 2rem 2.5rem;display:flex;flex-direction:column;justify-content:center;gap:.75rem}
-    .promo-text .eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#fde68a;font-weight:600}
-    .promo-text h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;line-height:1.2}
-    .promo-text p{font-size:.95rem;opacity:.85;line-height:1.6}
-    .btn-promo{display:inline-block;background:var(--red);color:#fff;padding:.6rem 1.5rem;border-radius:3px;font-weight:600;font-size:.9rem;width:fit-content;transition:background .2s;margin-top:.5rem}
-    .btn-promo:hover{background:var(--red-dark)}
-    .promo-img{overflow:hidden}
-    .promo-img img{width:100%;height:100%;object-fit:cover}
+/* Mobile drawer */
+@media(max-width:820px){
+  .nav-toggle{display:flex}
+  .nav-links{
+    display:none;flex-direction:column;align-items:stretch;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--navy-mid);
+    box-shadow:0 8px 24px rgba(0,0,0,.3);
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.85rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.06);border-left:none}
+  .nav-links a.active{border-bottom:1px solid rgba(255,255,255,.06);background:rgba(185,28,28,.3)}
+  .nav-search-wrap{display:none}
+  .nav-inner{position:relative;flex-direction:row-reverse}
+}
 
-    /* CATEGORY ROW */
-    .cat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem}
-    @media(max-width:700px){.cat-row{grid-template-columns:repeat(2,1fr)}}
-    .cat-card{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/3;cursor:pointer}
-    .cat-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.75);transition:filter .3s}
-    .cat-card:hover img{filter:brightness(.55)}
-    .cat-card__label{position:absolute;bottom:.75rem;left:.75rem;color:#fff;font-family:var(--serif);font-size:.95rem;font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,.5)}
-    .cat-card__count{position:absolute;top:.6rem;right:.6rem}
+/* ===================== HERO ===================== */
+.hero-section{background:var(--surface);padding:2rem 0;border-bottom:1px solid var(--border)}
+.hero-grid{display:grid;grid-template-columns:1.9fr 1fr;gap:1.75rem;align-items:start}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
 
-    /* EXPERT QUOTE */
-    .expert-quote{background:var(--bg-warm);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:2rem 2.5rem;text-align:center;margin:2rem 0}
-    .expert-quote blockquote{font-family:var(--serif);font-size:clamp(1.1rem,2.5vw,1.45rem);font-style:italic;color:var(--text);line-height:1.55;max-width:750px;margin:0 auto 1rem}
-    .expert-quote cite{font-size:.85rem;color:var(--text-mid);font-style:normal;font-weight:500}
-    .expert-quote cite strong{color:var(--navy)}
+.hero-card{position:relative;border-radius:var(--r);overflow:hidden;display:block}
+.hero-card-img{aspect-ratio:16/9;overflow:hidden}
+.hero-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.hero-card:hover .hero-card-img img{transform:scale(1.03)}
+.hero-card-body{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(5,15,30,.9) 0%,rgba(5,15,30,.6) 50%,transparent 100%);
+  padding:3rem 1.5rem 1.5rem;
+  color:#fff;
+}
+.hero-card-body .badge{margin-bottom:.6rem}
+.hero-card-body h2{
+  font-family:var(--serif);
+  font-size:clamp(1.4rem,2.8vw,2rem);
+  font-weight:700;line-height:1.2;
+  margin-bottom:.5rem;
+}
+.hero-card-body p{font-size:.9rem;opacity:.88;line-height:1.55}
+.hero-meta{
+  display:flex;gap:.75rem;flex-wrap:wrap;
+  font-size:.75rem;opacity:.7;margin-top:.75rem;
+}
 
-    /* ARTICLE CARDS */
-    .articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-    @media(max-width:640px){.articles-grid{grid-template-columns:1fr}}
-    .article-card{background:var(--white);border-radius:4px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
-    .article-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
-    .article-card__img{aspect-ratio:16/9;overflow:hidden}
-    .article-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
-    .article-card:hover .article-card__img img{transform:scale(1.04)}
-    .article-card__body{padding:1rem;flex-grow:1;display:flex;flex-direction:column;gap:.4rem}
-    .article-card__cat{font-size:.75rem}
-    .article-card__title{font-family:var(--serif);font-size:1.05rem;font-weight:600;line-height:1.3;color:var(--text);transition:color .2s}
-    .article-card:hover .article-card__title{color:var(--red)}
-    .article-card__excerpt{font-size:.88rem;color:var(--text-mid);line-height:1.55;flex-grow:1}
-    .article-card__meta{font-size:.75rem;color:var(--text-light);padding-top:.6rem;border-top:1px solid var(--border);display:flex;gap:1rem}
-    .article-card--wide{grid-column:1/-1;flex-direction:row}
-    .article-card--wide .article-card__img{width:42%;aspect-ratio:unset;flex-shrink:0}
-    @media(max-width:640px){.article-card--wide{flex-direction:column}.article-card--wide .article-card__img{width:100%;aspect-ratio:16/9}}
+/* Side list */
+.side-stack{display:flex;flex-direction:column;gap:0}
+.side-card{
+  display:flex;gap:.85rem;align-items:flex-start;
+  padding:.9rem 0;
+  border-bottom:1px solid var(--border);
+  transition:background .15s;
+}
+.side-card:first-child{padding-top:0}
+.side-card:last-child{border-bottom:none;padding-bottom:0}
+.side-card-img{
+  width:88px;height:66px;object-fit:cover;
+  border-radius:6px;flex-shrink:0;
+  transition:opacity .2s;
+}
+.side-card:hover .side-card-img{opacity:.85}
+.side-card-body{}
+.side-card-body .badge{margin-bottom:.3rem}
+.side-card-body h3{
+  font-family:var(--serif);font-size:.9rem;font-weight:600;
+  line-height:1.3;color:var(--txt);
+  transition:color .15s;
+}
+.side-card:hover h3{color:var(--crimson)}
+.side-card-meta{font-size:.72rem;color:var(--txt-3);margin-top:.25rem}
 
-    /* SIDEBAR */
-    .sidebar{display:flex;flex-direction:column;gap:1.75rem}
-    .sidebar-box{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
-    .sidebar-box__header{background:var(--navy);color:#fff;font-family:var(--serif);font-size:.95rem;font-weight:700;padding:.65rem 1rem;letter-spacing:.02em}
-    .sidebar-box__header--red{background:var(--red)}
-    .sidebar-box__body{padding:1rem}
-    .most-read-list{display:flex;flex-direction:column;gap:.85rem}
-    .most-read-item{display:flex;gap:.75rem;align-items:flex-start}
-    .most-read-num{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--border);line-height:1;width:28px;flex-shrink:0}
-    .most-read-item h4{font-family:var(--serif);font-size:.9rem;font-weight:600;line-height:1.3;color:var(--text);transition:color .2s}
-    .most-read-item:hover h4{color:var(--red)}
-    .most-read-item .meta{font-size:.72rem;color:var(--text-light);margin-top:.2rem}
-    .tip-box{background:#f0f7ed;border-left:4px solid #27ae60;padding:.85rem 1rem;border-radius:0 4px 4px 0}
-    .tip-box__label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#27ae60;margin-bottom:.4rem}
-    .tip-box p{font-size:.88rem;line-height:1.55;color:var(--text-mid)}
-    .nl-widget{text-align:center}
-    .nl-widget p{font-size:.85rem;color:var(--text-mid);line-height:1.5;margin-bottom:.85rem}
-    .nl-widget input{width:100%;padding:.55rem .75rem;border:1px solid var(--border);border-radius:4px;font-size:.88rem;margin-bottom:.5rem;outline:none}
-    .nl-widget input:focus{border-color:var(--red)}
-    .nl-widget button{width:100%;background:var(--red);color:#fff;border:none;border-radius:4px;padding:.65rem;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s}
-    .nl-widget button:hover{background:var(--red-dark)}
-    .nl-fine{font-size:.72rem;color:var(--text-light);margin-top:.5rem}
-    .ad-placeholder{background:var(--bg-warm);border:2px dashed var(--border);border-radius:4px;text-align:center;padding:2.5rem 1rem;color:var(--text-light);font-size:.8rem}
-    .ad-placeholder strong{display:block;font-size:1rem;color:var(--text-mid);margin-bottom:.25rem}
+/* ===================== STATS ===================== */
+.stats-section{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
+  padding:2rem 0;
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;
+}
+@media(max-width:600px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-n{
+  font-family:var(--serif);font-size:2rem;font-weight:700;
+  color:#fde68a;line-height:1;
+}
+.stat-l{font-size:.78rem;color:rgba(255,255,255,.7);margin-top:.3rem}
 
-    /* FOOTER */
-    .breadcrumb{padding:.6rem 0;font-size:.78rem;color:var(--text-light);border-bottom:1px solid var(--border);background:var(--white)}
-    .breadcrumb a{color:var(--text-light)}.breadcrumb a:hover{color:var(--red)}
-    .footer-top{background:var(--white);border-top:3px solid var(--red);padding:3rem 0 2rem}
-    .footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
-    @media(max-width:800px){.footer-cols{grid-template-columns:1fr 1fr}}
-    @media(max-width:480px){.footer-cols{grid-template-columns:1fr}}
-    .footer-brand p{font-size:.85rem;color:var(--text-mid);margin-top:.75rem;line-height:1.6}
-    .footer-col h4{font-family:var(--serif);font-size:.95rem;font-weight:700;margin-bottom:.75rem;color:var(--text);padding-bottom:.4rem;border-bottom:2px solid var(--red)}
-    .footer-col ul{display:flex;flex-direction:column;gap:.45rem}
-    .footer-col ul a{font-size:.85rem;color:var(--text-mid);transition:color .2s}
-    .footer-col ul a:hover{color:var(--red)}
-    .footer-bottom{background:var(--navy);color:rgba(255,255,255,.65);font-size:.8rem;padding:1rem 0}
-    .footer-bottom .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-    .footer-bottom a{color:rgba(255,255,255,.65);transition:color .2s}.footer-bottom a:hover{color:#fff}
-    .footer-bottom-links{display:flex;gap:1.25rem}
+/* ===================== SECTION HEADING ===================== */
+.sec-head{
+  display:flex;align-items:center;gap:.75rem;
+  margin:2.5rem 0 1.25rem;
+}
+.sec-head::after{content:'';flex:1;height:1px;background:var(--border)}
+.sec-head-accent{width:24px;height:4px;background:var(--crimson);border-radius:2px;flex-shrink:0}
+.sec-head span{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--txt);white-space:nowrap}
+
+/* ===================== MAIN LAYOUT ===================== */
+.main-layout{padding:2rem 0 4rem}
+.two-col{display:grid;grid-template-columns:1fr 300px;gap:2rem;align-items:start}
+@media(max-width:1060px){.two-col{grid-template-columns:1fr}}
+
+/* ===================== PROMO BANNER ===================== */
+.promo-wrap{
+  background:var(--navy);color:#fff;
+  border-radius:var(--r);overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:240px;margin-bottom:2rem;
+  box-shadow:var(--sh);
+}
+@media(max-width:680px){.promo-wrap{grid-template-columns:1fr}}
+.promo-text{
+  padding:2rem;display:flex;flex-direction:column;justify-content:center;gap:.6rem;
+}
+.promo-eyebrow{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#fde68a;font-weight:700}
+.promo-text h2{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:700;line-height:1.25}
+.promo-text p{font-size:.88rem;opacity:.8;line-height:1.6}
+.promo-btn{
+  display:inline-flex;align-items:center;gap:.35rem;
+  background:var(--crimson);color:#fff;
+  padding:.55rem 1.25rem;border-radius:6px;
+  font-weight:600;font-size:.85rem;width:fit-content;
+  transition:background .15s,transform .15s;margin-top:.25rem;
+}
+.promo-btn:hover{background:var(--crimson-d);transform:translateX(2px)}
+.promo-img{overflow:hidden}
+.promo-img img{width:100%;height:100%;object-fit:cover}
+
+/* ===================== CAT GRID ===================== */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem}
+@media(max-width:680px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+.cat-card{
+  position:relative;border-radius:var(--r);overflow:hidden;
+  aspect-ratio:4/3;display:block;
+}
+.cat-card img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.72) saturate(.9);
+  transition:filter .3s,transform .4s;
+}
+.cat-card:hover img{filter:brightness(.5) saturate(1);transform:scale(1.04)}
+.cat-label{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;padding:.85rem;
+  background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%);
+}
+.cat-label-name{
+  font-family:var(--serif);font-size:.9rem;font-weight:700;
+  color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5);
+}
+.cat-label-count{font-size:.68rem;color:rgba(255,255,255,.7);margin-top:.15rem}
+
+/* ===================== QUOTE ===================== */
+.quote-block{
+  background:var(--bg-warm);
+  border-radius:var(--r);
+  padding:2rem 2.5rem;
+  text-align:center;
+  margin:2rem 0;
+  border-left:4px solid var(--gold);
+  box-shadow:var(--sh);
+}
+.quote-block blockquote{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(1rem,2.2vw,1.3rem);
+  color:var(--txt);line-height:1.6;
+  max-width:700px;margin:0 auto .75rem;
+}
+.quote-block cite{font-size:.8rem;color:var(--txt-2);font-style:normal;font-weight:500}
+.quote-block cite strong{color:var(--navy)}
+
+/* ===================== ARTICLE GRID ===================== */
+.art-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+@media(max-width:600px){.art-grid{grid-template-columns:1fr}}
+
+.art-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:var(--sh);
+  transition:box-shadow .2s,transform .2s;
+}
+.art-card:hover{box-shadow:var(--sh-lg);transform:translateY(-3px)}
+
+.art-card-img{aspect-ratio:16/9;overflow:hidden}
+.art-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.art-card:hover .art-card-img img{transform:scale(1.05)}
+
+.art-card-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.35rem}
+.art-cat{font-size:.7rem}
+.art-title{
+  font-family:var(--serif);font-size:1rem;font-weight:600;
+  line-height:1.3;color:var(--txt);
+  transition:color .15s;flex-shrink:0;
+}
+.art-card:hover .art-title{color:var(--crimson)}
+.art-excerpt{font-size:.84rem;color:var(--txt-2);line-height:1.55;flex:1}
+.art-meta{
+  font-size:.72rem;color:var(--txt-3);
+  padding-top:.6rem;border-top:1px solid var(--border);
+  display:flex;gap:.85rem;
+}
+
+/* Wide variant */
+.art-card-wide{grid-column:1/-1;flex-direction:row}
+.art-card-wide .art-card-img{width:40%;aspect-ratio:unset;flex-shrink:0}
+@media(max-width:600px){
+  .art-card-wide{flex-direction:column}
+  .art-card-wide .art-card-img{width:100%;aspect-ratio:16/9}
+}
+
+/* Load more */
+.load-more{
+  display:flex;justify-content:center;margin-top:1.75rem;
+}
+.load-more a{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--surface);border:1.5px solid var(--border);
+  color:var(--txt);padding:.65rem 1.75rem;
+  border-radius:999px;font-size:.85rem;font-weight:600;
+  box-shadow:var(--sh);transition:all .2s;
+}
+.load-more a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ===================== SIDEBAR ===================== */
+.sidebar{display:flex;flex-direction:column;gap:1.5rem}
+
+.sb-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--sh);
+}
+.sb-head{
+  padding:.6rem 1rem;
+  font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;gap:.5rem;
+}
+.sb-head-red{background:var(--crimson)}
+.sb-body{padding:1rem}
+
+/* Newsletter */
+.nl-form p{font-size:.84rem;color:var(--txt-2);line-height:1.5;margin-bottom:.75rem}
+.nl-form input{
+  width:100%;padding:.55rem .85rem;
+  border:1.5px solid var(--border);border-radius:6px;
+  font-size:.84rem;margin-bottom:.5rem;outline:none;
+  transition:border-color .2s;
+}
+.nl-form input:focus{border-color:var(--crimson)}
+.nl-btn{
+  width:100%;background:var(--crimson);color:#fff;border:none;
+  border-radius:6px;padding:.65rem;font-size:.88rem;font-weight:600;
+  transition:background .15s;
+}
+.nl-btn:hover{background:var(--crimson-d)}
+.nl-fine{font-size:.68rem;color:var(--txt-3);margin-top:.45rem;text-align:center}
+
+/* Most read */
+.mr-list{display:flex;flex-direction:column;gap:.75rem}
+.mr-item{display:flex;gap:.65rem;align-items:flex-start}
+.mr-num{
+  font-family:var(--serif);font-size:1.4rem;font-weight:700;
+  color:var(--border);line-height:1;width:26px;flex-shrink:0;
+}
+.mr-item h4{
+  font-size:.85rem;font-weight:600;line-height:1.3;
+  color:var(--txt);transition:color .15s;
+}
+.mr-item:hover h4{color:var(--crimson)}
+.mr-meta{font-size:.7rem;color:var(--txt-3);margin-top:.15rem}
+
+/* Tip box */
+.tip-inner{background:#ecfdf5;border-left:3px solid #10b981;padding:.85rem 1rem;border-radius:0 6px 6px 0}
+.tip-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#059669;margin-bottom:.35rem}
+.tip-inner p{font-size:.84rem;color:#065f46;line-height:1.55}
+
+/* Ad placeholder */
+.ad-ph{
+  background:var(--bg-warm);border:2px dashed var(--border);
+  border-radius:var(--r);padding:2.5rem 1rem;
+  text-align:center;font-size:.75rem;color:var(--txt-3);
+}
+.ad-ph strong{display:block;font-size:.9rem;color:var(--txt-2);margin-bottom:.2rem}
+
+/* Tags cloud */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag-cloud a{
+  display:inline-block;background:var(--bg);
+  border:1px solid var(--border);color:var(--txt-2);
+  padding:.25em .65em;border-radius:4px;font-size:.72rem;font-weight:500;
+  transition:all .15s;
+}
+.tag-cloud a:hover{background:var(--crimson);color:#fff;border-color:var(--crimson)}
+
+/* ===================== FOOTER ===================== */
+.footer-main{
+  background:var(--surface);
+  border-top:3px solid var(--crimson);
+  padding:3rem 0 2rem;
+}
+.foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:2rem}
+@media(max-width:820px){.foot-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.foot-grid{grid-template-columns:1fr}}
+.foot-brand p{font-size:.84rem;color:var(--txt-2);margin-top:.65rem;line-height:1.65}
+.foot-col h4{
+  font-family:var(--serif);font-size:.9rem;font-weight:700;
+  color:var(--txt);margin-bottom:.65rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--crimson);
+}
+.foot-col ul{display:flex;flex-direction:column;gap:.4rem}
+.foot-col ul a{font-size:.83rem;color:var(--txt-2);transition:color .15s}
+.foot-col ul a:hover{color:var(--crimson)}
+
+.footer-bottom{
+  background:var(--navy);color:rgba(255,255,255,.55);
+  font-size:.75rem;padding:.9rem 0;
+}
+.footer-bottom .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-bottom a{color:rgba(255,255,255,.55);transition:color .15s}
+.footer-bottom a:hover{color:#fff}
+.foot-bot-links{display:flex;gap:1.25rem}
   </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="container">
-    <span class="topbar-date">Mittwoch, 17. Juni 2026</span>
-    <div class="topbar-links">
+<!-- ===== TOP STRIP ===== -->
+<div class="top-strip">
+  <div class="wrap">
+    <span class="top-date">Mittwoch, 17. Juni 2026</span>
+    <nav class="top-links" aria-label="Service-Links">
       <a href="/impressum/">Impressum</a>
       <a href="/datenschutz/">Datenschutz</a>
       <a href="#newsletter">Newsletter</a>
       <a href="https://luada.de" target="_blank" rel="noopener">Über uns</a>
-    </div>
+    </nav>
   </div>
 </div>
 
-<!-- BREAKING NEWS TICKER -->
-<div class="ticker-bar" role="marquee" aria-label="Aktuelle Meldungen">
-  <div class="container">
-    <div class="ticker-inner">
-      <div class="ticker-label">Aktuell</div>
-      <div class="ticker-scroll" aria-live="off">
-        <ul>
-          <li>Neue Studie: Regelmäßige Spaziergänge reduzieren Demenzrisiko um 40 Prozent</li>
-          <li>Pflegekassen erhöhen Pflegegeld 2026 – Was Betroffene jetzt wissen müssen</li>
-          <li>Stiftung Warentest: Beste Notrufuhren 2026 im großen Vergleich</li>
-          <li>Sommerhitze: So schützen sich Senioren bei Temperaturen über 30 Grad</li>
-          <li>Neue Studie: Regelmäßige Spaziergänge reduzieren Demenzrisiko um 40 Prozent</li>
-          <li>Pflegekassen erhöhen Pflegegeld 2026 – Was Betroffene jetzt wissen müssen</li>
-          <li>Stiftung Warentest: Beste Notrufuhren 2026 im großen Vergleich</li>
-          <li>Sommerhitze: So schützen sich Senioren bei Temperaturen über 30 Grad</li>
-        </ul>
+<!-- ===== TICKER ===== -->
+<div class="ticker" aria-label="Aktuelle Meldungen">
+  <div class="wrap">
+    <div class="ticker-wrap">
+      <span class="ticker-flag">Aktuell</span>
+      <div class="ticker-track" aria-live="off">
+        <div class="ticker-items">
+          <span>Neue Studie: Spaziergänge reduzieren Demenzrisiko um 40 Prozent</span>
+          <span>Pflegegeld 2026 erhöht – Was Betroffene jetzt wissen müssen</span>
+          <span>Stiftung Warentest: Beste Notrufuhren 2026 im Vergleich</span>
+          <span>Sommerhitze-Tipps: So schützen sich Senioren bei über 30 Grad</span>
+          <span>Neue Studie: Spaziergänge reduzieren Demenzrisiko um 40 Prozent</span>
+          <span>Pflegegeld 2026 erhöht – Was Betroffene jetzt wissen müssen</span>
+          <span>Stiftung Warentest: Beste Notrufuhren 2026 im Vergleich</span>
+          <span>Sommerhitze-Tipps: So schützen sich Senioren bei über 30 Grad</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MASTHEAD -->
-<div class="masthead">
-  <div class="container">
-    <a href="/" class="logo" aria-label="Startseite">
-      <span class="logo-main">Senioren Gesundheit Aktuell</span>
-      <span class="logo-sub">Ihr unabhängiges Magazin für Gesundheit &amp; Lebensqualität im Alter</span>
+<!-- ===== MASTHEAD ===== -->
+<header class="masthead">
+  <div class="wrap">
+    <a href="/" class="site-logo" aria-label="Senioren Gesundheit Aktuell – Startseite">
+      <span class="site-logo-name">Senioren Gesundheit Aktuell</span>
+      <span class="site-logo-claim">Ihr unabhängiges Magazin für Gesundheit &amp; Lebensqualität im Alter</span>
     </a>
-    <div class="masthead-ad">
+    <div class="masthead-cta">
       <strong>Kostenloser Newsletter</strong>
-      Jeden Freitag: Die besten Gesundheitstipps
+      <span>Jeden Freitag die besten Gesundheitstipps</span>
     </div>
   </div>
-</div>
+</header>
 
-<!-- MAIN NAV -->
-<nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
-  <div class="container">
-    <button class="nav-toggle" aria-label="Menü öffnen" onclick="this.nextElementSibling.classList.toggle('open')">☰</button>
-    <div class="main-nav-links" role="list">
-      <a href="/" class="active" role="listitem">Startseite</a>
-      <a href="/editorial/stuerze-im-alter/" role="listitem">Sturzprävention</a>
-      <a href="/editorial/notrufuhr-vs-hausnotruf/" role="listitem">Notrufhilfen</a>
-      <a href="#" role="listitem">Ernährung</a>
-      <a href="#" role="listitem">Bewegung &amp; Fitness</a>
-      <a href="#" role="listitem">Wohnen im Alter</a>
-      <a href="#" role="listitem">Pflege &amp; Angehörige</a>
-      <a href="#" class="nav-highlight" role="listitem">★ Ratgeber</a>
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav-bar" role="navigation" aria-label="Hauptnavigation">
+  <div class="wrap nav-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menü öffnen/schließen">
+      <span id="nav-icon">☰</span>
+    </button>
+    <div class="nav-links" id="nav-links" role="menubar">
+      <a href="/" class="active" role="menuitem">Startseite</a>
+      <a href="/editorial/stuerze-im-alter/" role="menuitem">Sturzprävention</a>
+      <a href="/editorial/notrufuhr-vs-hausnotruf/" role="menuitem">Notrufhilfen</a>
+      <a href="#" role="menuitem">Ernährung</a>
+      <a href="#" role="menuitem">Bewegung &amp; Fitness</a>
+      <a href="#" role="menuitem">Wohnen im Alter</a>
+      <a href="#" role="menuitem">Pflege &amp; Angehörige</a>
+      <a href="#" class="hot" role="menuitem">★ Ratgeber</a>
     </div>
-    <form class="nav-search" role="search" onsubmit="return false;">
-      <input type="search" placeholder="Artikel suchen …" aria-label="Suche">
-      <button type="submit" aria-label="Suchen">🔍</button>
-    </form>
+    <div class="nav-search-wrap" role="search">
+      <input type="search" placeholder="Artikel suchen …" aria-label="Suchbegriff eingeben">
+      <button type="button" aria-label="Suchen">🔍</button>
+    </div>
   </div>
 </nav>
 
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <div class="container">
-    <a href="/">Startseite</a>
-  </div>
-</div>
-
-<!-- HERO FEATURE -->
-<section class="hero-feature" aria-labelledby="hero-title">
-  <div class="container">
+<!-- ===== HERO ===== -->
+<section class="hero-section" aria-labelledby="hero-title">
+  <div class="wrap">
     <div class="hero-grid">
-      <a href="/editorial/stuerze-im-alter/" class="hero-main" aria-label="Hauptartikel lesen">
-        <div class="hero-img-wrap">
-          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80"
-            alt="Physiotherapeutin arbeitet mit Seniorin an Gleichgewichtsübungen"
+      <!-- Featured article -->
+      <a href="/editorial/stuerze-im-alter/" class="hero-card" aria-label="Titelartikel lesen">
+        <div class="hero-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80"
+            alt="Physiotherapeutin hilft Seniorin bei Gleichgewichtsübungen"
             width="900" height="506" loading="eager" decoding="async">
-          <div class="hero-img-overlay">
-            <span class="tag">Titelthema</span>
-            <h2 id="hero-title">Stürze im Alter – die unterschätzte Gefahr und was Sie jetzt tun können</h2>
-            <p>Jährlich stürzen über 4 Millionen Deutsche über 65. Unsere Experten erklären, wie moderne Prävention und schnelle Hilfe Leben retten.</p>
-            <div class="hero-meta">
-              <time datetime="2026-06-15">15. Juni 2026</time>
-              <span>· 6 Min. Lesezeit</span>
-              <span>· Dr. med. Sabine Krüger</span>
-            </div>
+        </div>
+        <div class="hero-card-body">
+          <span class="badge">Titelthema</span>
+          <h2 id="hero-title">Stürze im Alter – die unterschätzte Gefahr und was Sie jetzt tun können</h2>
+          <p>Jährlich stürzen über 4 Millionen Deutsche über 65. Unsere Experten erklären, wie moderne Prävention und schnelle Hilfe Leben retten können.</p>
+          <div class="hero-meta">
+            <time datetime="2026-06-15">15. Juni 2026</time>
+            <span>· 6 Min. Lesezeit</span>
+            <span>· Dr. med. Sabine Krüger</span>
           </div>
         </div>
       </a>
-      <aside class="hero-side" aria-label="Weitere aktuelle Artikel">
-        <a href="/editorial/notrufuhr-vs-hausnotruf/" class="hero-side-card">
-          <img class="hero-side-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=180&q=75"
-            alt="Seniorin mit Smartwatch" width="90" height="68" loading="lazy" decoding="async">
-          <div class="hero-side-body">
-            <span class="tag tag--navy">Ratgeber</span>
+
+      <!-- Side articles -->
+      <aside class="side-stack" aria-label="Weitere aktuelle Artikel">
+        <a href="/editorial/notrufuhr-vs-hausnotruf/" class="side-card">
+          <img class="side-card-img"
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200&q=75"
+            alt="Seniorin mit Smartwatch" width="88" height="66" loading="lazy" decoding="async">
+          <div class="side-card-body">
+            <span class="badge badge-navy">Ratgeber</span>
             <h3>Notrufuhr vs. Hausnotruf – Was passt zu Ihnen?</h3>
-            <div class="meta"><time datetime="2026-06-12">12. Juni 2026</time> · 8 Min.</div>
+            <div class="side-card-meta"><time datetime="2026-06-12">12. Juni 2026</time> · 8 Min.</div>
           </div>
         </a>
-        <a href="#" class="hero-side-card">
-          <img class="hero-side-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=180&q=75"
-            alt="Gesunde Lebensmittel für Senioren" width="90" height="68" loading="lazy" decoding="async">
-          <div class="hero-side-body">
-            <span class="tag tag--gold">Ernährung</span>
+        <a href="#" class="side-card">
+          <img class="side-card-img"
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=200&q=75"
+            alt="Frische Lebensmittel" width="88" height="66" loading="lazy" decoding="async">
+          <div class="side-card-body">
+            <span class="badge badge-gold">Ernährung</span>
             <h3>Richtig essen ab 65: Die 10 wichtigsten Nährstoffe</h3>
-            <div class="meta"><time datetime="2026-06-10">10. Juni 2026</time> · 5 Min.</div>
+            <div class="side-card-meta"><time datetime="2026-06-10">10. Juni 2026</time> · 5 Min.</div>
           </div>
         </a>
-        <a href="#" class="hero-side-card">
-          <img class="hero-side-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=180&q=75"
-            alt="Senioren beim Spaziergang im Park" width="90" height="68" loading="lazy" decoding="async">
-          <div class="hero-side-body">
-            <span class="tag">Fitness</span>
-            <h3>Gleichgewichtstraining: 10 Übungen für mehr Stabilität</h3>
-            <div class="meta"><time datetime="2026-06-08">8. Juni 2026</time> · 7 Min.</div>
+        <a href="#" class="side-card">
+          <img class="side-card-img"
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&q=75"
+            alt="Senioren beim Sport" width="88" height="66" loading="lazy" decoding="async">
+          <div class="side-card-body">
+            <span class="badge">Fitness</span>
+            <h3>Gleichgewicht stärken: 10 Übungen für jeden Tag</h3>
+            <div class="side-card-meta"><time datetime="2026-06-08">8. Juni 2026</time> · 7 Min.</div>
           </div>
         </a>
-        <a href="#" class="hero-side-card">
-          <img class="hero-side-img" src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=180&q=75"
-            alt="Apothekerin berät ältere Dame" width="90" height="68" loading="lazy" decoding="async">
-          <div class="hero-side-body">
-            <span class="tag tag--navy">Medikation</span>
+        <a href="#" class="side-card">
+          <img class="side-card-img"
+            src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=200&q=75"
+            alt="Apothekerin berät Kundin" width="88" height="66" loading="lazy" decoding="async">
+          <div class="side-card-body">
+            <span class="badge badge-navy">Medikation</span>
             <h3>Medikamente im Alter: Wechselwirkungen sicher vermeiden</h3>
-            <div class="meta"><time datetime="2026-06-05">5. Juni 2026</time> · 5 Min.</div>
+            <div class="side-card-meta"><time datetime="2026-06-05">5. Juni 2026</time> · 5 Min.</div>
           </div>
         </a>
       </aside>
@@ -351,29 +669,34 @@
   </div>
 </section>
 
-<!-- STATS BAR -->
-<div class="stats-bar" role="complementary" aria-label="Magazin in Zahlen">
-  <div class="container">
-    <div class="stat-item"><div class="stat-num">50.000+</div><div class="stat-desc">Leser monatlich</div></div>
-    <div class="stat-item"><div class="stat-num">200+</div><div class="stat-desc">Geprüfte Artikel</div></div>
-    <div class="stat-item"><div class="stat-num">25</div><div class="stat-desc">Jahre Erfahrung</div></div>
-    <div class="stat-item"><div class="stat-num">98 %</div><div class="stat-desc">Weiterempfehlung</div></div>
+<!-- ===== STATS ===== -->
+<div class="stats-section" aria-label="Magazin in Zahlen">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div><div class="stat-n">50.000+</div><div class="stat-l">Leser monatlich</div></div>
+      <div><div class="stat-n">200+</div><div class="stat-l">geprüfte Artikel</div></div>
+      <div><div class="stat-n">25 J.</div><div class="stat-l">Erfahrung</div></div>
+      <div><div class="stat-n">98 %</div><div class="stat-l">Weiterempfehlung</div></div>
+    </div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- ===== MAIN CONTENT ===== -->
 <main id="main-content" role="main">
-  <div class="container content-layout">
-    <div class="content-grid">
+  <div class="wrap main-layout">
+    <div class="two-col">
+
+      <!-- PRIMARY -->
       <div>
-        <!-- THEMA DES MONATS -->
-        <div class="section-label"><div class="sl-accent"></div><span>Thema des Monats</span></div>
-        <div class="promo-banner">
+        <!-- Thema des Monats -->
+        <div class="sec-head"><div class="sec-head-accent"></div><span>Thema des Monats</span></div>
+
+        <div class="promo-wrap">
           <div class="promo-text">
-            <span class="eyebrow">Juni 2026 · Schwerpunkt</span>
+            <span class="promo-eyebrow">Juni 2026 · Schwerpunkt</span>
             <h2>Sicher zuhause bleiben – Assistenzsysteme im Vergleich</h2>
             <p>Ob Notrufuhr, Smart-Home-Sensor oder klassischer Hausnotruf – wir zeigen, welche Lösung zu welcher Lebenssituation passt und was die Kassen übernehmen.</p>
-            <a href="/editorial/notrufuhr-vs-hausnotruf/" class="btn-promo">Zum Schwerpunkt-Artikel</a>
+            <a href="/editorial/notrufuhr-vs-hausnotruf/" class="promo-btn">Zum Schwerpunkt ›</a>
           </div>
           <div class="promo-img">
             <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80"
@@ -381,204 +704,227 @@
           </div>
         </div>
 
-        <!-- KATEGORIEN -->
-        <div class="section-label"><div class="sl-accent"></div><span>Alle Themen</span></div>
-        <div class="cat-row" role="list" aria-label="Themengebiete">
-          <a href="#" class="cat-card" role="listitem" aria-label="Gesundheit und Vorsorge">
+        <!-- Kategorien -->
+        <div class="sec-head"><div class="sec-head-accent"></div><span>Alle Themen</span></div>
+        <div class="cat-grid" role="list">
+          <a href="#" class="cat-card" role="listitem">
             <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=75"
-              alt="Arzt im Gespräch mit älterem Patienten" width="400" height="300" loading="lazy" decoding="async">
-            <span class="cat-card__label">Gesundheit &amp; Vorsorge</span>
-            <span class="cat-card__count"><span class="tag">48 Artikel</span></span>
-          </a>
-          <a href="#" class="cat-card" role="listitem" aria-label="Sicherheit und Notfall">
-            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&q=75"
-              alt="Sanitäter hilft älterer Person" width="400" height="300" loading="lazy" decoding="async">
-            <span class="cat-card__label">Sicherheit &amp; Notfall</span>
-            <span class="cat-card__count"><span class="tag">31 Artikel</span></span>
-          </a>
-          <a href="#" class="cat-card" role="listitem" aria-label="Ernährung und Fitness">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=75"
-              alt="Senioren beim Sport im Freien" width="400" height="300" loading="lazy" decoding="async">
-            <span class="cat-card__label">Ernährung &amp; Fitness</span>
-            <span class="cat-card__count"><span class="tag">56 Artikel</span></span>
-          </a>
-          <a href="#" class="cat-card" role="listitem" aria-label="Wohnen und Pflege">
-            <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&q=75"
-              alt="Helles altersgerechtes Wohnzimmer" width="400" height="300" loading="lazy" decoding="async">
-            <span class="cat-card__label">Wohnen &amp; Pflege</span>
-            <span class="cat-card__count"><span class="tag">40 Artikel</span></span>
-          </a>
-        </div>
-
-        <!-- EXPERTENZITAT -->
-        <div class="expert-quote" role="complementary">
-          <blockquote>
-            „Die meisten Stürze im Alter sind vermeidbar. Mit der richtigen Umgebungsanpassung und gezieltem Gleichgewichtstraining lässt sich das Risiko um bis zu 50 Prozent senken."
-          </blockquote>
-          <cite><strong>Prof. Dr. Andreas Voss</strong> · Geriatrie, Universitätsklinikum Köln</cite>
-        </div>
-
-        <!-- ARTIKEL-GRID -->
-        <div class="section-label"><div class="sl-accent"></div><span>Aktuelle Ratgeber</span></div>
-        <div class="articles-grid">
-          <a href="/editorial/stuerze-im-alter/" class="article-card article-card--wide">
-            <div class="article-card__img">
-              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80"
-                alt="Physiotherapie Übung Gleichgewicht Seniorin" width="600" height="400" loading="lazy" decoding="async">
+              alt="Arzt mit Patient" width="400" height="300" loading="lazy" decoding="async">
+            <div class="cat-label">
+              <span class="cat-label-name">Gesundheit &amp; Vorsorge</span>
+              <span class="cat-label-count">48 Artikel</span>
             </div>
-            <div class="article-card__body">
-              <span class="tag article-card__cat">Sturzprävention</span>
-              <h2 class="article-card__title" style="font-size:1.25rem;">Stürze im Alter – die 7 häufigsten Ursachen und wie Sie sich wirksam schützen</h2>
-              <p class="article-card__excerpt">Glatte Böden, Medikamentennebenwirkungen, Gleichgewichtsprobleme: Stürze haben oft mehrere Ursachen gleichzeitig. Unser umfassender Ratgeber zeigt, was Sie selbst tun können – und wann ein Arztbesuch nötig ist.</p>
-              <div class="article-card__meta">
+          </a>
+          <a href="#" class="cat-card" role="listitem">
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&q=75"
+              alt="Notfall und Sicherheit" width="400" height="300" loading="lazy" decoding="async">
+            <div class="cat-label">
+              <span class="cat-label-name">Sicherheit &amp; Notfall</span>
+              <span class="cat-label-count">31 Artikel</span>
+            </div>
+          </a>
+          <a href="#" class="cat-card" role="listitem">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=75"
+              alt="Fitness für Senioren" width="400" height="300" loading="lazy" decoding="async">
+            <div class="cat-label">
+              <span class="cat-label-name">Ernährung &amp; Fitness</span>
+              <span class="cat-label-count">56 Artikel</span>
+            </div>
+          </a>
+          <a href="#" class="cat-card" role="listitem">
+            <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&q=75"
+              alt="Wohnen im Alter" width="400" height="300" loading="lazy" decoding="async">
+            <div class="cat-label">
+              <span class="cat-label-name">Wohnen &amp; Pflege</span>
+              <span class="cat-label-count">40 Artikel</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Expertenzitat -->
+        <blockquote class="quote-block">
+          <p>„Die meisten Stürze im Alter sind vermeidbar. Mit der richtigen Umgebungsanpassung und gezieltem Gleichgewichtstraining lässt sich das Risiko um bis zu 50 Prozent senken."</p>
+          <cite><strong>Prof. Dr. Andreas Voss</strong> · Geriatrie, Universitätsklinikum Köln</cite>
+        </blockquote>
+
+        <!-- Artikel -->
+        <div class="sec-head"><div class="sec-head-accent"></div><span>Aktuelle Ratgeber</span></div>
+        <div class="art-grid">
+
+          <a href="/editorial/stuerze-im-alter/" class="art-card art-card-wide">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=640&q=80"
+                alt="Physiotherapeutin mit Seniorin" width="640" height="400" loading="lazy" decoding="async">
+            </div>
+            <div class="art-card-body">
+              <span class="badge art-cat">Sturzprävention</span>
+              <h2 class="art-title" style="font-size:1.15rem;line-height:1.25">Stürze im Alter – die 7 häufigsten Ursachen und wie Sie sich wirksam schützen</h2>
+              <p class="art-excerpt">Glatte Böden, Medikamentennebenwirkungen, Gleichgewichtsprobleme: Stürze haben meist mehrere Ursachen. Unser Ratgeber zeigt, was Sie selbst tun können.</p>
+              <div class="art-meta">
                 <time datetime="2026-06-15">15. Juni 2026</time>
                 <span>⏱ 6 Min.</span>
                 <span>Dr. S. Krüger</span>
               </div>
             </div>
           </a>
-          <a href="/editorial/notrufuhr-vs-hausnotruf/" class="article-card">
-            <div class="article-card__img">
-              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80"
-                alt="Seniorin betrachtet ihre Notrufuhr" width="600" height="338" loading="lazy" decoding="async">
+
+          <a href="/editorial/notrufuhr-vs-hausnotruf/" class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=640&q=80"
+                alt="Seniorin mit Notrufuhr" width="640" height="360" loading="lazy" decoding="async">
             </div>
-            <div class="article-card__body">
-              <span class="tag article-card__cat">Notrufhilfen</span>
-              <h3 class="article-card__title">Notrufuhr oder Hausnotruf? Der große Vergleich 2026</h3>
-              <p class="article-card__excerpt">Mobil oder stationär – beide Systeme haben Vor- und Nachteile. Wir erklären, was die Krankenkasse zahlt und worauf Sie beim Kauf achten sollten.</p>
-              <div class="article-card__meta"><time datetime="2026-06-12">12. Juni 2026</time><span>⏱ 8 Min.</span></div>
-            </div>
-          </a>
-          <a href="#" class="article-card">
-            <div class="article-card__img">
-              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80"
-                alt="Buntes Gemüse und Obst" width="600" height="338" loading="lazy" decoding="async">
-            </div>
-            <div class="article-card__body">
-              <span class="tag tag--gold article-card__cat">Ernährung</span>
-              <h3 class="article-card__title">Diese 10 Nährstoffe brauchen Senioren täglich</h3>
-              <p class="article-card__excerpt">Vitamin D, Kalzium, Omega-3: Was der alternde Körper wirklich braucht – und in welchen Lebensmitteln Sie es finden.</p>
-              <div class="article-card__meta"><time datetime="2026-06-10">10. Juni 2026</time><span>⏱ 5 Min.</span></div>
+            <div class="art-card-body">
+              <span class="badge art-cat">Notrufhilfen</span>
+              <h3 class="art-title">Notrufuhr oder Hausnotruf? Der große Vergleich 2026</h3>
+              <p class="art-excerpt">Mobil oder stationär – beide Systeme haben Vor- und Nachteile. Was die Krankenkasse zahlt und worauf Sie beim Kauf achten sollten.</p>
+              <div class="art-meta"><time datetime="2026-06-12">12. Juni 2026</time><span>⏱ 8 Min.</span></div>
             </div>
           </a>
-          <a href="#" class="article-card">
-            <div class="article-card__img">
-              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"
-                alt="Gruppe älterer Menschen beim Yoga" width="600" height="338" loading="lazy" decoding="async">
+
+          <a href="#" class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=640&q=80"
+                alt="Gesunde Lebensmittel" width="640" height="360" loading="lazy" decoding="async">
             </div>
-            <div class="article-card__body">
-              <span class="tag article-card__cat">Fitness</span>
-              <h3 class="article-card__title">10 Gleichgewichtsübungen für Senioren – zu Hause, ohne Geräte</h3>
-              <p class="article-card__excerpt">Diese einfachen Übungen stärken Muskeln und Koordination und lassen sich täglich in nur 15 Minuten durchführen.</p>
-              <div class="article-card__meta"><time datetime="2026-06-08">8. Juni 2026</time><span>⏱ 7 Min.</span></div>
-            </div>
-          </a>
-          <a href="#" class="article-card">
-            <div class="article-card__img">
-              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80"
-                alt="Apothekerin erklärt Medikamente" width="600" height="338" loading="lazy" decoding="async">
-            </div>
-            <div class="article-card__body">
-              <span class="tag tag--navy article-card__cat">Medikation</span>
-              <h3 class="article-card__title">Medikamente im Alter: So vermeiden Sie gefährliche Wechselwirkungen</h3>
-              <p class="article-card__excerpt">Wer mehrere Medikamente einnimmt, riskiert Neben- und Wechselwirkungen. Mit diesen Tipps bleiben Sie auf der sicheren Seite.</p>
-              <div class="article-card__meta"><time datetime="2026-06-05">5. Juni 2026</time><span>⏱ 5 Min.</span></div>
+            <div class="art-card-body">
+              <span class="badge badge-gold art-cat">Ernährung</span>
+              <h3 class="art-title">Diese 10 Nährstoffe brauchen Senioren täglich</h3>
+              <p class="art-excerpt">Vitamin D, Kalzium, Omega-3: Was der alternde Körper wirklich braucht und in welchen Lebensmitteln Sie es finden.</p>
+              <div class="art-meta"><time datetime="2026-06-10">10. Juni 2026</time><span>⏱ 5 Min.</span></div>
             </div>
           </a>
-          <a href="#" class="article-card">
-            <div class="article-card__img">
-              <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&q=80"
-                alt="Altersgerechtes helles Wohnzimmer" width="600" height="338" loading="lazy" decoding="async">
+
+          <a href="#" class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=640&q=80"
+                alt="Senioren beim Yoga" width="640" height="360" loading="lazy" decoding="async">
             </div>
-            <div class="article-card__body">
-              <span class="tag article-card__cat">Wohnen</span>
-              <h3 class="article-card__title">Altersgerecht wohnen: Kleine Umbaumaßnahmen, große Wirkung</h3>
-              <p class="article-card__excerpt">Rutschmatten, Haltegriffe, breitere Türen: Mit welchen Maßnahmen Sie Ihr Zuhause sicher machen – und was die Pflegekasse fördert.</p>
-              <div class="article-card__meta"><time datetime="2026-06-03">3. Juni 2026</time><span>⏱ 6 Min.</span></div>
+            <div class="art-card-body">
+              <span class="badge art-cat">Fitness</span>
+              <h3 class="art-title">10 Gleichgewichtsübungen für Senioren – täglich, ohne Geräte</h3>
+              <p class="art-excerpt">Diese einfachen Übungen stärken Muskeln und Koordination – durchführbar in 15 Minuten täglich, ganz zu Hause.</p>
+              <div class="art-meta"><time datetime="2026-06-08">8. Juni 2026</time><span>⏱ 7 Min.</span></div>
             </div>
           </a>
+
+          <a href="#" class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=640&q=80"
+                alt="Apothekerin erklärt Medikamente" width="640" height="360" loading="lazy" decoding="async">
+            </div>
+            <div class="art-card-body">
+              <span class="badge badge-navy art-cat">Medikation</span>
+              <h3 class="art-title">Medikamente im Alter: So vermeiden Sie gefährliche Wechselwirkungen</h3>
+              <p class="art-excerpt">Wer mehrere Medikamente nimmt, riskiert Neben- und Wechselwirkungen. Mit diesen Tipps bleiben Sie sicher.</p>
+              <div class="art-meta"><time datetime="2026-06-05">5. Juni 2026</time><span>⏱ 5 Min.</span></div>
+            </div>
+          </a>
+
+          <a href="#" class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=640&q=80"
+                alt="Altersgerechtes Wohnzimmer" width="640" height="360" loading="lazy" decoding="async">
+            </div>
+            <div class="art-card-body">
+              <span class="badge art-cat">Wohnen</span>
+              <h3 class="art-title">Altersgerecht wohnen: Kleine Umbaumaßnahmen, große Wirkung</h3>
+              <p class="art-excerpt">Rutschmatten, Haltegriffe, breitere Türen: Was die Pflegekasse fördert und wie Sie Ihr Zuhause sicherer machen.</p>
+              <div class="art-meta"><time datetime="2026-06-03">3. Juni 2026</time><span>⏱ 6 Min.</span></div>
+            </div>
+          </a>
+
         </div>
 
-        <div style="text-align:center;margin-top:2rem;">
-          <a href="#" style="display:inline-block;background:var(--navy);color:#fff;padding:.7rem 2rem;border-radius:3px;font-weight:600;font-size:.9rem;">
-            Weitere Artikel laden →
-          </a>
+        <div class="load-more">
+          <a href="#">Weitere Artikel laden <span>›</span></a>
         </div>
       </div>
 
       <!-- SIDEBAR -->
-      <aside role="complementary" aria-label="Ergänzende Inhalte">
+      <aside aria-label="Ergänzende Inhalte">
         <div class="sidebar">
-          <div class="sidebar-box" id="newsletter">
-            <div class="sidebar-box__header sidebar-box__header--red">📬 Kostenloser Newsletter</div>
-            <div class="sidebar-box__body">
-              <div class="nl-widget">
-                <p>Wöchentliche Gesundheitstipps, neue Ratgeber und aktuelle Meldungen – gratis in Ihr Postfach.</p>
-                <form onsubmit="handleNL(event)">
-                  <input type="email" placeholder="Ihre E-Mail-Adresse" required aria-label="E-Mail für Newsletter">
-                  <button type="submit">Jetzt kostenlos abonnieren</button>
-                </form>
-                <p class="nl-fine">✓ Kostenlos &nbsp;✓ Kein Spam &nbsp;✓ Jederzeit kündbar</p>
-              </div>
+
+          <!-- Newsletter -->
+          <div class="sb-card" id="newsletter">
+            <div class="sb-head sb-head-red">📬 Kostenloser Newsletter</div>
+            <div class="sb-body">
+              <form class="nl-form" onsubmit="handleNL(event)">
+                <p>Wöchentliche Gesundheitstipps und neue Ratgeber – gratis in Ihr Postfach.</p>
+                <input type="email" placeholder="Ihre E-Mail-Adresse" required aria-label="E-Mail-Adresse">
+                <button type="submit" class="nl-btn">Jetzt kostenlos abonnieren</button>
+                <p class="nl-fine">✓ Kostenlos &nbsp;·&nbsp; ✓ Kein Spam &nbsp;·&nbsp; ✓ Jederzeit kündbar</p>
+              </form>
             </div>
           </div>
-          <div class="sidebar-box">
-            <div class="sidebar-box__header">🔥 Meist gelesen</div>
-            <div class="sidebar-box__body">
-              <ul class="most-read-list">
-                <li><a href="/editorial/stuerze-im-alter/" class="most-read-item"><span class="most-read-num">1</span><div><h4>Stürze im Alter – Ursachen und Prävention</h4><div class="meta">6 Min. · Sturzprävention</div></div></a></li>
-                <li><a href="/editorial/notrufuhr-vs-hausnotruf/" class="most-read-item"><span class="most-read-num">2</span><div><h4>Notrufuhr vs. Hausnotruf: Der große Vergleich</h4><div class="meta">8 Min. · Ratgeber</div></div></a></li>
-                <li><a href="#" class="most-read-item"><span class="most-read-num">3</span><div><h4>Medikamente im Alter: Was Sie wissen müssen</h4><div class="meta">5 Min. · Medikation</div></div></a></li>
-                <li><a href="#" class="most-read-item"><span class="most-read-num">4</span><div><h4>Gleichgewichtstraining: 10 Übungen für zu Hause</h4><div class="meta">7 Min. · Fitness</div></div></a></li>
-                <li><a href="#" class="most-read-item"><span class="most-read-num">5</span><div><h4>Pflegegeld 2026: Alle Änderungen auf einen Blick</h4><div class="meta">4 Min. · Pflege</div></div></a></li>
+
+          <!-- Meist gelesen -->
+          <div class="sb-card">
+            <div class="sb-head">🔥 Meist gelesen</div>
+            <div class="sb-body">
+              <ul class="mr-list">
+                <li><a href="/editorial/stuerze-im-alter/" class="mr-item"><span class="mr-num">1</span><div><h4>Stürze im Alter – Ursachen und Prävention</h4><div class="mr-meta">6 Min. · Sturzprävention</div></div></a></li>
+                <li><a href="/editorial/notrufuhr-vs-hausnotruf/" class="mr-item"><span class="mr-num">2</span><div><h4>Notrufuhr vs. Hausnotruf: Der große Vergleich</h4><div class="mr-meta">8 Min. · Ratgeber</div></div></a></li>
+                <li><a href="#" class="mr-item"><span class="mr-num">3</span><div><h4>Medikamente im Alter sicher einnehmen</h4><div class="mr-meta">5 Min. · Medikation</div></div></a></li>
+                <li><a href="#" class="mr-item"><span class="mr-num">4</span><div><h4>Gleichgewichtstraining: 10 Übungen für zu Hause</h4><div class="mr-meta">7 Min. · Fitness</div></div></a></li>
+                <li><a href="#" class="mr-item"><span class="mr-num">5</span><div><h4>Pflegegeld 2026: Alle Änderungen auf einen Blick</h4><div class="mr-meta">4 Min. · Pflege</div></div></a></li>
               </ul>
             </div>
           </div>
-          <div class="sidebar-box">
-            <div class="sidebar-box__header">💡 Tipp des Tages</div>
-            <div class="sidebar-box__body">
-              <div class="tip-box">
-                <div class="tip-box__label">Gesundheitstipp</div>
-                <p>Trinken Sie täglich mindestens 1,5 Liter Wasser – auch wenn Sie keinen Durst verspüren. Im Alter lässt das Durstempfinden nach, was schnell zur Dehydration führt.</p>
+
+          <!-- Tipp des Tages -->
+          <div class="sb-card">
+            <div class="sb-head">💡 Tipp des Tages</div>
+            <div class="sb-body">
+              <div class="tip-inner">
+                <div class="tip-label">Gesundheitstipp</div>
+                <p>Trinken Sie täglich mindestens 1,5 Liter Wasser – auch ohne Durst. Im Alter lässt das Durstempfinden nach und Dehydration kann Stürze und Verwirrtheit begünstigen.</p>
               </div>
             </div>
           </div>
-          <div class="ad-placeholder" role="complementary" aria-label="Werbeanzeige">
-            <strong>Werbeanzeige</strong>300 × 250 px<br>Ihre Anzeige hier
+
+          <!-- Ad -->
+          <div class="ad-ph" role="complementary" aria-label="Werbeanzeige">
+            <strong>Anzeige</strong>300 × 250 px
           </div>
-          <div class="sidebar-box">
-            <div class="sidebar-box__header">🏷️ Themen</div>
-            <div class="sidebar-box__body">
-              <div style="display:flex;flex-wrap:wrap;gap:.45rem;">
-                <a href="#" class="tag" style="font-size:.75rem;">Sturzprävention</a>
-                <a href="#" class="tag tag--navy" style="font-size:.75rem;">Notrufuhr</a>
-                <a href="#" class="tag tag--gold" style="font-size:.75rem;">Ernährung</a>
-                <a href="#" class="tag" style="font-size:.75rem;">Gleichgewicht</a>
-                <a href="#" class="tag tag--navy" style="font-size:.75rem;">Pflege</a>
-                <a href="#" class="tag tag--gold" style="font-size:.75rem;">Demenz</a>
-                <a href="#" class="tag" style="font-size:.75rem;">Herzgesundheit</a>
-                <a href="#" class="tag tag--navy" style="font-size:.75rem;">Medikamente</a>
-                <a href="#" class="tag tag--gold" style="font-size:.75rem;">Wohnen</a>
-                <a href="#" class="tag" style="font-size:.75rem;">Hausnotruf</a>
+
+          <!-- Tags -->
+          <div class="sb-card">
+            <div class="sb-head">🏷 Themen</div>
+            <div class="sb-body">
+              <div class="tag-cloud">
+                <a href="#">Sturzprävention</a>
+                <a href="#">Notrufuhr</a>
+                <a href="#">Ernährung</a>
+                <a href="#">Gleichgewicht</a>
+                <a href="#">Pflege</a>
+                <a href="#">Demenz</a>
+                <a href="#">Herzgesundheit</a>
+                <a href="#">Medikamente</a>
+                <a href="#">Wohnen</a>
+                <a href="#">Hausnotruf</a>
+                <a href="#">Vitamin D</a>
+                <a href="#">Bewegung</a>
               </div>
             </div>
           </div>
+
         </div>
       </aside>
+
     </div>
   </div>
 </main>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
-  <div class="footer-top">
-    <div class="container">
-      <div class="footer-cols">
-        <div class="footer-brand">
-          <a href="/" class="logo"><span class="logo-main">Senioren Gesundheit Aktuell</span></a>
+  <div class="footer-main">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="/" class="site-logo"><span class="site-logo-name" style="font-size:1.35rem">Senioren Gesundheit Aktuell</span></a>
           <p>Seit über 25 Jahren das vertrauenswürdige Magazin für Gesundheit, Sicherheit und Lebensqualität im Alter. Medizinisch geprüfte Ratgeber für Senioren und ihre Angehörigen.</p>
         </div>
-        <div class="footer-col">
+        <div class="foot-col">
           <h4>Themen</h4>
           <ul>
             <li><a href="#">Sturzprävention</a></li>
@@ -589,7 +935,7 @@
             <li><a href="#">Pflege &amp; Angehörige</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="foot-col">
           <h4>Ratgeber</h4>
           <ul>
             <li><a href="#">Pflegegeld 2026</a></li>
@@ -599,7 +945,7 @@
             <li><a href="#">Pflegegrade erklärt</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="foot-col">
           <h4>Magazin</h4>
           <ul>
             <li><a href="/impressum/">Impressum</a></li>
@@ -613,9 +959,9 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="container">
+    <div class="wrap">
       <span>© 2026 Senioren Gesundheit Aktuell · LUADA eHealth Solutions GmbH</span>
-      <div class="footer-bottom-links">
+      <div class="foot-bot-links">
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
         <a href="#">Cookie-Einstellungen</a>
@@ -625,19 +971,36 @@
 </footer>
 
 <script>
-  function handleNL(e) {
+  // Nav toggle
+  (function(){
+    var btn = document.getElementById('nav-toggle');
+    var links = document.getElementById('nav-links');
+    var icon = document.getElementById('nav-icon');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      icon.textContent = open ? '✕' : '☰';
+    });
+    // Close on outside click
+    document.addEventListener('click', function(e){
+      if(!btn.contains(e.target) && !links.contains(e.target)){
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        icon.textContent='☰';
+      }
+    });
+  })();
+
+  // Newsletter
+  function handleNL(e){
     e.preventDefault();
-    var input = e.target.querySelector('input[type="email"]');
+    var inp = e.target.querySelector('input[type="email"]');
     var btn = e.target.querySelector('button');
-    if (input && input.value) {
-      input.value = '';
-      btn.textContent = '✓ Erfolgreich angemeldet!';
-      btn.style.background = '#27ae60';
-      setTimeout(function() {
-        btn.textContent = 'Jetzt kostenlos abonnieren';
-        btn.style.background = '';
-      }, 4000);
-    }
+    inp.value='';
+    btn.textContent='✓ Erfolgreich angemeldet!';
+    btn.style.background='#059669';
+    setTimeout(function(){btn.textContent='Jetzt kostenlos abonnieren';btn.style.background='';},4000);
   }
 </script>
 </body>
