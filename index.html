@@ -1,1049 +1,644 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <!-- SEO Meta Tags -->
-  <title>Senioren Gesundheit Aktuell – Ihr vertrauensvoller Ratgeber für Gesundheit im Alter</title>
-  <meta name="description" content="Das führende Gesundheitsmagazin für Senioren: Expertenwissen zu Sturzprävention, Notrufhilfen, Gesundheitsvorsorge und mehr. Vertrauen Sie auf über 25 Jahre Erfahrung.">
+
+  <title>Senioren Gesundheit Aktuell – Ihr Magazin für Gesundheit im Alter</title>
+  <meta name="description" content="Das führende Gesundheitsmagazin für Senioren: Expertenwissen zu Sturzprävention, Notrufhilfen, Gesundheitsvorsorge und mehr.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://senioren-gesundheit-aktuell.de/">
-  
-  <!-- Open Graph / Social Media -->
+
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Senioren Gesundheit Aktuell – Ihr vertrauensvoller Ratgeber für Gesundheit im Alter">
-  <meta property="og:description" content="Das führende Gesundheitsmagazin für Senioren mit Expertenwissen zu Sturzprävention, Notrufhilfen und Gesundheitsvorsorge.">
+  <meta property="og:title" content="Senioren Gesundheit Aktuell – Ihr Magazin für Gesundheit im Alter">
+  <meta property="og:description" content="Fundierte Gesundheitsratgeber für Senioren und Angehörige.">
   <meta property="og:url" content="https://senioren-gesundheit-aktuell.de/">
-  <meta property="og:site_name" content="Senioren Gesundheit Aktuell">
-  <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="https://senioren-gesundheit-aktuell.de/assets/images/og-image.jpg">
-  
-  <!-- Preconnect für Performance -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/article.css">
-  
-  
-  <!-- Enhanced Homepage Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    /* ==========================================================================
-       Enhanced Typography
-       ========================================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-serif: 'Source Serif Pro', Georgia, serif;
-      --color-success: #10b981;
-      --color-info: #3b82f6;
-      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-      --gradient-primary: linear-gradient(135deg, #1a5f7a 0%, #2563eb 100%);
-      --gradient-accent: linear-gradient(135deg, #e07b39 0%, #f59e0b 100%);
-    }
-    
-    /* ==========================================================================
-       Header Enhancement
-       ========================================================================== */
-    .site-header {
-      background: white;
-      border-bottom: 1px solid var(--color-border);
-      box-shadow: var(--shadow-sm);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    .header-inner {
-      max-width: var(--max-width-wide);
-      margin: 0 auto;
-      padding: 0 var(--spacing-md);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 70px;
-    }
-    
-    .site-logo {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-    }
-    
-    .site-logo::before {
-      content: "🏥";
-      font-size: 1.75rem;
-    }
-    
-    .header-nav {
-      display: flex;
-      gap: var(--spacing-lg);
-    }
-    
-    .header-nav a {
-      color: var(--color-text);
-      text-decoration: none;
-      font-weight: 500;
-      padding: var(--spacing-sm);
-      border-radius: 6px;
-      transition: var(--transition-fast);
-    }
-    
-    .header-nav a:hover {
-      background-color: var(--color-background-alt);
-      color: var(--color-primary);
-    }
-    
-    /* ==========================================================================
-       Hero Section Enhancement
-       ========================================================================== */
-    .hero {
-      background: var(--gradient-primary);
-      color: white;
-      padding: var(--spacing-xxl) var(--spacing-md);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='7' cy='7' r='7'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.1;
-    }
-    
-    .hero-content {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: var(--spacing-md);
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .hero .lead {
-      font-size: 1.25rem;
-      line-height: 1.6;
-      opacity: 0.95;
-      margin-bottom: var(--spacing-xl);
-      font-weight: 300;
-    }
-    
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing-lg);
-      margin-top: var(--spacing-xl);
-      flex-wrap: wrap;
-    }
-    
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-xs);
-      font-size: 0.875rem;
-      opacity: 0.9;
-    }
-    
-    .trust-badge::before {
-      content: "✓";
-      background: rgba(255,255,255,0.2);
-      padding: 0.25rem;
-      border-radius: 50%;
-      font-weight: bold;
-    }
-    
-    /* ==========================================================================
-       Featured Stats Section
-       ========================================================================== */
-    .stats-section {
-      background: white;
-      padding: var(--spacing-xl) var(--spacing-md);
-      margin-top: -2rem;
-      position: relative;
-      z-index: 10;
-    }
-    
-    .stats-container {
-      max-width: var(--max-width-wide);
-      margin: 0 auto;
-      background: white;
-      border-radius: 16px;
-      padding: var(--spacing-xl);
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--color-border);
-    }
-    
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--spacing-xl);
-      text-align: center;
-    }
-    
-    .stat {
-      padding: var(--spacing-md);
-    }
-    
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: var(--spacing-xs);
-      font-family: var(--font-serif);
-    }
-    
-    .stat-label {
-      color: var(--color-text-light);
-      font-size: 0.9375rem;
-      line-height: 1.4;
-    }
-    
-    /* ==========================================================================
-       Welcome Section
-       ========================================================================== */
-    .welcome-section {
-      padding: var(--spacing-xxl) var(--spacing-md);
-      background: var(--color-background-alt);
-    }
-    
-    .welcome-content {
-      max-width: var(--max-width-content);
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .welcome-content h2 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      color: var(--color-text);
-      margin-bottom: var(--spacing-md);
-    }
-    
-    .welcome-content .intro-text {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      color: var(--color-text-light);
-      margin-bottom: var(--spacing-lg);
-    }
-    
-    .feature-highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--spacing-lg);
-      margin-top: var(--spacing-xl);
-    }
-    
-    .feature-highlight {
-      background: white;
-      padding: var(--spacing-lg);
-      border-radius: 12px;
-      text-align: center;
-      border: 1px solid var(--color-border);
-      transition: var(--transition-fast);
-    }
-    
-    .feature-highlight:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-    
-    .feature-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--gradient-primary);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--spacing-md);
-      font-size: 1.5rem;
-    }
-    
-    .feature-highlight h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: var(--spacing-xs);
-      color: var(--color-text);
-    }
-    
-    .feature-highlight p {
-      font-size: 0.9375rem;
-      color: var(--color-text-light);
-      line-height: 1.5;
-    }
-    
-    /* ==========================================================================
-       Articles Section Enhancement
-       ========================================================================== */
-    .articles-section {
-      padding: var(--spacing-xxl) var(--spacing-md);
-      background: white;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: var(--spacing-xl);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      color: var(--color-text);
-      margin-bottom: var(--spacing-md);
-    }
-    
-    .section-subtitle {
-      font-size: 1.125rem;
-      color: var(--color-text-light);
-      line-height: 1.6;
-    }
-    
-    .articles-grid {
-      display: grid;
-      gap: var(--spacing-lg);
-      max-width: var(--max-width-wide);
-      margin: 0 auto;
-      grid-template-columns: 1fr;
-    }
-    
-    @media (min-width: 768px) {
-      .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .articles-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    .article-card {
-      display: flex;
-      flex-direction: column;
-      background: white;
-      border: 1px solid var(--color-border);
-      border-radius: 16px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: all var(--transition-normal);
-      height: 100%;
-    }
-    
-    .article-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--color-primary);
-    }
-    
-    .article-card__image {
-      aspect-ratio: 16/9;
-      background: var(--gradient-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1rem;
-      font-weight: 500;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .article-card__image::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='m20 20 20-20v40z'/%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.3;
-    }
-    
-    .article-card__content {
-      padding: var(--spacing-lg);
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .article-card__category {
-      font-size: 0.8125rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--color-primary);
-      font-weight: 600;
-      margin-bottom: var(--spacing-sm);
-    }
-    
-    .article-card__title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      line-height: 1.3;
-      margin-bottom: var(--spacing-sm);
-      color: var(--color-text);
-      font-family: var(--font-serif);
-    }
-    
-    .article-card__excerpt {
-      font-size: 1rem;
-      color: var(--color-text-light);
-      line-height: 1.6;
-      flex-grow: 1;
-      margin-bottom: var(--spacing-md);
-    }
-    
-    .article-card__meta {
-      font-size: 0.875rem;
-      color: var(--color-text-light);
-      padding-top: var(--spacing-sm);
-      border-top: 1px solid var(--color-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    .read-time {
-      font-size: 0.8125rem;
-      color: var(--color-primary);
-      font-weight: 500;
-    }
-    
-    /* ==========================================================================
-       Newsletter Section
-       ========================================================================== */
-    .newsletter-section {
-      background: var(--gradient-primary);
-      color: white;
-      padding: var(--spacing-xxl) var(--spacing-md);
-      text-align: center;
-      position: relative;
-    }
-    
-    .newsletter-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .newsletter-content h2 {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      margin-bottom: var(--spacing-md);
-    }
-    
-    .newsletter-content p {
-      font-size: 1.125rem;
-      opacity: 0.9;
-      margin-bottom: var(--spacing-xl);
-      line-height: 1.6;
-    }
-    
-    .newsletter-form {
-      display: flex;
-      gap: var(--spacing-sm);
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    
-    @media (max-width: 480px) {
-      .newsletter-form {
-        flex-direction: column;
-      }
-    }
-    
-    .newsletter-form input {
-      flex: 1;
-      padding: var(--spacing-md);
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    
-    .newsletter-form button {
-      background: var(--color-accent);
-      color: white;
-      border: none;
-      padding: var(--spacing-md) var(--spacing-lg);
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition-fast);
-      white-space: nowrap;
-    }
-    
-    .newsletter-form button:hover {
-      background: #d97539;
-      transform: translateY(-1px);
-    }
-    
-    /* ==========================================================================
-       About Section Enhancement
-       ========================================================================== */
-    .about-section {
-      background: var(--color-background-alt);
-      padding: var(--spacing-xxl) var(--spacing-md);
-    }
-    
-    .about-content {
-      max-width: var(--max-width-content);
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .about-content h2 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      margin-bottom: var(--spacing-lg);
-      color: var(--color-text);
-    }
-    
-    .about-content p {
-      color: var(--color-text-light);
-      margin-bottom: var(--spacing-md);
-      font-size: 1.125rem;
-      line-height: 1.7;
-    }
-    
-    .cta-button {
-      display: inline-block;
-      background: var(--color-primary);
-      color: white;
-      padding: var(--spacing-md) var(--spacing-xl);
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: var(--spacing-md);
-      transition: var(--transition-fast);
-    }
-    
-    .cta-button:hover {
-      background: var(--color-primary-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    /* ==========================================================================
-       Footer Enhancement
-       ========================================================================== */
-    .site-footer {
-      background: var(--color-text);
-      color: white;
-      padding: var(--spacing-xl) var(--spacing-md);
-    }
-    
-    .footer-inner {
-      max-width: var(--max-width-wide);
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .footer-nav {
-      margin-bottom: var(--spacing-lg);
-    }
-    
-    .footer-nav a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      margin: 0 var(--spacing-md);
-      transition: var(--transition-fast);
-    }
-    
-    .footer-nav a:hover {
-      color: white;
-    }
-    
-    .footer-copyright {
-      opacity: 0.7;
-      font-size: 0.875rem;
-    }
-    
-    /* ==========================================================================
-       Accessibility & Utility Classes
-       ========================================================================== */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 6px;
-      background: var(--color-primary);
-      color: white;
-      padding: 8px;
-      text-decoration: none;
-      z-index: 1000;
-    }
-    
-    .skip-link:focus {
-      top: 6px;
-    }
-    
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
-    }
-    
-    /* ==========================================================================
-       Responsive Design
-       ========================================================================== */
-    @media (max-width: 768px) {
-      .header-nav {
-        display: none;
-      }
-      
-      .hero {
-        padding: var(--spacing-xl) var(--spacing-md);
-      }
-      
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-md);
-      }
-      
-      .feature-highlights {
-        grid-template-columns: 1fr;
-      }
-      
-      .trust-badges {
-        gap: var(--spacing-md);
-      }
-    }
+      --red:#c0392b; --red-dark:#96281b; --navy:#1a2e4a; --gold:#c9860a;
+      --text:#1a1a1a; --text-mid:#444; --text-light:#666; --border:#ddd;
+      --bg-light:#f7f5f0; --bg-warm:#fdf8f0; --white:#fff;
+      --serif:'Playfair Display',Georgia,serif; --sans:'Source Sans 3',system-ui,sans-serif;
+      --max-w:1240px; --shadow:0 2px 12px rgba(0,0,0,.10); --shadow-lg:0 8px 30px rgba(0,0,0,.14);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--text);background:var(--bg-light);line-height:1.65}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 1.25rem}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+    .tag{display:inline-block;background:var(--red);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.2em .55em;border-radius:2px}
+    .tag--gold{background:var(--gold)}.tag--navy{background:var(--navy)}
+
+    /* TOP BAR */
+    .topbar{background:var(--navy);color:rgba(255,255,255,.8);font-size:.8rem;padding:.4rem 0}
+    .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .topbar a{color:rgba(255,255,255,.75);transition:color .2s}.topbar a:hover{color:#fff}
+    .topbar-links{display:flex;gap:1.25rem}.topbar-date{opacity:.7}
+
+    /* TICKER */
+    .ticker-bar{background:var(--red);color:#fff;font-size:.85rem;font-weight:500;padding:.45rem 0;overflow:hidden}
+    .ticker-inner{display:flex;align-items:center;gap:1.5rem}
+    .ticker-label{background:rgba(0,0,0,.25);padding:.15em .65em;border-radius:2px;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+    .ticker-scroll{flex:1;overflow:hidden}
+    .ticker-scroll ul{display:flex;gap:3rem;animation:ticker-move 30s linear infinite;white-space:nowrap}
+    .ticker-scroll ul:hover{animation-play-state:paused}
+    .ticker-scroll li::before{content:'▸ ';opacity:.7}
+    @keyframes ticker-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* MASTHEAD */
+    .masthead{background:var(--white);border-bottom:3px solid var(--red);padding:1.25rem 0 1rem}
+    .masthead .container{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .logo{display:flex;flex-direction:column;line-height:1}
+    .logo-main{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:var(--red);letter-spacing:-.01em}
+    .logo-sub{font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text-mid);margin-top:.15rem;border-top:1px solid var(--border);padding-top:.25rem}
+    .masthead-ad{background:var(--bg-warm);border:1px solid var(--border);border-radius:4px;padding:.5rem 1.25rem;font-size:.8rem;color:var(--text-light);text-align:center;min-width:220px}
+    .masthead-ad strong{display:block;font-size:1rem;color:var(--text);font-family:var(--serif)}
+
+    /* NAV */
+    .main-nav{background:var(--navy)}
+    .main-nav .container{display:flex;align-items:center;gap:0}
+    .main-nav a{display:block;color:rgba(255,255,255,.88);font-size:.88rem;font-weight:500;padding:.75rem 1.1rem;transition:background .2s,color .2s;white-space:nowrap}
+    .main-nav a:hover,.main-nav a.active{background:var(--red);color:#fff}
+    .main-nav a.nav-highlight{color:#fde68a;font-weight:700}
+    .nav-search{margin-left:auto;display:flex;align-items:center;padding:.5rem .75rem}
+    .nav-search input{border:none;border-radius:3px 0 0 3px;padding:.35rem .75rem;font-size:.85rem;width:170px;outline:none}
+    .nav-search button{background:var(--red);border:none;color:#fff;padding:.35rem .75rem;border-radius:0 3px 3px 0;cursor:pointer;font-size:.85rem}
+    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:.5rem .75rem;margin-left:auto}
+    @media(max-width:768px){
+      .nav-toggle{display:block}
+      .main-nav-links{display:none}
+      .main-nav-links.open{display:flex;flex-direction:column}
+      .main-nav .container{flex-wrap:wrap}
+      .nav-search{display:none}
+    }
+
+    /* HERO */
+    .hero-feature{background:var(--white);padding:2rem 0;border-bottom:1px solid var(--border)}
+    .hero-grid{display:grid;grid-template-columns:1.8fr 1fr;gap:2rem;align-items:start}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    .hero-main{position:relative}
+    .hero-img-wrap{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:16/9}
+    .hero-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .hero-img-wrap:hover img{transform:scale(1.02)}
+    .hero-img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,20,40,.85) 0%,transparent 100%);padding:2.5rem 1.5rem 1.5rem;color:#fff}
+    .hero-img-overlay .tag{margin-bottom:.6rem}
+    .hero-img-overlay h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;line-height:1.2;margin-bottom:.5rem}
+    .hero-img-overlay p{font-size:.95rem;opacity:.9}
+    .hero-img-overlay .hero-meta{font-size:.8rem;opacity:.75;margin-top:.75rem;display:flex;gap:.75rem}
+    .hero-side{display:flex;flex-direction:column;gap:1rem}
+    .hero-side-card{display:flex;gap:.85rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+    .hero-side-card:last-child{border-bottom:none;padding-bottom:0}
+    .hero-side-img{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0}
+    .hero-side-body .tag{margin-bottom:.3rem}
+    .hero-side-body h3{font-family:var(--serif);font-size:.95rem;font-weight:600;line-height:1.3;color:var(--text);transition:color .2s}
+    .hero-side-card:hover h3{color:var(--red)}
+    .hero-side-body .meta{font-size:.75rem;color:var(--text-light);margin-top:.25rem}
+
+    /* STATS BAR */
+    .stats-bar{background:var(--navy);color:#fff;padding:1.75rem 0}
+    .stats-bar .container{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
+    @media(max-width:640px){.stats-bar .container{grid-template-columns:repeat(2,1fr)}}
+    .stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:#fde68a;line-height:1}
+    .stat-desc{font-size:.82rem;opacity:.8;margin-top:.35rem}
+
+    /* SECTION LABEL */
+    .section-label{display:flex;align-items:center;gap:.75rem;margin:2.25rem 0 1.25rem}
+    .section-label span{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text)}
+    .section-label::after{content:'';flex:1;height:2px;background:var(--border)}
+    .section-label .sl-accent{width:28px;height:4px;background:var(--red);border-radius:2px;flex-shrink:0}
+
+    /* CONTENT LAYOUT */
+    .content-layout{padding:2rem 0 3rem}
+    .content-grid{display:grid;grid-template-columns:1fr 310px;gap:2.5rem;align-items:start}
+    @media(max-width:1024px){.content-grid{grid-template-columns:1fr}}
+
+    /* PROMO BANNER */
+    .promo-banner{background:var(--navy);color:#fff;border-radius:4px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:260px;margin-bottom:2rem}
+    @media(max-width:700px){.promo-banner{grid-template-columns:1fr}}
+    .promo-text{padding:2rem 2rem 2rem 2.5rem;display:flex;flex-direction:column;justify-content:center;gap:.75rem}
+    .promo-text .eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#fde68a;font-weight:600}
+    .promo-text h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;line-height:1.2}
+    .promo-text p{font-size:.95rem;opacity:.85;line-height:1.6}
+    .btn-promo{display:inline-block;background:var(--red);color:#fff;padding:.6rem 1.5rem;border-radius:3px;font-weight:600;font-size:.9rem;width:fit-content;transition:background .2s;margin-top:.5rem}
+    .btn-promo:hover{background:var(--red-dark)}
+    .promo-img{overflow:hidden}
+    .promo-img img{width:100%;height:100%;object-fit:cover}
+
+    /* CATEGORY ROW */
+    .cat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem}
+    @media(max-width:700px){.cat-row{grid-template-columns:repeat(2,1fr)}}
+    .cat-card{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+    .cat-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.75);transition:filter .3s}
+    .cat-card:hover img{filter:brightness(.55)}
+    .cat-card__label{position:absolute;bottom:.75rem;left:.75rem;color:#fff;font-family:var(--serif);font-size:.95rem;font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+    .cat-card__count{position:absolute;top:.6rem;right:.6rem}
+
+    /* EXPERT QUOTE */
+    .expert-quote{background:var(--bg-warm);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:2rem 2.5rem;text-align:center;margin:2rem 0}
+    .expert-quote blockquote{font-family:var(--serif);font-size:clamp(1.1rem,2.5vw,1.45rem);font-style:italic;color:var(--text);line-height:1.55;max-width:750px;margin:0 auto 1rem}
+    .expert-quote cite{font-size:.85rem;color:var(--text-mid);font-style:normal;font-weight:500}
+    .expert-quote cite strong{color:var(--navy)}
+
+    /* ARTICLE CARDS */
+    .articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    @media(max-width:640px){.articles-grid{grid-template-columns:1fr}}
+    .article-card{background:var(--white);border-radius:4px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+    .article-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+    .article-card__img{aspect-ratio:16/9;overflow:hidden}
+    .article-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+    .article-card:hover .article-card__img img{transform:scale(1.04)}
+    .article-card__body{padding:1rem;flex-grow:1;display:flex;flex-direction:column;gap:.4rem}
+    .article-card__cat{font-size:.75rem}
+    .article-card__title{font-family:var(--serif);font-size:1.05rem;font-weight:600;line-height:1.3;color:var(--text);transition:color .2s}
+    .article-card:hover .article-card__title{color:var(--red)}
+    .article-card__excerpt{font-size:.88rem;color:var(--text-mid);line-height:1.55;flex-grow:1}
+    .article-card__meta{font-size:.75rem;color:var(--text-light);padding-top:.6rem;border-top:1px solid var(--border);display:flex;gap:1rem}
+    .article-card--wide{grid-column:1/-1;flex-direction:row}
+    .article-card--wide .article-card__img{width:42%;aspect-ratio:unset;flex-shrink:0}
+    @media(max-width:640px){.article-card--wide{flex-direction:column}.article-card--wide .article-card__img{width:100%;aspect-ratio:16/9}}
+
+    /* SIDEBAR */
+    .sidebar{display:flex;flex-direction:column;gap:1.75rem}
+    .sidebar-box{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .sidebar-box__header{background:var(--navy);color:#fff;font-family:var(--serif);font-size:.95rem;font-weight:700;padding:.65rem 1rem;letter-spacing:.02em}
+    .sidebar-box__header--red{background:var(--red)}
+    .sidebar-box__body{padding:1rem}
+    .most-read-list{display:flex;flex-direction:column;gap:.85rem}
+    .most-read-item{display:flex;gap:.75rem;align-items:flex-start}
+    .most-read-num{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--border);line-height:1;width:28px;flex-shrink:0}
+    .most-read-item h4{font-family:var(--serif);font-size:.9rem;font-weight:600;line-height:1.3;color:var(--text);transition:color .2s}
+    .most-read-item:hover h4{color:var(--red)}
+    .most-read-item .meta{font-size:.72rem;color:var(--text-light);margin-top:.2rem}
+    .tip-box{background:#f0f7ed;border-left:4px solid #27ae60;padding:.85rem 1rem;border-radius:0 4px 4px 0}
+    .tip-box__label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#27ae60;margin-bottom:.4rem}
+    .tip-box p{font-size:.88rem;line-height:1.55;color:var(--text-mid)}
+    .nl-widget{text-align:center}
+    .nl-widget p{font-size:.85rem;color:var(--text-mid);line-height:1.5;margin-bottom:.85rem}
+    .nl-widget input{width:100%;padding:.55rem .75rem;border:1px solid var(--border);border-radius:4px;font-size:.88rem;margin-bottom:.5rem;outline:none}
+    .nl-widget input:focus{border-color:var(--red)}
+    .nl-widget button{width:100%;background:var(--red);color:#fff;border:none;border-radius:4px;padding:.65rem;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s}
+    .nl-widget button:hover{background:var(--red-dark)}
+    .nl-fine{font-size:.72rem;color:var(--text-light);margin-top:.5rem}
+    .ad-placeholder{background:var(--bg-warm);border:2px dashed var(--border);border-radius:4px;text-align:center;padding:2.5rem 1rem;color:var(--text-light);font-size:.8rem}
+    .ad-placeholder strong{display:block;font-size:1rem;color:var(--text-mid);margin-bottom:.25rem}
+
+    /* FOOTER */
+    .breadcrumb{padding:.6rem 0;font-size:.78rem;color:var(--text-light);border-bottom:1px solid var(--border);background:var(--white)}
+    .breadcrumb a{color:var(--text-light)}.breadcrumb a:hover{color:var(--red)}
+    .footer-top{background:var(--white);border-top:3px solid var(--red);padding:3rem 0 2rem}
+    .footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
+    @media(max-width:800px){.footer-cols{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.footer-cols{grid-template-columns:1fr}}
+    .footer-brand p{font-size:.85rem;color:var(--text-mid);margin-top:.75rem;line-height:1.6}
+    .footer-col h4{font-family:var(--serif);font-size:.95rem;font-weight:700;margin-bottom:.75rem;color:var(--text);padding-bottom:.4rem;border-bottom:2px solid var(--red)}
+    .footer-col ul{display:flex;flex-direction:column;gap:.45rem}
+    .footer-col ul a{font-size:.85rem;color:var(--text-mid);transition:color .2s}
+    .footer-col ul a:hover{color:var(--red)}
+    .footer-bottom{background:var(--navy);color:rgba(255,255,255,.65);font-size:.8rem;padding:1rem 0}
+    .footer-bottom .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+    .footer-bottom a{color:rgba(255,255,255,.65);transition:color .2s}.footer-bottom a:hover{color:#fff}
+    .footer-bottom-links{display:flex;gap:1.25rem}
   </style>
-  
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Senioren Gesundheit Aktuell",
-    "alternateName": "SGA Magazin",
-    "description": "Das führende Gesundheitsmagazin für Senioren mit Expertenwissen zu Sturzprävention, Notrufhilfen und Gesundheitsvorsorge.",
-    "url": "https://senioren-gesundheit-aktuell.de",
-    "publisher": {
-      "@type": "Organization",
-      "name": "LUADA eHealth Solutions GmbH",
-      "url": "https://luada.de",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://senioren-gesundheit-aktuell.de/assets/images/logo.png"
-      }
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://senioren-gesundheit-aktuell.de/suche?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  
-  <!-- Schema für Gesundheitsorganisation -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HealthAndBeautyBusiness",
-    "name": "Senioren Gesundheit Aktuell",
-    "description": "Vertrauensvolle Gesundheitsinformationen für Senioren und deren Angehörige.",
-    "url": "https://senioren-gesundheit-aktuell.de",
-    "logo": "https://senioren-gesundheit-aktuell.de/assets/images/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "url": "https://luada.de/kontakt"
-    },
-    "sameAs": [
-      "https://luada.de"
-    ]
-  }
-  </script>
 </head>
 <body>
-  <!-- Skip Link für Accessibility -->
-  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
-  <!-- Header -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a href="/" class="site-logo" aria-label="Senioren Gesundheit Aktuell - Zur Startseite">
-        Senioren Gesundheit Aktuell
-      </a>
-      <nav class="header-nav" aria-label="Hauptnavigation" role="navigation">
-        <a href="/">Startseite</a>
-        <a href="/editorial/stuerze-im-alter/">Sturzprävention</a>
-        <a href="/editorial/notrufuhr-vs-hausnotruf/">Notrufhilfen</a>
-        <a href="#newsletter">Newsletter</a>
-      </nav>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <span class="topbar-date">Mittwoch, 17. Juni 2026</span>
+    <div class="topbar-links">
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+      <a href="#newsletter">Newsletter</a>
+      <a href="https://luada.de" target="_blank" rel="noopener">Über uns</a>
     </div>
-  </header>
+  </div>
+</div>
 
-  <!-- Main Content -->
-  <main id="main-content" role="main">
-    
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <h1 id="hero-title">Ihr vertrauensvoller Ratgeber für Gesundheit im Alter</h1>
-        <p class="lead">
-          Mit über 25 Jahren Erfahrung bieten wir Ihnen fundierte, verständliche Informationen zu Gesundheit, 
-          Sicherheit und Lebensqualität im Alter. Für Senioren und ihre Angehörigen.
-        </p>
-        
-        <div class="trust-badges">
-          <div class="trust-badge">Medizinisch geprüft</div>
-          <div class="trust-badge">25+ Jahre Erfahrung</div>
-          <div class="trust-badge">Über 50.000 zufriedene Leser</div>
+<!-- BREAKING NEWS TICKER -->
+<div class="ticker-bar" role="marquee" aria-label="Aktuelle Meldungen">
+  <div class="container">
+    <div class="ticker-inner">
+      <div class="ticker-label">Aktuell</div>
+      <div class="ticker-scroll" aria-live="off">
+        <ul>
+          <li>Neue Studie: Regelmäßige Spaziergänge reduzieren Demenzrisiko um 40 Prozent</li>
+          <li>Pflegekassen erhöhen Pflegegeld 2026 – Was Betroffene jetzt wissen müssen</li>
+          <li>Stiftung Warentest: Beste Notrufuhren 2026 im großen Vergleich</li>
+          <li>Sommerhitze: So schützen sich Senioren bei Temperaturen über 30 Grad</li>
+          <li>Neue Studie: Regelmäßige Spaziergänge reduzieren Demenzrisiko um 40 Prozent</li>
+          <li>Pflegekassen erhöhen Pflegegeld 2026 – Was Betroffene jetzt wissen müssen</li>
+          <li>Stiftung Warentest: Beste Notrufuhren 2026 im großen Vergleich</li>
+          <li>Sommerhitze: So schützen sich Senioren bei Temperaturen über 30 Grad</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="container">
+    <a href="/" class="logo" aria-label="Startseite">
+      <span class="logo-main">Senioren Gesundheit Aktuell</span>
+      <span class="logo-sub">Ihr unabhängiges Magazin für Gesundheit &amp; Lebensqualität im Alter</span>
+    </a>
+    <div class="masthead-ad">
+      <strong>Kostenloser Newsletter</strong>
+      Jeden Freitag: Die besten Gesundheitstipps
+    </div>
+  </div>
+</div>
+
+<!-- MAIN NAV -->
+<nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="container">
+    <button class="nav-toggle" aria-label="Menü öffnen" onclick="this.nextElementSibling.classList.toggle('open')">☰</button>
+    <div class="main-nav-links" role="list">
+      <a href="/" class="active" role="listitem">Startseite</a>
+      <a href="/editorial/stuerze-im-alter/" role="listitem">Sturzprävention</a>
+      <a href="/editorial/notrufuhr-vs-hausnotruf/" role="listitem">Notrufhilfen</a>
+      <a href="#" role="listitem">Ernährung</a>
+      <a href="#" role="listitem">Bewegung &amp; Fitness</a>
+      <a href="#" role="listitem">Wohnen im Alter</a>
+      <a href="#" role="listitem">Pflege &amp; Angehörige</a>
+      <a href="#" class="nav-highlight" role="listitem">★ Ratgeber</a>
+    </div>
+    <form class="nav-search" role="search" onsubmit="return false;">
+      <input type="search" placeholder="Artikel suchen …" aria-label="Suche">
+      <button type="submit" aria-label="Suchen">🔍</button>
+    </form>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="/">Startseite</a>
+  </div>
+</div>
+
+<!-- HERO FEATURE -->
+<section class="hero-feature" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-grid">
+      <a href="/editorial/stuerze-im-alter/" class="hero-main" aria-label="Hauptartikel lesen">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80"
+            alt="Physiotherapeutin arbeitet mit Seniorin an Gleichgewichtsübungen"
+            width="900" height="506" loading="eager" decoding="async">
+          <div class="hero-img-overlay">
+            <span class="tag">Titelthema</span>
+            <h2 id="hero-title">Stürze im Alter – die unterschätzte Gefahr und was Sie jetzt tun können</h2>
+            <p>Jährlich stürzen über 4 Millionen Deutsche über 65. Unsere Experten erklären, wie moderne Prävention und schnelle Hilfe Leben retten.</p>
+            <div class="hero-meta">
+              <time datetime="2026-06-15">15. Juni 2026</time>
+              <span>· 6 Min. Lesezeit</span>
+              <span>· Dr. med. Sabine Krüger</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section" aria-labelledby="stats-title">
-      <div class="stats-container">
-        <h2 id="stats-title" class="sr-only">Unsere Erfolge in Zahlen</h2>
-        <div class="stats-grid">
-          <div class="stat">
-            <div class="stat-number">50.000+</div>
-            <div class="stat-label">Zufriedene Leser monatlich</div>
+      </a>
+      <aside class="hero-side" aria-label="Weitere aktuelle Artikel">
+        <a href="/editorial/notrufuhr-vs-hausnotruf/" class="hero-side-card">
+          <img class="hero-side-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=180&q=75"
+            alt="Seniorin mit Smartwatch" width="90" height="68" loading="lazy" decoding="async">
+          <div class="hero-side-body">
+            <span class="tag tag--navy">Ratgeber</span>
+            <h3>Notrufuhr vs. Hausnotruf – Was passt zu Ihnen?</h3>
+            <div class="meta"><time datetime="2026-06-12">12. Juni 2026</time> · 8 Min.</div>
           </div>
-          <div class="stat">
-            <div class="stat-number">200+</div>
-            <div class="stat-label">Fachgeprüfte Artikel</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">25</div>
-            <div class="stat-label">Jahre Expertise</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Weiterempfehlungsrate</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Welcome Section -->
-    <section class="welcome-section" aria-labelledby="welcome-title">
-      <div class="welcome-content">
-        <h2 id="welcome-title">Willkommen bei Deutschlands führendem Senioren-Gesundheitsmagazin</h2>
-        <p class="intro-text">
-          Unser Ziel ist es, Ihnen dabei zu helfen, auch im Alter gesund, sicher und selbstbestimmt zu leben. 
-          Wir übersetzen komplexe medizinische Informationen in verständliche, praxisnahe Ratschläge.
-        </p>
-        
-        <div class="feature-highlights">
-          <article class="feature-highlight">
-            <div class="feature-icon">🩺</div>
-            <h3>Medizinisch fundiert</h3>
-            <p>Alle unsere Artikel werden von Fachärzten und Gesundheitsexperten geprüft und regelmäßig aktualisiert.</p>
-          </article>
-          
-          <article class="feature-highlight">
-            <div class="feature-icon">🛡️</div>
-            <h3>Sicherheit im Fokus</h3>
-            <p>Spezialisiert auf Sturzprävention, Notfallvorsorge und moderne Assistenzsysteme für mehr Sicherheit.</p>
-          </article>
-          
-          <article class="feature-highlight">
-            <div class="feature-icon">👥</div>
-            <h3>Für Senioren & Angehörige</h3>
-            <p>Praktische Ratschläge sowohl für Senioren selbst als auch für deren Kinder und pflegende Angehörige.</p>
-          </article>
-          
-          <article class="feature-highlight">
-            <div class="feature-icon">📚</div>
-            <h3>Verständlich erklärt</h3>
-            <p>Komplexe Themen werden in einfacher, klarer Sprache erklärt – ohne Fachchinesisch.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Articles Section -->
-    <section class="articles-section" aria-labelledby="articles-title">
-      <div class="section-header">
-        <h2 id="articles-title" class="section-title">Unsere meistgelesenen Gesundheitsratgeber</h2>
-        <p class="section-subtitle">
-          Expertenwissen, verständlich aufbereitet: Von Sturzprävention bis zu modernen Notrufsystemen – 
-          hier finden Sie die Antworten auf Ihre wichtigsten Fragen.
-        </p>
-      </div>
-      
-      <div class="articles-grid">
-        
-        <!-- Article Card 1 - Featured -->
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <a href="/editorial/stuerze-im-alter/" data-track="link" aria-label="Artikel über Stürze im Alter lesen">
-            <div class="article-card__image" aria-hidden="true">
-              <span>🚑 Notfall & Prävention</span>
-            </div>
-            <div class="article-card__content">
-              <span class="article-card__category">Gesundheit & Sicherheit</span>
-              <h3 class="article-card__title" itemprop="headline">
-                Stürze im Alter – die unterschätzte Gefahr und wie Sie sich schützen
-              </h3>
-              <p class="article-card__excerpt" itemprop="description">
-                Jedes Jahr stürzen über 4 Millionen Deutsche über 65 Jahre. Erfahren Sie, warum schnelle Hilfe 
-                entscheidend ist und wie moderne Präventionsmaßnahmen wirksam schützen können.
-              </p>
-              <div class="article-card__meta">
-                <time datetime="2026-01-27" itemprop="datePublished">27. Januar 2026</time>
-                <span class="read-time">⏱ 6 Min.</span>
-              </div>
-            </div>
-          </a>
-        </article>
-        
-        <!-- Article Card 2 -->
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <a href="/editorial/notrufuhr-vs-hausnotruf/" data-track="link" aria-label="Vergleich zwischen Notrufuhr und Hausnotruf lesen">
-            <div class="article-card__image" aria-hidden="true">
-              <span>⌚ Technologie & Hilfe</span>
-            </div>
-            <div class="article-card__content">
-              <span class="article-card__category">Ratgeber & Vergleich</span>
-              <h3 class="article-card__title" itemprop="headline">
-                Notrufuhr vs. Hausnotruf – Was ist die bessere Wahl für Sie?
-              </h3>
-              <p class="article-card__excerpt" itemprop="description">
-                Mobil oder klassisch? Unser detaillierter Vergleich hilft Ihnen bei der Entscheidung zwischen 
-                moderner Notrufuhr und bewährtem Hausnotrufsystem.
-              </p>
-              <div class="article-card__meta">
-                <time datetime="2026-01-20" itemprop="datePublished">20. Januar 2026</time>
-                <span class="read-time">⏱ 8 Min.</span>
-              </div>
-            </div>
-          </a>
-        </article>
-        
-        <!-- Article Card 3 -->
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <a href="/editorial/gleichgewicht-training/" data-track="link" aria-label="Artikel über Gleichgewichtstraining lesen">
-            <div class="article-card__image" aria-hidden="true">
-              <span>🤸‍♀️ Training & Fitness</span>
-            </div>
-            <div class="article-card__content">
-              <span class="article-card__category">Fitness & Prävention</span>
-              <h3 class="article-card__title" itemprop="headline">
-                Gleichgewichtstraining: 10 einfache Übungen für jeden Tag
-              </h3>
-              <p class="article-card__excerpt" itemprop="description">
-                Verbessern Sie Ihr Gleichgewicht mit einfachen, aber effektiven Übungen. Unser Programm 
-                ist speziell für Senioren entwickelt und zu Hause durchführbar.
-              </p>
-              <div class="article-card__meta">
-                <time datetime="2026-01-18" itemprop="datePublished">18. Januar 2026</time>
-                <span class="read-time">⏱ 7 Min.</span>
-              </div>
-            </div>
-          </a>
-        </article>
-        
-        <!-- Article Card 4 -->
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <a href="/editorial/medikamente-sicher-einnehmen/" data-track="link" aria-label="Artikel über sichere Medikamenteneinnahme lesen">
-            <div class="article-card__image" aria-hidden="true">
-              <span>💊 Medikation & Sicherheit</span>
-            </div>
-            <div class="article-card__content">
-              <span class="article-card__category">Gesundheit & Medikation</span>
-              <h3 class="article-card__title" itemprop="headline">
-                Medikamente im Alter: So vermeiden Sie gefährliche Wechselwirkungen
-              </h3>
-              <p class="article-card__excerpt" itemprop="description">
-                Mehrere Medikamente gleichzeitig? Unser Leitfaden zeigt, worauf Sie achten müssen und 
-                wie Sie Ihre Medikation sicher organisieren.
-              </p>
-              <div class="article-card__meta">
-                <time datetime="2026-01-15" itemprop="datePublished">15. Januar 2026</time>
-                <span class="read-time">⏱ 5 Min.</span>
-              </div>
-            </div>
-          </a>
-        </article>
-        
-        <!-- Article Card 5 -->
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <a href="/editorial/wohnen-im-alter/" data-track="link" aria-label="Artikel über altersgerechtes Wohnen lesen">
-            <div class="article-card__image" aria-hidden="true">
-              <span>🏠 Wohnen & Komfort</span>
-            </div>
-            <div class="article-card__content">
-              <span class="article-card__category">Wohnen & Sicherheit</span>
-              <h3 class="article-card__title" itemprop="headline">
-                Altersgerechtes Wohnen: Ihr Zuhause sicher und komfortabel gestalten
-              </h3>
-              <p class="article-card__excerpt" itemprop="description">
-                Kleine Änderungen, große Wirkung: Wie Sie Ihr Zuhause mit einfachen Mitteln sicherer 
-                und altersgerechter gestalten können.
-              </p>
-              <div class="article-card__meta">
-                <time datetime="2026-01-12" itemprop="datePublished">12. Januar 2026</time>
-                <span class="read-time">⏱ 6 Min.</span>
-              </div>
-            </div>
-          </a>
-        </article>
-        
-        <!-- Article Card 6 -->
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <a href="/editorial/digitale-gesundheitshilfen/" data-track="link" aria-label="Artikel über digitale Gesundheitshilfen lesen">
-            <div class="article-card__image" aria-hidden="true">
-              <span>📱 Digital & Innovation</span>
-            </div>
-            <div class="article-card__content">
-              <span class="article-card__category">Technologie & Gesundheit</span>
-              <h3 class="article-card__title" itemprop="headline">
-                Digitale Gesundheitshilfen: Apps und Geräte für Senioren im Test
-              </h3>
-              <p class="article-card__excerpt" itemprop="description">
-                Von Medikamenten-Apps bis zu Fitness-Trackern: Welche digitalen Helfer wirklich 
-                nützlich sind und wie Sie sie sicher nutzen.
-              </p>
-              <div class="article-card__meta">
-                <time datetime="2026-01-08" itemprop="datePublished">08. Januar 2026</time>
-                <span class="read-time">⏱ 9 Min.</span>
-              </div>
-            </div>
-          </a>
-        </article>
-        
-      </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section id="newsletter" class="newsletter-section" aria-labelledby="newsletter-title">
-      <div class="newsletter-content">
-        <h2 id="newsletter-title">Bleiben Sie informiert – kostenlos und jederzeit kündbar</h2>
-        <p>
-          Erhalten Sie wöchentlich die neuesten Gesundheitstipps und wichtige Updates direkt in Ihr Postfach. 
-          Über 15.000 Abonnenten vertrauen bereits unserem Newsletter.
-        </p>
-        <form class="newsletter-form" action="#" method="post" aria-label="Newsletter-Anmeldung">
-          <input 
-            type="email" 
-            placeholder="Ihre E-Mail-Adresse" 
-            required
-            aria-label="E-Mail-Adresse eingeben"
-            name="email"
-          >
-          <button type="submit">
-            Newsletter abonnieren
-          </button>
-        </form>
-        <p style="font-size: 0.875rem; opacity: 0.8; margin-top: 1rem;">
-          ✓ Kostenlos ✓ Jederzeit kündbar ✓ Kein Spam
-        </p>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" aria-labelledby="about-title">
-      <div class="about-content">
-        <h2 id="about-title">Über Senioren Gesundheit Aktuell</h2>
-        <p>
-          <strong>Senioren Gesundheit Aktuell</strong> ist Deutschlands führendes Online-Magazin für Gesundheits- 
-          und Sicherheitsthemen im Alter. Seit über 25 Jahren vertrauen Senioren und ihre Angehörigen 
-          auf unsere fundierten, medizinisch geprüften Ratgeber.
-        </p>
-        <p>
-          Unser Team aus Ärzten, Gesundheitsexperten und erfahrenen Journalisten erstellt für Sie verständliche, 
-          praxisnahe Artikel zu allen Themen rund um ein gesundes und sicheres Leben im Alter. 
-          Von Sturzprävention über moderne Notrufsysteme bis hin zu Ernährungstipps – wir übersetzen 
-          komplexe medizinische Informationen in klare, umsetzbare Ratschläge.
-        </p>
-        <p>
-          <strong>Unsere Mission:</strong> Ihnen dabei zu helfen, auch im Alter selbstbestimmt, gesund und sicher zu leben. 
-          Denn jeder verdient es, die goldenen Jahre in vollen Zügen zu genießen.
-        </p>
-        <a href="https://luada.de" class="cta-button" data-track="cta" target="_blank" rel="noopener">
-          Mehr über LUADA erfahren
         </a>
+        <a href="#" class="hero-side-card">
+          <img class="hero-side-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=180&q=75"
+            alt="Gesunde Lebensmittel für Senioren" width="90" height="68" loading="lazy" decoding="async">
+          <div class="hero-side-body">
+            <span class="tag tag--gold">Ernährung</span>
+            <h3>Richtig essen ab 65: Die 10 wichtigsten Nährstoffe</h3>
+            <div class="meta"><time datetime="2026-06-10">10. Juni 2026</time> · 5 Min.</div>
+          </div>
+        </a>
+        <a href="#" class="hero-side-card">
+          <img class="hero-side-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=180&q=75"
+            alt="Senioren beim Spaziergang im Park" width="90" height="68" loading="lazy" decoding="async">
+          <div class="hero-side-body">
+            <span class="tag">Fitness</span>
+            <h3>Gleichgewichtstraining: 10 Übungen für mehr Stabilität</h3>
+            <div class="meta"><time datetime="2026-06-08">8. Juni 2026</time> · 7 Min.</div>
+          </div>
+        </a>
+        <a href="#" class="hero-side-card">
+          <img class="hero-side-img" src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=180&q=75"
+            alt="Apothekerin berät ältere Dame" width="90" height="68" loading="lazy" decoding="async">
+          <div class="hero-side-body">
+            <span class="tag tag--navy">Medikation</span>
+            <h3>Medikamente im Alter: Wechselwirkungen sicher vermeiden</h3>
+            <div class="meta"><time datetime="2026-06-05">5. Juni 2026</time> · 5 Min.</div>
+          </div>
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar" role="complementary" aria-label="Magazin in Zahlen">
+  <div class="container">
+    <div class="stat-item"><div class="stat-num">50.000+</div><div class="stat-desc">Leser monatlich</div></div>
+    <div class="stat-item"><div class="stat-num">200+</div><div class="stat-desc">Geprüfte Artikel</div></div>
+    <div class="stat-item"><div class="stat-num">25</div><div class="stat-desc">Jahre Erfahrung</div></div>
+    <div class="stat-item"><div class="stat-num">98 %</div><div class="stat-desc">Weiterempfehlung</div></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main id="main-content" role="main">
+  <div class="container content-layout">
+    <div class="content-grid">
+      <div>
+        <!-- THEMA DES MONATS -->
+        <div class="section-label"><div class="sl-accent"></div><span>Thema des Monats</span></div>
+        <div class="promo-banner">
+          <div class="promo-text">
+            <span class="eyebrow">Juni 2026 · Schwerpunkt</span>
+            <h2>Sicher zuhause bleiben – Assistenzsysteme im Vergleich</h2>
+            <p>Ob Notrufuhr, Smart-Home-Sensor oder klassischer Hausnotruf – wir zeigen, welche Lösung zu welcher Lebenssituation passt und was die Kassen übernehmen.</p>
+            <a href="/editorial/notrufuhr-vs-hausnotruf/" class="btn-promo">Zum Schwerpunkt-Artikel</a>
+          </div>
+          <div class="promo-img">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80"
+              alt="Modernes Assistenzsystem für Senioren" width="700" height="400" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <!-- KATEGORIEN -->
+        <div class="section-label"><div class="sl-accent"></div><span>Alle Themen</span></div>
+        <div class="cat-row" role="list" aria-label="Themengebiete">
+          <a href="#" class="cat-card" role="listitem" aria-label="Gesundheit und Vorsorge">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=75"
+              alt="Arzt im Gespräch mit älterem Patienten" width="400" height="300" loading="lazy" decoding="async">
+            <span class="cat-card__label">Gesundheit &amp; Vorsorge</span>
+            <span class="cat-card__count"><span class="tag">48 Artikel</span></span>
+          </a>
+          <a href="#" class="cat-card" role="listitem" aria-label="Sicherheit und Notfall">
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&q=75"
+              alt="Sanitäter hilft älterer Person" width="400" height="300" loading="lazy" decoding="async">
+            <span class="cat-card__label">Sicherheit &amp; Notfall</span>
+            <span class="cat-card__count"><span class="tag">31 Artikel</span></span>
+          </a>
+          <a href="#" class="cat-card" role="listitem" aria-label="Ernährung und Fitness">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=75"
+              alt="Senioren beim Sport im Freien" width="400" height="300" loading="lazy" decoding="async">
+            <span class="cat-card__label">Ernährung &amp; Fitness</span>
+            <span class="cat-card__count"><span class="tag">56 Artikel</span></span>
+          </a>
+          <a href="#" class="cat-card" role="listitem" aria-label="Wohnen und Pflege">
+            <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&q=75"
+              alt="Helles altersgerechtes Wohnzimmer" width="400" height="300" loading="lazy" decoding="async">
+            <span class="cat-card__label">Wohnen &amp; Pflege</span>
+            <span class="cat-card__count"><span class="tag">40 Artikel</span></span>
+          </a>
+        </div>
+
+        <!-- EXPERTENZITAT -->
+        <div class="expert-quote" role="complementary">
+          <blockquote>
+            „Die meisten Stürze im Alter sind vermeidbar. Mit der richtigen Umgebungsanpassung und gezieltem Gleichgewichtstraining lässt sich das Risiko um bis zu 50 Prozent senken."
+          </blockquote>
+          <cite><strong>Prof. Dr. Andreas Voss</strong> · Geriatrie, Universitätsklinikum Köln</cite>
+        </div>
+
+        <!-- ARTIKEL-GRID -->
+        <div class="section-label"><div class="sl-accent"></div><span>Aktuelle Ratgeber</span></div>
+        <div class="articles-grid">
+          <a href="/editorial/stuerze-im-alter/" class="article-card article-card--wide">
+            <div class="article-card__img">
+              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80"
+                alt="Physiotherapie Übung Gleichgewicht Seniorin" width="600" height="400" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <span class="tag article-card__cat">Sturzprävention</span>
+              <h2 class="article-card__title" style="font-size:1.25rem;">Stürze im Alter – die 7 häufigsten Ursachen und wie Sie sich wirksam schützen</h2>
+              <p class="article-card__excerpt">Glatte Böden, Medikamentennebenwirkungen, Gleichgewichtsprobleme: Stürze haben oft mehrere Ursachen gleichzeitig. Unser umfassender Ratgeber zeigt, was Sie selbst tun können – und wann ein Arztbesuch nötig ist.</p>
+              <div class="article-card__meta">
+                <time datetime="2026-06-15">15. Juni 2026</time>
+                <span>⏱ 6 Min.</span>
+                <span>Dr. S. Krüger</span>
+              </div>
+            </div>
+          </a>
+          <a href="/editorial/notrufuhr-vs-hausnotruf/" class="article-card">
+            <div class="article-card__img">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80"
+                alt="Seniorin betrachtet ihre Notrufuhr" width="600" height="338" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <span class="tag article-card__cat">Notrufhilfen</span>
+              <h3 class="article-card__title">Notrufuhr oder Hausnotruf? Der große Vergleich 2026</h3>
+              <p class="article-card__excerpt">Mobil oder stationär – beide Systeme haben Vor- und Nachteile. Wir erklären, was die Krankenkasse zahlt und worauf Sie beim Kauf achten sollten.</p>
+              <div class="article-card__meta"><time datetime="2026-06-12">12. Juni 2026</time><span>⏱ 8 Min.</span></div>
+            </div>
+          </a>
+          <a href="#" class="article-card">
+            <div class="article-card__img">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80"
+                alt="Buntes Gemüse und Obst" width="600" height="338" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <span class="tag tag--gold article-card__cat">Ernährung</span>
+              <h3 class="article-card__title">Diese 10 Nährstoffe brauchen Senioren täglich</h3>
+              <p class="article-card__excerpt">Vitamin D, Kalzium, Omega-3: Was der alternde Körper wirklich braucht – und in welchen Lebensmitteln Sie es finden.</p>
+              <div class="article-card__meta"><time datetime="2026-06-10">10. Juni 2026</time><span>⏱ 5 Min.</span></div>
+            </div>
+          </a>
+          <a href="#" class="article-card">
+            <div class="article-card__img">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"
+                alt="Gruppe älterer Menschen beim Yoga" width="600" height="338" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <span class="tag article-card__cat">Fitness</span>
+              <h3 class="article-card__title">10 Gleichgewichtsübungen für Senioren – zu Hause, ohne Geräte</h3>
+              <p class="article-card__excerpt">Diese einfachen Übungen stärken Muskeln und Koordination und lassen sich täglich in nur 15 Minuten durchführen.</p>
+              <div class="article-card__meta"><time datetime="2026-06-08">8. Juni 2026</time><span>⏱ 7 Min.</span></div>
+            </div>
+          </a>
+          <a href="#" class="article-card">
+            <div class="article-card__img">
+              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80"
+                alt="Apothekerin erklärt Medikamente" width="600" height="338" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <span class="tag tag--navy article-card__cat">Medikation</span>
+              <h3 class="article-card__title">Medikamente im Alter: So vermeiden Sie gefährliche Wechselwirkungen</h3>
+              <p class="article-card__excerpt">Wer mehrere Medikamente einnimmt, riskiert Neben- und Wechselwirkungen. Mit diesen Tipps bleiben Sie auf der sicheren Seite.</p>
+              <div class="article-card__meta"><time datetime="2026-06-05">5. Juni 2026</time><span>⏱ 5 Min.</span></div>
+            </div>
+          </a>
+          <a href="#" class="article-card">
+            <div class="article-card__img">
+              <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&q=80"
+                alt="Altersgerechtes helles Wohnzimmer" width="600" height="338" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <span class="tag article-card__cat">Wohnen</span>
+              <h3 class="article-card__title">Altersgerecht wohnen: Kleine Umbaumaßnahmen, große Wirkung</h3>
+              <p class="article-card__excerpt">Rutschmatten, Haltegriffe, breitere Türen: Mit welchen Maßnahmen Sie Ihr Zuhause sicher machen – und was die Pflegekasse fördert.</p>
+              <div class="article-card__meta"><time datetime="2026-06-03">3. Juni 2026</time><span>⏱ 6 Min.</span></div>
+            </div>
+          </a>
+        </div>
+
+        <div style="text-align:center;margin-top:2rem;">
+          <a href="#" style="display:inline-block;background:var(--navy);color:#fff;padding:.7rem 2rem;border-radius:3px;font-weight:600;font-size:.9rem;">
+            Weitere Artikel laden →
+          </a>
+        </div>
       </div>
-    </section>
 
-  </main>
+      <!-- SIDEBAR -->
+      <aside role="complementary" aria-label="Ergänzende Inhalte">
+        <div class="sidebar">
+          <div class="sidebar-box" id="newsletter">
+            <div class="sidebar-box__header sidebar-box__header--red">📬 Kostenloser Newsletter</div>
+            <div class="sidebar-box__body">
+              <div class="nl-widget">
+                <p>Wöchentliche Gesundheitstipps, neue Ratgeber und aktuelle Meldungen – gratis in Ihr Postfach.</p>
+                <form onsubmit="handleNL(event)">
+                  <input type="email" placeholder="Ihre E-Mail-Adresse" required aria-label="E-Mail für Newsletter">
+                  <button type="submit">Jetzt kostenlos abonnieren</button>
+                </form>
+                <p class="nl-fine">✓ Kostenlos &nbsp;✓ Kein Spam &nbsp;✓ Jederzeit kündbar</p>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-box">
+            <div class="sidebar-box__header">🔥 Meist gelesen</div>
+            <div class="sidebar-box__body">
+              <ul class="most-read-list">
+                <li><a href="/editorial/stuerze-im-alter/" class="most-read-item"><span class="most-read-num">1</span><div><h4>Stürze im Alter – Ursachen und Prävention</h4><div class="meta">6 Min. · Sturzprävention</div></div></a></li>
+                <li><a href="/editorial/notrufuhr-vs-hausnotruf/" class="most-read-item"><span class="most-read-num">2</span><div><h4>Notrufuhr vs. Hausnotruf: Der große Vergleich</h4><div class="meta">8 Min. · Ratgeber</div></div></a></li>
+                <li><a href="#" class="most-read-item"><span class="most-read-num">3</span><div><h4>Medikamente im Alter: Was Sie wissen müssen</h4><div class="meta">5 Min. · Medikation</div></div></a></li>
+                <li><a href="#" class="most-read-item"><span class="most-read-num">4</span><div><h4>Gleichgewichtstraining: 10 Übungen für zu Hause</h4><div class="meta">7 Min. · Fitness</div></div></a></li>
+                <li><a href="#" class="most-read-item"><span class="most-read-num">5</span><div><h4>Pflegegeld 2026: Alle Änderungen auf einen Blick</h4><div class="meta">4 Min. · Pflege</div></div></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sidebar-box">
+            <div class="sidebar-box__header">💡 Tipp des Tages</div>
+            <div class="sidebar-box__body">
+              <div class="tip-box">
+                <div class="tip-box__label">Gesundheitstipp</div>
+                <p>Trinken Sie täglich mindestens 1,5 Liter Wasser – auch wenn Sie keinen Durst verspüren. Im Alter lässt das Durstempfinden nach, was schnell zur Dehydration führt.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ad-placeholder" role="complementary" aria-label="Werbeanzeige">
+            <strong>Werbeanzeige</strong>300 × 250 px<br>Ihre Anzeige hier
+          </div>
+          <div class="sidebar-box">
+            <div class="sidebar-box__header">🏷️ Themen</div>
+            <div class="sidebar-box__body">
+              <div style="display:flex;flex-wrap:wrap;gap:.45rem;">
+                <a href="#" class="tag" style="font-size:.75rem;">Sturzprävention</a>
+                <a href="#" class="tag tag--navy" style="font-size:.75rem;">Notrufuhr</a>
+                <a href="#" class="tag tag--gold" style="font-size:.75rem;">Ernährung</a>
+                <a href="#" class="tag" style="font-size:.75rem;">Gleichgewicht</a>
+                <a href="#" class="tag tag--navy" style="font-size:.75rem;">Pflege</a>
+                <a href="#" class="tag tag--gold" style="font-size:.75rem;">Demenz</a>
+                <a href="#" class="tag" style="font-size:.75rem;">Herzgesundheit</a>
+                <a href="#" class="tag tag--navy" style="font-size:.75rem;">Medikamente</a>
+                <a href="#" class="tag tag--gold" style="font-size:.75rem;">Wohnen</a>
+                <a href="#" class="tag" style="font-size:.75rem;">Hausnotruf</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
 
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer-Navigation" role="navigation">
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <a href="/" class="logo"><span class="logo-main">Senioren Gesundheit Aktuell</span></a>
+          <p>Seit über 25 Jahren das vertrauenswürdige Magazin für Gesundheit, Sicherheit und Lebensqualität im Alter. Medizinisch geprüfte Ratgeber für Senioren und ihre Angehörigen.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Themen</h4>
+          <ul>
+            <li><a href="#">Sturzprävention</a></li>
+            <li><a href="#">Notrufhilfen</a></li>
+            <li><a href="#">Ernährung</a></li>
+            <li><a href="#">Bewegung &amp; Fitness</a></li>
+            <li><a href="#">Wohnen im Alter</a></li>
+            <li><a href="#">Pflege &amp; Angehörige</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ratgeber</h4>
+          <ul>
+            <li><a href="#">Pflegegeld 2026</a></li>
+            <li><a href="#">Hausnotruf Vergleich</a></li>
+            <li><a href="#">Medikamente-Check</a></li>
+            <li><a href="#">Wohnungsumbau</a></li>
+            <li><a href="#">Pflegegrade erklärt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Magazin</h4>
+          <ul>
+            <li><a href="/impressum/">Impressum</a></li>
+            <li><a href="/datenschutz/">Datenschutz</a></li>
+            <li><a href="#">Über die Redaktion</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="https://luada.de" target="_blank" rel="noopener">LUADA eHealth</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© 2026 Senioren Gesundheit Aktuell · LUADA eHealth Solutions GmbH</span>
+      <div class="footer-bottom-links">
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
-        <a href="#newsletter">Newsletter</a>
-        <a href="https://luada.de" target="_blank" rel="noopener">LUADA eHealth</a>
-      </nav>
-      <p class="footer-copyright">
-        © 2026 LUADA eHealth Solutions GmbH. Alle Rechte vorbehalten. 
-        Ein Unternehmen der LUADA Group.
-      </p>
+        <a href="#">Cookie-Einstellungen</a>
+      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Tracking Script -->
-  <script src="assets/js/tracking.js"></script>
-  
-  <!-- Performance & Analytics -->
-  <script>
-    // Lazy loading für Bilder (falls später hinzugefügt)
-    if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-            observer.unobserve(img);
-          }
-        });
-      });
-      
-      document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-      });
+<script>
+  function handleNL(e) {
+    e.preventDefault();
+    var input = e.target.querySelector('input[type="email"]');
+    var btn = e.target.querySelector('button');
+    if (input && input.value) {
+      input.value = '';
+      btn.textContent = '✓ Erfolgreich angemeldet!';
+      btn.style.background = '#27ae60';
+      setTimeout(function() {
+        btn.textContent = 'Jetzt kostenlos abonnieren';
+        btn.style.background = '';
+      }, 4000);
     }
-    
-    // Newsletter Form Enhancement
-    document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      if (email) {
-        // Hier würde normalerweise die Newsletter-Anmeldung stattfinden
-        alert('Vielen Dank! Sie werden in Kürze eine Bestätigungs-E-Mail erhalten.');
-      }
-    });
-  </script>
+  }
+</script>
 </body>
 </html>
