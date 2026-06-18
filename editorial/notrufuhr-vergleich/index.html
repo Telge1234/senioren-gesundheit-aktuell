@@ -50,7 +50,7 @@
     ul,ol{list-style:none}
     button,input,textarea{font-family:inherit}
     :root{
-      --crimson:#b91c1c;--crimson-d:#991b1b;--navy:#0f2444;--navy-mid:#1e3a5f;
+      --crimson:#8b2635;--crimson-d:#6f1e2a;--navy:#1e2d3d;--navy-mid:#2c3e52;
       --gold:#b45309;--green:#065f46;--green-l:#d1fae5;
       --txt:#1c1c1e;--txt-2:#4b5563;--txt-3:#9ca3af;
       --border:#e5e7eb;--surface:#fff;--bg:#f5f4f0;--bg-warm:#fdf8f2;
@@ -60,14 +60,14 @@
     }
     .wrap{max-width:1200px;margin:0 auto;padding:0 1.25rem}
     .wrap-narrow{max-width:820px;margin:0 auto;padding:0 1.25rem}/* ---- MASTHEAD ---- */
-    .masthead{background:var(--surface);padding:.5rem 0;border-bottom:3px solid var(--crimson)}
+    .masthead{background:var(--surface);padding:.5rem 0;border-bottom:2px solid #c5a882}
     .site-logo{display:flex;align-items:center;gap:.65rem;line-height:1}
     .logo-svg{flex-shrink:0}
     .logo-text{display:flex;flex-direction:column;gap:.08rem}
-    .logo-name{font-family:var(--serif);font-size:clamp(.9rem,2vw,1.3rem);font-weight:700;color:var(--crimson);letter-spacing:-.01em}
+    .logo-name{font-family:var(--serif);font-size:clamp(.9rem,2vw,1.3rem);font-weight:700;color:#1e2d3d;letter-spacing:-.01em}
     .logo-claim{font-size:.58rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--txt-2)}
     /* ---- NAV ---- */
-    .nav-bar{background:var(--navy);position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .nav-bar{background:#1e2d3d;position:sticky;top:0;z-index:200;box-shadow:0 1px 4px rgba(0,0,0,.18)}
     .nav-inner{display:flex;align-items:stretch;min-height:40px}
     .nav-links{display:flex;align-items:stretch;flex:1}
     .nav-links a{display:flex;align-items:center;padding:0 .85rem;color:rgba(255,255,255,.85);font-size:.85rem;font-weight:500;white-space:nowrap;transition:background .15s,color .15s;border-bottom:3px solid transparent}
@@ -86,7 +86,7 @@
     .breadcrumb a{color:var(--txt-3)}.breadcrumb a:hover{color:var(--crimson)}
     /* ---- HERO BANNER ---- */
     .hero-lp{
-      background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
+      background:linear-gradient(160deg,#1e2d3d 0%,#2c3e52 60%,#3a4e62 100%);
       color:#fff;padding:3rem 0 2.5rem;
     }
     .hero-lp .wrap{max-width:820px}
@@ -141,7 +141,7 @@
     /* ---- SECTION HEADING ---- */
     .sec-head{display:flex;align-items:center;gap:.75rem;margin:2.5rem 0 1.5rem}
     .sec-head::after{content:'';flex:1;height:1px;background:var(--border)}
-    .sec-head-accent{width:24px;height:4px;background:var(--crimson);border-radius:2px;flex-shrink:0}
+    .sec-head-accent{width:24px;height:4px;background:#c5a882;border-radius:2px;flex-shrink:0}
     .sec-head span{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--txt);white-space:nowrap}
     /* ---- SCROLL CARDS (overview widget) ---- */
     .scroll-outer{overflow-x:auto;margin:0 -1.25rem;padding:.25rem 1.25rem 1rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#9ca3af #e5e7eb}
@@ -404,8 +404,8 @@
     .art-body ul li{margin-bottom:.4rem}
     .art-body strong{color:var(--txt);font-weight:600}
     /* ---- FOOTER ---- */
-    .footer-main{background:var(--surface);border-top:3px solid var(--crimson);padding:2rem 0 1.5rem}
-    .footer-bottom{background:var(--navy);color:rgba(255,255,255,.55);font-size:.75rem;padding:.9rem 0}
+    .footer-main{background:#f8f7f5;border-top:1px solid #d1cfc9;padding:1.25rem 0 1rem}
+    .footer-bottom{background:#2c3a48;color:rgba(255,255,255,.55);font-size:.75rem;padding:.75rem 0}
     .footer-bottom .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
     .footer-bottom a{color:rgba(255,255,255,.55);transition:color .15s}.footer-bottom a:hover{color:#fff}
     .foot-bot-links{display:flex;gap:1.25rem}
@@ -1213,13 +1213,7 @@
 <footer>
   <div class="footer-main">
     <div class="wrap">
-      <p class="foot-simple">
-        <a href="/">Startseite</a> &nbsp;·&nbsp;
-        <a href="/editorial/notrufuhr-vs-hausnotruf/">Notrufhilfen Ratgeber</a> &nbsp;·&nbsp;
-        <a href="/editorial/stuerze-im-alter/">Sturzprävention</a> &nbsp;·&nbsp;
-        <a href="/impressum/">Impressum</a> &nbsp;·&nbsp;
-        <a href="/datenschutz/">Datenschutz</a>
-      </p>
+
     </div>
   </div>
   <div class="footer-bottom">
