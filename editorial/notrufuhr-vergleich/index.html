@@ -1116,28 +1116,31 @@
           </div>
           <div class="lead-form">
             <h3>Testgerät anfordern</h3>
-            <p>Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden.</p>
+
+            <!-- Ablauf-Schritte -->
+            <ol style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.25rem;padding:0;counter-reset:steps">
+              <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.8rem;opacity:.85;list-style:none">
+                <span style="flex-shrink:0;width:22px;height:22px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700">1</span>
+                <span><strong>Daten angeben</strong> – E-Mail und Rufnummer eintragen</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.8rem;opacity:.85;list-style:none">
+                <span style="flex-shrink:0;width:22px;height:22px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700">2</span>
+                <span><strong>Persönliche Beratung</strong> – Wir rufen Sie zurück und klären alle Fragen</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.8rem;opacity:.85;list-style:none">
+                <span style="flex-shrink:0;width:22px;height:22px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700">3</span>
+                <span><strong>7 Tage unverbindlich testen</strong> – kostenlos, kein Abo</span>
+              </li>
+            </ol>
+
             <form id="lead-form-el" novalidate>
-              <div class="form-group">
-                <label for="lf-name">Vor- und Nachname *</label>
-                <input type="text" id="lf-name" placeholder="Maria Mustermann" required autocomplete="name">
-              </div>
               <div class="form-group">
                 <label for="lf-email">E-Mail-Adresse *</label>
                 <input type="email" id="lf-email" placeholder="m.mustermann@email.de" required autocomplete="email">
               </div>
               <div class="form-group">
-                <label for="lf-phone">Telefon (für Rückfragen)</label>
-                <input type="tel" id="lf-phone" placeholder="0123 456789" autocomplete="tel">
-              </div>
-              <div class="form-group">
-                <label for="lf-for">Das Gerät ist für …</label>
-                <select id="lf-for">
-                  <option value="">Bitte wählen</option>
-                  <option value="self">Mich selbst</option>
-                  <option value="parent">Meine Eltern / einen Angehörigen</option>
-                  <option value="patient">Einen Patienten / Klienten</option>
-                </select>
+                <label for="lf-phone">Rufnummer *</label>
+                <input type="tel" id="lf-phone" placeholder="0123 456789" required autocomplete="tel">
               </div>
               <label class="form-check">
                 <input type="checkbox" id="lf-consent" required>
@@ -1296,29 +1299,26 @@ function splitName(full) {
 document.getElementById('lead-form-el').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  var fullName = document.getElementById('lf-name').value.trim();
   var email    = document.getElementById('lf-email').value.trim();
   var phone    = (document.getElementById('lf-phone').value || '').trim();
   var consent  = document.getElementById('lf-consent').checked;
   var btn      = document.getElementById('lead-submit');
 
-  if (!fullName || !email || !consent) {
-    alert('Bitte füllen Sie alle Pflichtfelder aus und stimmen Sie den Datenschutzbedingungen zu.');
+  if (!email || !phone || !consent) {
+    alert('Bitte E-Mail-Adresse und Rufnummer angeben und den Datenschutzbedingungen zustimmen.');
     return;
   }
 
   btn.textContent = 'Wird gesendet …';
   btn.disabled = true;
 
-  var name = splitName(fullName);
-
   var payload = {
     source:        'senioren-gesundheit-aktuell-notrufuhr-vergleich',
     lead_type:     '7-tage-testphase',
     email:         email,
     phone:         phone,
-    vorname:       name.vorname,
-    nachname:      name.nachname,
+    vorname:       '',
+    nachname:      '',
     utm_source:    getUtm('utm_source'),
     utm_medium:    getUtm('utm_medium'),
     utm_campaign:  getUtm('utm_campaign'),
@@ -1342,9 +1342,8 @@ document.getElementById('lead-form-el').addEventListener('submit', function(e) {
   .then(function() {
     btn.textContent = '✓ Anfrage gesendet – wir melden uns bald!';
     btn.style.background = '#059669';
-    document.getElementById('lf-name').value  = '';
     document.getElementById('lf-email').value = '';
-    if (document.getElementById('lf-phone')) document.getElementById('lf-phone').value = '';
+    document.getElementById('lf-phone').value = '';
   })
   .catch(function(err) {
     console.error('Lead-Übertragung fehlgeschlagen:', err);
