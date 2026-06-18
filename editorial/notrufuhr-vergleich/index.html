@@ -144,80 +144,79 @@
     .sec-head-accent{width:24px;height:4px;background:var(--crimson);border-radius:2px;flex-shrink:0}
     .sec-head span{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--txt);white-space:nowrap}
     /* ---- SCROLL CARDS (overview widget) ---- */
-    .scroll-outer{overflow-x:auto;margin:0 -1.25rem;padding:.25rem 1.25rem 1.25rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--crimson) var(--border)}
-    .scroll-outer::-webkit-scrollbar{height:4px}
-    .scroll-outer::-webkit-scrollbar-track{background:var(--border);border-radius:2px}
-    .scroll-outer::-webkit-scrollbar-thumb{background:var(--crimson);border-radius:2px}
-    .scroll-track{display:flex;gap:1rem;padding-bottom:.25rem;width:max-content}
+    .scroll-outer{overflow-x:auto;margin:0 -1.25rem;padding:.25rem 1.25rem 1rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#9ca3af #e5e7eb}
+    .scroll-outer::-webkit-scrollbar{height:3px}
+    .scroll-outer::-webkit-scrollbar-track{background:#e5e7eb}
+    .scroll-outer::-webkit-scrollbar-thumb{background:#9ca3af;border-radius:2px}
+    .scroll-track{display:flex;gap:.85rem;padding-bottom:.25rem;width:max-content;align-items:stretch}
     .sc-card{
-      width:280px;flex-shrink:0;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);overflow:hidden;
-      box-shadow:var(--sh);display:flex;flex-direction:column;
-      transition:transform .2s,box-shadow .2s;
+      width:240px;flex-shrink:0;
+      background:var(--surface);border:1px solid #d1d5db;
+      border-top:3px solid #d1d5db;
+      overflow:hidden;display:flex;flex-direction:column;
     }
-    .sc-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
-    .sc-card--winner{border-color:var(--crimson);border-width:2px;width:310px}
-    .sc-card-img{aspect-ratio:16/9;overflow:hidden;position:relative;background:#e2e8f0;display:flex;align-items:center;justify-content:center}
+    .sc-card--winner{border-top-color:var(--crimson);border-color:#d1d5db;width:260px}
+    .sc-card-img{aspect-ratio:3/2;overflow:hidden;position:relative;background:#f1f5f9;display:flex;align-items:center;justify-content:center}
     .sc-card-img img{width:100%;height:100%;object-fit:cover}
-    .sc-card-img-ph{display:flex;flex-direction:column;align-items:center;gap:.4rem;color:#94a3b8;font-size:.72rem}
-    .sc-card-img-ph svg{opacity:.35}
-    .sc-ribbon{position:absolute;top:.6rem;left:.6rem;background:var(--crimson);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.2em .65em;border-radius:3px}
-    .sc-rank-badge{position:absolute;top:.6rem;right:.6rem;background:var(--navy);color:#fff;font-size:.62rem;font-weight:700;padding:.2em .65em;border-radius:3px}
-    .sc-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
-    .sc-brand{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-3)}
-    .sc-name{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--txt);line-height:1.25}
-    .sc-card--winner .sc-name{font-size:1.1rem}
-    .sc-desc{font-size:.82rem;color:var(--txt-2);line-height:1.6;flex:1}
-    .sc-pc{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.25rem}
-    .sc-pc-col p{font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem}
-    .sc-pc-col ul{display:flex;flex-direction:column;gap:.25rem}
-    .sc-pc-col li{font-size:.76rem;color:var(--txt-2);display:flex;align-items:flex-start;gap:.3rem;line-height:1.35}
-    .sc-pc-col .pros li::before{content:'✓';color:#059669;font-weight:700;flex-shrink:0}
-    .sc-pc-col .cons li::before{content:'✗';color:#dc2626;font-weight:700;flex-shrink:0}
-    .sc-pc-col .pros-label{color:#059669}.sc-pc-col .cons-label{color:#dc2626}
-    .sc-cta{margin-top:auto;padding-top:.75rem;display:flex;flex-direction:column;gap:.4rem}
-    .sc-btn-primary{display:flex;align-items:center;justify-content:center;background:var(--crimson);color:#fff;padding:.55rem .85rem;border-radius:6px;font-weight:700;font-size:.82rem;transition:background .15s}
+    .sc-card-img-ph{display:flex;flex-direction:column;align-items:center;gap:.35rem;color:#9ca3af;font-size:.68rem;text-align:center;padding:1.25rem .75rem}
+    .sc-card-img-ph svg{opacity:.3}
+    .sc-ribbon{position:absolute;top:.5rem;left:0;background:var(--crimson);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2em .65em .2em .5em}
+    .sc-rank-badge{position:absolute;top:.5rem;right:.5rem;background:#374151;color:#fff;font-size:.58rem;font-weight:700;padding:.15em .5em}
+    .sc-body{padding:.85rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
+    .sc-brand{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af}
+    .sc-name{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--txt);line-height:1.25}
+    .sc-card--winner .sc-name{color:var(--crimson)}
+    .sc-verdict{font-size:.68rem;font-weight:600;padding:.15em .55em;border-radius:2px;display:inline-block;width:fit-content}
+    .sc-verdict.gut{background:#dcfce7;color:#166534}
+    .sc-verdict.bedingt{background:#fef9c3;color:#854d0e}
+    .sc-verdict.eingeschraenkt{background:#fee2e2;color:#7f1d1d}
+    .sc-pc{display:flex;flex-direction:column;gap:.2rem;margin-top:.25rem;flex:1}
+    .sc-pc-head{font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-top:.4rem;margin-bottom:.15rem}
+    .sc-pc-head.pro-h{color:#059669}.sc-pc-head.con-h{color:#dc2626}
+    .sc-pc li{font-size:.75rem;color:var(--txt-2);display:flex;align-items:flex-start;gap:.3rem;line-height:1.4}
+    .sc-pc .pro::before{content:'✓';color:#059669;font-weight:700;flex-shrink:0;font-size:.78rem}
+    .sc-pc .con::before{content:'✗';color:#dc2626;font-weight:700;flex-shrink:0;font-size:.78rem}
+    .sc-cta{margin-top:auto;padding-top:.65rem;display:flex;flex-direction:column;gap:.3rem}
+    .sc-btn-primary{display:flex;align-items:center;justify-content:center;background:var(--crimson);color:#fff;padding:.5rem .75rem;font-weight:700;font-size:.78rem;transition:background .15s}
     .sc-btn-primary:hover{background:var(--crimson-d)}
-    .sc-btn-ghost{display:flex;align-items:center;justify-content:center;background:transparent;color:var(--navy);border:1.5px solid var(--border);padding:.45rem .85rem;border-radius:6px;font-weight:600;font-size:.78rem;transition:all .15s}
-    .sc-btn-ghost:hover{background:var(--bg);border-color:var(--navy)}
-    .scroll-hint{font-size:.72rem;color:var(--txt-3);text-align:right;margin-top:.35rem}
-    @media(max-width:600px){.scroll-hint{text-align:center}}
-    /* ---- DETAILED TESTS ---- */
+    .sc-btn-ghost{display:flex;align-items:center;justify-content:center;background:transparent;color:var(--txt-2);border:1px solid #d1d5db;padding:.4rem .75rem;font-weight:500;font-size:.74rem;transition:all .15s}
+    .sc-btn-ghost:hover{background:var(--bg);color:var(--txt)}
+    .scroll-hint{font-size:.7rem;color:#9ca3af;text-align:center;margin-top:.5rem;letter-spacing:.04em}
+    /* ---- DETAILED TESTS (Stiftung-Warentest-Stil) ---- */
     .test-section{margin-top:3rem}
-    .test-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);margin-bottom:2rem}
-    .test-card--winner{border-color:var(--crimson);border-width:2px}
-    .test-card-header{display:grid;grid-template-columns:1fr 220px;gap:0;border-bottom:1px solid var(--border)}
+    .test-card{background:var(--surface);border:1px solid #d1d5db;border-top:3px solid #6b7280;overflow:hidden;margin-bottom:2.5rem}
+    .test-card--winner{border-top-color:var(--crimson)}
+    .test-card-header{display:grid;grid-template-columns:1fr 200px;gap:0;border-bottom:1px solid #e5e7eb}
     @media(max-width:640px){.test-card-header{grid-template-columns:1fr}}
-    .test-card-header-body{padding:1.5rem}
-    .test-card-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-3);margin-bottom:.3rem;display:flex;align-items:center;gap:.5rem}
+    .test-card-header-body{padding:1.5rem 1.75rem 1.25rem}
+    .test-card-eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b7280;margin-bottom:.35rem}
     .test-card-eyebrow .rank-w{color:var(--crimson)}
-    .test-card-h2{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--txt);line-height:1.2;margin-bottom:.4rem}
+    .test-card-h2{font-family:var(--serif);font-size:1.45rem;font-weight:700;color:#111827;line-height:1.2;margin-bottom:.35rem}
     .test-card--winner .test-card-h2{color:var(--crimson)}
-    .test-card-sub{font-size:.85rem;color:var(--txt-2);line-height:1.55;margin-bottom:.75rem}
-    .test-verdict-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--bg-warm);border:1px solid var(--border);border-radius:999px;padding:.2em .85em;font-size:.72rem;font-weight:600;color:var(--txt-2)}
-    .test-verdict-tag.gut{background:#dcfce7;border-color:#86efac;color:#166534}
-    .test-verdict-tag.bedingt{background:#fef9c3;border-color:#fde047;color:#713f12}
-    .test-verdict-tag.eingeschraenkt{background:#fee2e2;border-color:#fca5a5;color:#7f1d1d}
-    .test-card-img-wrap{overflow:hidden;display:flex;align-items:stretch}
-    .test-card-img-wrap img{width:100%;object-fit:cover}
-    .test-card-img-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:#f1f5f9;color:#94a3b8;font-size:.72rem;width:100%;padding:1.5rem}
-    .test-card-img-ph svg{opacity:.3}
-    .test-card-body{padding:1.5rem}
-    .test-section-title{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--txt);margin:1.5rem 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+    .test-card-sub{font-size:.8rem;color:#6b7280;margin-bottom:.85rem}
+    .test-verdict-tag{display:inline-flex;align-items:center;gap:.3rem;border:1px solid;border-radius:2px;padding:.2em .75em;font-size:.7rem;font-weight:700;letter-spacing:.03em}
+    .test-verdict-tag.gut{background:#f0fdf4;border-color:#86efac;color:#166534}
+    .test-verdict-tag.bedingt{background:#fefce8;border-color:#fde047;color:#854d0e}
+    .test-verdict-tag.eingeschraenkt{background:#fff1f2;border-color:#fda4af;color:#9f1239}
+    .test-card-img-wrap{overflow:hidden;display:flex;align-items:stretch;border-left:1px solid #e5e7eb}
+    .test-card-img-wrap img{width:100%;height:100%;object-fit:cover}
+    .test-card-img-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:#f8fafc;color:#94a3b8;font-size:.68rem;width:100%;padding:2rem 1rem;text-align:center}
+    .test-card-img-ph svg{opacity:.25}
+    .test-card-body{padding:1.5rem 1.75rem;border-bottom:1px solid #e5e7eb}
+    .test-section-title{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin:1.5rem 0 .5rem;padding-bottom:.4rem;border-bottom:1px solid #e5e7eb}
     .test-section-title:first-child{margin-top:0}
-    .test-card-body p{font-size:.88rem;color:var(--txt-2);line-height:1.75;margin-bottom:.75rem}
+    .test-card-body p{font-size:.9rem;color:#374151;line-height:1.8;margin-bottom:.85rem}
     .test-card-body p:last-child{margin-bottom:0}
-    .test-pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+    .test-pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1.25rem;border:1px solid #e5e7eb;background:#e5e7eb}
     @media(max-width:500px){.test-pc-grid{grid-template-columns:1fr}}
-    .test-pc-box{background:var(--bg);border-radius:6px;padding:.85rem 1rem}
-    .test-pc-box h4{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
-    .test-pc-box.pros-box h4{color:#059669}.test-pc-box.cons-box h4{color:#dc2626}
-    .test-pc-box ul{display:flex;flex-direction:column;gap:.35rem}
-    .test-pc-box li{font-size:.82rem;color:var(--txt-2);display:flex;align-items:flex-start;gap:.4rem;line-height:1.4}
-    .test-pc-box.pros-box li::before{content:'✓';color:#059669;font-weight:700;flex-shrink:0}
+    .test-pc-box{background:var(--surface);padding:1rem 1.25rem}
+    .test-pc-box h4{font-size:.65rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.6rem}
+    .test-pc-box.pros-box h4{color:#166534}.test-pc-box.cons-box h4{color:#9f1239}
+    .test-pc-box ul{display:flex;flex-direction:column;gap:.4rem}
+    .test-pc-box li{font-size:.84rem;color:#374151;display:flex;align-items:flex-start;gap:.45rem;line-height:1.45}
+    .test-pc-box.pros-box li::before{content:'✓';color:#16a34a;font-weight:700;flex-shrink:0}
     .test-pc-box.cons-box li::before{content:'✗';color:#dc2626;font-weight:700;flex-shrink:0}
-    .test-card-footer{padding:1rem 1.5rem;border-top:1px solid var(--border);background:var(--bg-warm);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+    .test-card-footer{padding:.85rem 1.75rem;background:#f9fafb;display:flex;gap:.65rem;flex-wrap:wrap;align-items:center}
     /* ---- PRODUCT CARDS (old, kept for table compat) ---- */
     .products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
     @media(max-width:720px){.products-grid{grid-template-columns:1fr}}
@@ -404,6 +403,7 @@
     /* PAGE CONTENT GRID */
     .page-content-grid{display:grid;grid-template-columns:1fr 300px;gap:2rem}
     @media(max-width:1100px){.page-content-grid{grid-template-columns:1fr}}
+    .content-main{min-width:0}
     .winner-sidebar{display:block}
     @media(max-width:1100px){.winner-sidebar{display:none}}
     /* STICKY WINNER BOX */
@@ -500,20 +500,25 @@
             <!-- LUADA 2 – WINNER -->
             <div class="sc-card sc-card--winner">
               <div class="sc-card-img">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80"
-                  alt="LUADA 2 Notrufuhr" width="600" height="338" loading="lazy" decoding="async">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=480&q=80"
+                  alt="LUADA 2 Notrufuhr" width="480" height="320" loading="lazy" decoding="async">
                 <span class="sc-ribbon">🏆 Testsieger</span>
               </div>
               <div class="sc-body">
-                <span class="sc-brand">LUADA eHealth</span>
+                <span class="sc-brand">LUADA eHealth · ab 40 €/Monat</span>
                 <h2 class="sc-name">LUADA 2 Notrufuhr</h2>
-                <p class="sc-desc">Die LUADA 2 ist das technisch ausgereifteste Modell im Test. Sie vereint GPS-Ortung in Echtzeit, eine zuverlässige automatische Sturzerkennung und bis zu fünf Tage Akkulaufzeit in einem schlanken, wasserdichten Gehäuse (IP67). Besonders für Senioren, die noch aktiv und viel unterwegs sind, ist sie die überzeugendste Wahl. Die Einrichtung gelingt intuitiv, der große Notrufknopf lässt sich auch bei eingeschränkter Handbeweglichkeit leicht drücken. Einziger Kompromiss: Der monatliche Servicevertrag ist Pflicht.</p>
-                <div class="sc-pc">
-                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>Zuverlässige Sturzerkennung</li><li>GPS überall einsetzbar</li><li>5 Tage Akku</li><li>IP67 wasserdicht</li><li>7 Tage Test möglich</li></ul></div>
-                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Monatlicher Servicevertrag</li><li>Akku-Stand täglich prüfen</li></ul></div>
-                </div>
+                <span class="sc-verdict gut">Empfehlung der Redaktion</span>
+                <ul class="sc-pc">
+                  <p class="sc-pc-head pro-h">Vorteile</p>
+                  <li class="pro">Sturzerkennung zuverlässig</li>
+                  <li class="pro">GPS überall einsetzbar</li>
+                  <li class="pro">5 Tage Akku · IP67</li>
+                  <li class="pro">7 Tage kostenlos testen</li>
+                  <p class="sc-pc-head con-h">Nachteile</p>
+                  <li class="con">Servicevertrag erforderlich</li>
+                </ul>
                 <div class="sc-cta">
-                  <a href="#testsieger-form" class="sc-btn-primary">7 Tage kostenlos testen →</a>
+                  <a href="#testsieger-form" class="sc-btn-primary">7 Tage gratis testen →</a>
                   <a href="https://luada.de/products/luada-2" target="_blank" rel="noopener" class="sc-btn-ghost">Zur Produktseite</a>
                 </div>
               </div>
@@ -522,72 +527,87 @@
             <!-- JAMES -->
             <div class="sc-card">
               <div class="sc-card-img">
-                <div class="sc-card-img-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span>Foto folgt</span></div>
+                <div class="sc-card-img-ph"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span>Foto folgt</span></div>
                 <span class="sc-rank-badge">Platz 2</span>
               </div>
               <div class="sc-body">
-                <span class="sc-brand">James Technology</span>
+                <span class="sc-brand">James Technology · ab 30 €/Monat</span>
                 <h2 class="sc-name">James Notrufuhr</h2>
-                <p class="sc-desc">Die James Notrufuhr ist eine solide Einstiegslösung für Senioren, die GPS-Ortung zu einem überschaubaren Preis suchen. Die Bedienung ist unkompliziert, der Notrufknopf deutlich sichtbar platziert. Die integrierte Sturzerkennung arbeitet in unserem Test jedoch unzuverlässig und löst sowohl zu früh als auch gar nicht aus – das ist ein ernstes Sicherheitsmanko. Der Akku hält nur etwa zwei Tage, was ein tägliches Laden erfordert. Zudem fehlt jeglicher Spritzwasserschutz, was bei einem Gerät, das auch unter der Dusche getragen werden sollte, ein Ausschlussgrund sein kann.</p>
-                <div class="sc-pc">
-                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>Günstiger Einstiegspreis</li><li>GPS vorhanden</li><li>Einfache Handhabung</li></ul></div>
-                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Sturzerkennung unzuverlässig</li><li>Nur 2 Tage Akku</li><li>Kein Wasserschutz</li></ul></div>
-                </div>
-                <div class="sc-cta"><a href="#" class="sc-btn-ghost">Produktseite ansehen →</a></div>
+                <span class="sc-verdict bedingt">Bedingt empfehlenswert</span>
+                <ul class="sc-pc">
+                  <p class="sc-pc-head pro-h">Vorteile</p>
+                  <li class="pro">Günstiger Preis</li>
+                  <li class="pro">GPS vorhanden</li>
+                  <p class="sc-pc-head con-h">Nachteile</p>
+                  <li class="con">Sturzerkennung unzuverlässig</li>
+                  <li class="con">2 Tage Akku · kein Wasserschutz</li>
+                </ul>
+                <div class="sc-cta"><a href="#test-james" class="sc-btn-ghost">Zum Test ↓</a></div>
               </div>
             </div>
 
             <!-- PATRONUS -->
             <div class="sc-card">
               <div class="sc-card-img">
-                <div class="sc-card-img-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Foto folgt</span></div>
+                <div class="sc-card-img-ph"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Foto folgt</span></div>
                 <span class="sc-rank-badge">Platz 3</span>
               </div>
               <div class="sc-body">
-                <span class="sc-brand">Patronus GmbH</span>
+                <span class="sc-brand">Patronus GmbH · ab 35 €/Monat</span>
                 <h2 class="sc-name">Patronus Notrufuhr</h2>
-                <p class="sc-desc">Der Patronus überzeugt mit einer robusten Verarbeitung und einem der besseren Akkus im Testfeld: Bis zu vier Tage sind realistisch. Das GPS-Signal ist verlässlich und arbeitet auch in Gebäuden. Allerdings hinterlässt das klobige Gehäuse – deutlich wuchtiger als ein herkömmliches Armband – einen geteilten Eindruck: Einige Nutzer empfinden es als sperrig, was das Tragen im Alltag erschwert. Die Menüführung ist wenig intuitiv, ein telefonischer Kundensupport fehlt. Für Angehörige, die primär auf GPS-Zuverlässigkeit und lange Akkulaufzeit setzen und das Design in den Hintergrund stellen, ist es eine brauchbare Option.</p>
-                <div class="sc-pc">
-                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>4 Tage Akku</li><li>Robustes Gehäuse</li><li>Verlässliches GPS</li></ul></div>
-                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Klobiges Design</li><li>Bedienung wenig intuitiv</li><li>Kein Kunden-Chat</li></ul></div>
-                </div>
-                <div class="sc-cta"><a href="#" class="sc-btn-ghost">Produktseite ansehen →</a></div>
+                <span class="sc-verdict bedingt">Bedingt empfehlenswert</span>
+                <ul class="sc-pc">
+                  <p class="sc-pc-head pro-h">Vorteile</p>
+                  <li class="pro">4 Tage Akku · robust</li>
+                  <li class="pro">GPS zuverlässig</li>
+                  <p class="sc-pc-head con-h">Nachteile</p>
+                  <li class="con">Klobiges Design</li>
+                  <li class="con">Bedienung wenig intuitiv</li>
+                </ul>
+                <div class="sc-cta"><a href="#test-patronus" class="sc-btn-ghost">Zum Test ↓</a></div>
               </div>
             </div>
 
             <!-- GARDIA -->
             <div class="sc-card">
               <div class="sc-card-img">
-                <div class="sc-card-img-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Foto folgt</span></div>
+                <div class="sc-card-img-ph"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Foto folgt</span></div>
                 <span class="sc-rank-badge">Platz 4</span>
               </div>
               <div class="sc-body">
-                <span class="sc-brand">Gardia Safety</span>
+                <span class="sc-brand">Gardia Safety · ab 20 €/Monat</span>
                 <h2 class="sc-name">Gardia Notrufarmband</h2>
-                <p class="sc-desc">Das Gardia ist kein eigenständiges Notrufgerät im modernen Sinne, sondern ein klassisches Funksystem: Ein leichter Sender am Handgelenk kommuniziert mit einer Basisstation zu Hause. Das funktioniert im eigenen Wohnbereich verlässlich – aber nur dort. Wer die Straße überquert, ist nicht mehr erreichbar. GPS gibt es nicht, eine automatische Sturzerkennung ebenfalls nicht. Dafür glänzt Gardia mit dem niedrigsten Monatspreis und einer beeindruckenden Akkulaufzeit von bis zu sieben Tagen. Für Senioren, die kaum das Haus verlassen und in erster Linie einen günstigen, einfachen Heimnotruf suchen, ist es eine akzeptable Wahl – für alle anderen klar ungeeignet.</p>
-                <div class="sc-pc">
-                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>Sehr günstig (ab 20 €/Monat)</li><li>7 Tage Akku</li><li>Einfachste Bedienung</li></ul></div>
-                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Kein GPS</li><li>Keine Sturzerkennung</li><li>Nur zu Hause einsetzbar</li></ul></div>
-                </div>
-                <div class="sc-cta"><a href="#" class="sc-btn-ghost">Produktseite ansehen →</a></div>
+                <span class="sc-verdict eingeschraenkt">Nur für zuhause</span>
+                <ul class="sc-pc">
+                  <p class="sc-pc-head pro-h">Vorteile</p>
+                  <li class="pro">Günstigster Preis · 7 Tage Akku</li>
+                  <p class="sc-pc-head con-h">Nachteile</p>
+                  <li class="con">Kein GPS · keine Sturzerkennung</li>
+                  <li class="con">Nur im Hausbereich nutzbar</li>
+                </ul>
+                <div class="sc-cta"><a href="#test-gardia" class="sc-btn-ghost">Zum Test ↓</a></div>
               </div>
             </div>
 
             <!-- BEMBU -->
             <div class="sc-card">
               <div class="sc-card-img">
-                <div class="sc-card-img-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Foto folgt</span></div>
+                <div class="sc-card-img-ph"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Foto folgt</span></div>
                 <span class="sc-rank-badge">Platz 5</span>
               </div>
               <div class="sc-body">
-                <span class="sc-brand">Bembu GmbH</span>
+                <span class="sc-brand">Bembu GmbH · ab 28 €/Monat</span>
                 <h2 class="sc-name">Bembu Notrufuhr</h2>
-                <p class="sc-desc">Die Bembu Notrufuhr macht optisch einen guten ersten Eindruck: Das schlanke, leichte Gehäuse fühlt sich am Handgelenk angenehm an und ist deutlich weniger aufdringlich als manche Konkurrenten. GPS ist an Bord, die SOS-Taste ist groß und gut sichtbar. Für technikscheue Senioren ist der Einstieg einfach. Allerdings fehlen zentrale Sicherheitsmerkmale: Weder eine automatische Sturzerkennung noch ein Wasserschutz sind vorhanden. Ohne Sturzerkennung muss der Nutzer nach einem Sturz selbst in der Lage sein, den Knopf zu drücken – was in einem echten Notfall nicht immer möglich ist. Für bewusste Nutzer, die das Gerät aktiv einsetzen wollen, aber keinen Aufpreis zahlen möchten, eine überlegungswürdige Wahl.</p>
-                <div class="sc-pc">
-                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>Schlankes, leichtes Design</li><li>GPS vorhanden</li><li>Günstig (ab 28 €/Monat)</li><li>Gute Bedienung</li></ul></div>
-                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Keine Sturzerkennung</li><li>Kein Wasserschutz</li><li>Kein Direktgespräch an der Uhr</li></ul></div>
-                </div>
-                <div class="sc-cta"><a href="#" class="sc-btn-ghost">Produktseite ansehen →</a></div>
+                <span class="sc-verdict bedingt">Für aktive Nutzer</span>
+                <ul class="sc-pc">
+                  <p class="sc-pc-head pro-h">Vorteile</p>
+                  <li class="pro">Schlankes Design · GPS</li>
+                  <li class="pro">Gute Bedienung</li>
+                  <p class="sc-pc-head con-h">Nachteile</p>
+                  <li class="con">Keine Sturzerkennung</li>
+                  <li class="con">Kein Wasserschutz</li>
+                </ul>
+                <div class="sc-cta"><a href="#test-bembu" class="sc-btn-ghost">Zum Test ↓</a></div>
               </div>
             </div>
 
