@@ -217,6 +217,26 @@
     .test-pc-box.pros-box li::before{content:'✓';color:#16a34a;font-weight:700;flex-shrink:0}
     .test-pc-box.cons-box li::before{content:'✗';color:#dc2626;font-weight:700;flex-shrink:0}
     .test-card-footer{padding:.85rem 1.75rem;background:#f9fafb;display:flex;gap:.65rem;flex-wrap:wrap;align-items:center}
+    /* ---- IMAGE PLACEHOLDERS ---- */
+    .img-ph{
+      background:#f8fafc;border:1.5px dashed #cbd5e1;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:.6rem;padding:1.5rem 1.25rem;text-align:center;
+      color:#64748b;
+    }
+    .img-ph svg{opacity:.35;flex-shrink:0}
+    .img-ph-label{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8;margin-bottom:.1rem}
+    .img-ph-desc{font-size:.8rem;color:#475569;line-height:1.5;max-width:320px}
+    .img-ph-size{font-size:.65rem;color:#94a3b8;margin-top:.15rem}
+    /* Photo caption */
+    .img-caption{font-size:.72rem;color:#64748b;font-style:italic;margin-top:.3rem;margin-bottom:1rem;padding-left:.5rem;border-left:2px solid #e2e8f0}
+    /* Inline image float */
+    .img-inline{float:right;width:260px;margin:0 0 1rem 1.5rem}
+    .img-inline .img-ph{width:100%}
+    @media(max-width:600px){.img-inline{float:none;width:100%;margin:0 0 1rem 0}}
+    /* Fullwidth image inside article */
+    .img-full{width:100%;margin:1.25rem 0 .35rem}
+    .img-full .img-ph{width:100%;min-height:200px}
     /* ---- PRODUCT CARDS (old, kept for table compat) ---- */
     .products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
     @media(max-width:720px){.products-grid{grid-template-columns:1fr}}
@@ -629,12 +649,25 @@
                 <span class="test-verdict-tag gut">✓ Empfehlung der Redaktion</span>
               </div>
               <div class="test-card-img-wrap">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=440&q=80"
-                  alt="LUADA 2 Notrufuhr – Testsieger 2026" width="440" height="330" loading="lazy" decoding="async">
+                <div class="img-ph" style="min-height:220px">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <div>
+                    <p class="img-ph-label">Produktfoto</p>
+                    <p class="img-ph-desc">LUADA 2 von vorn auf weißem oder hellgrauem Hintergrund – Zifferblatt, Knopf und Armband gut sichtbar</p>
+                    <p class="img-ph-size">Empfohlen: 440 × 330 px</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="test-card-body">
               <h3 class="test-section-title">Gesamteindruck</h3>
+              <div class="img-inline">
+                <div class="img-ph" style="min-height:170px">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+                  <div><p class="img-ph-label">Lifestyle</p><p class="img-ph-desc">Ältere Person trägt die LUADA 2 am Handgelenk beim Spaziergang im Freien – natürliches Tageslicht, Bewegungskontext</p><p class="img-ph-size">ca. 260 × 200 px</p></div>
+                </div>
+                <p class="img-caption">LUADA 2 im Alltag: auch unterwegs einsetzbar</p>
+              </div>
               <p>Die LUADA 2 ist das ausgereifteste Modell in unserem Vergleich und das einzige, das alle zentralen Anforderungen an eine moderne Notrufuhr vollständig erfüllt. Das Gerät sieht aus wie eine gewöhnliche Sportarmbanduhr – kein unmittelbares „Pflege-Stigma" –, ist wasserdicht nach IP67 und lässt sich damit auch unter der Dusche tragen. Das ist besonders wichtig: Der häufigste Unfallort älterer Menschen ist das Badezimmer.</p>
 
               <h3 class="test-section-title">Bedienung</h3>
@@ -645,9 +678,23 @@
               <p>Die LUADA 2 verwendet eine Kombination aus GPS, WLAN- und Mobilfunkortung, was die Positionsgenauigkeit auch in Gebäuden deutlich verbessert. In unserem Test wurde die korrekte Position innerhalb von 15 bis 30 Sekunden auf der Karte angezeigt – sowohl im Freien als auch innerhalb eines Wohngebäudes. Die Ortung funktioniert überall, wo Mobilfunknetz vorhanden ist, also nicht nur zu Hause, sondern auch beim Einkaufen, im Park oder auf Reisen. Das ist ein erheblicher Vorteil gegenüber stationären Hausnotruf-Systemen.</p>
 
               <h3 class="test-section-title">Sturzerkennung</h3>
+              <div class="img-full">
+                <div class="img-ph" style="min-height:160px">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  <div><p class="img-ph-label">Testfoto</p><p class="img-ph-desc">Testaufbau Sturzerkennung: Uhr liegt flach auf Testtisch, daneben Smartphone mit App-Alarm-Anzeige – Kabel oder Messgerät als technischer Kontext sichtbar</p><p class="img-ph-size">Empfohlen: 760 × 380 px (Querformat)</p></div>
+                </div>
+                <p class="img-caption">Testaufbau: Sturzerkennung im Labor-Test</p>
+              </div>
               <p>Die automatische Sturzerkennung arbeitet auf Basis mehrerer eingebauter Sensoren (Beschleunigungsmesser, Gyroskop). Im Testbetrieb zeigte sie eine hohe Treffsicherheit: Echte Sturzsequenzen wurden zuverlässig erkannt, alltägliche Bewegungen wie schnelles Aufstehen oder das Hinsetzen auf dem Sofa führten nicht zu Fehlalarmen. Diese Kombination aus Empfindlichkeit und Präzision ist technisch anspruchsvoll und nicht selbstverständlich. Bei Wettbewerbern, die ebenfalls Sturzerkennung bewerben, sahen wir deutlich mehr Fehlauslösungen oder eine zu träge Reaktion.</p>
 
               <h3 class="test-section-title">Akkulaufzeit &amp; Laden</h3>
+              <div class="img-inline">
+                <div class="img-ph" style="min-height:165px">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="7" width="18" height="11" rx="2"/><path d="M22 11v3"/><path d="M7 11v2m4-2v2m4-2v2"/></svg>
+                  <div><p class="img-ph-label">Testfoto</p><p class="img-ph-desc">Uhr auf magnetischer Ladestation – Akku-Anzeige gut erkennbar, ruhiger Hintergrund</p><p class="img-ph-size">ca. 260 × 200 px</p></div>
+                </div>
+                <p class="img-caption">Magnetisches Laden – einfach aufsetzen, fertig</p>
+              </div>
               <p>Im Test hielt die Uhr mit moderater Nutzung (GPS-Tracking aktiv, Sturzerkennung aktiv) zwischen vier und fünf Tagen durch. Das Laden erfolgt über eine magnetische Ladestation, was die Handhabung erleichtert. Sobald der Akku unter 20 % fällt, wird eine Benachrichtigung an die Angehörigen-App gesendet – ein sinnvolles Sicherheitsnetz für Nutzer, die vergessen, die Uhr zu laden.</p>
 
               <h3 class="test-section-title">Notrufzentrale &amp; Service</h3>
@@ -692,7 +739,10 @@
                 <span class="test-verdict-tag bedingt">~ Bedingt empfehlenswert</span>
               </div>
               <div class="test-card-img-wrap">
-                <div class="test-card-img-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span>Eigenes Foto einsetzen</span></div>
+                <div class="img-ph" style="min-height:220px;width:200px">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <div><p class="img-ph-label">Produktfoto</p><p class="img-ph-desc">James Notrufuhr von vorn, weißer Hintergrund, SOS-Taste deutlich sichtbar</p><p class="img-ph-size">440 × 330 px</p></div>
+                </div>
               </div>
             </div>
             <div class="test-card-body">
@@ -706,6 +756,13 @@
               <p>Die GPS-Ortung arbeitet im Außenbereich zuverlässig. In Gebäuden – insbesondere in mehrstöckigen Häusern oder mit dicken Wänden – kam es vereinzelt zu Verzögerungen von bis zu zwei Minuten, bis eine aktualisierte Position auf der App erschien. Das ist im Alltag tolerierbar, im Notfall aber ein potenzieller Zeitverlust.</p>
 
               <h3 class="test-section-title">Sturzerkennung</h3>
+              <div class="img-full">
+                <div class="img-ph" style="min-height:140px">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  <div><p class="img-ph-label">Testfoto</p><p class="img-ph-desc">Smartphone mit App-Screen zeigt ausgebliebenen Alarm nach simuliertem Sturz – deutlich als Test-Screenshot erkennbar (kein echter Notfall)</p><p class="img-ph-size">760 × 320 px</p></div>
+                </div>
+                <p class="img-caption">Test: Sturzerkennung löste in 4 von 10 Versuchen nicht aus</p>
+              </div>
               <p>Das ist der kritische Punkt: Die James Notrufuhr bewirbt eine Sturzerkennung, die im Praxistest jedoch nicht die nötige Zuverlässigkeit zeigt. Bei einem simulierten Sturz auf der Trainingsmatte wurde in vier von zehn Versuchen kein Alarm ausgelöst. In zwei Fällen hingegen löste sie bei einem schnellen Hinhocken aus. Diese Streuung ist für ein Sicherheitsprodukt nicht akzeptabel.</p>
 
               <h3 class="test-section-title">Akku &amp; Wasserschutz</h3>
@@ -737,7 +794,10 @@
                 <span class="test-verdict-tag bedingt">~ Bedingt empfehlenswert</span>
               </div>
               <div class="test-card-img-wrap">
-                <div class="test-card-img-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Eigenes Foto einsetzen</span></div>
+                <div class="img-ph" style="min-height:220px;width:200px">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <div><p class="img-ph-label">Produktfoto</p><p class="img-ph-desc">Patronus Notrufuhr von der Seite – Gehäusedicke deutlich sichtbar machen (Größenvergleich mit Münze o.ä.)</p><p class="img-ph-size">440 × 330 px</p></div>
+                </div>
               </div>
             </div>
             <div class="test-card-body">
@@ -745,6 +805,13 @@
               <p>Der Patronus ist ein robustes, zuverlässiges Gerät, das technisch einiges bietet – Sturzerkennung, GPS, IP54-Schutz – aber durch sein klobiges Design und eine wenig durchdachte Bedienoberfläche hinter seinem Potenzial zurückbleibt. Für Nutzer, bei denen Design zweitrangig ist und die in erster Linie auf Langlebigkeit und Akkulaufzeit setzen, ist er eine überlegenswerte Alternative.</p>
 
               <h3 class="test-section-title">Bedienung &amp; Design</h3>
+              <div class="img-inline">
+                <div class="img-ph" style="min-height:165px">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <div><p class="img-ph-label">Testfoto</p><p class="img-ph-desc">Patronus am Handgelenk, Seitenansicht – Gehäusedicke im Vergleich zur Hand hervorheben. Gerne Münze oder flache Uhr als Größenvergleich daneben legen.</p><p class="img-ph-size">ca. 260 × 200 px</p></div>
+                </div>
+                <p class="img-caption">Tragetest: Das klobige Gehäuse fällt im Vergleich auf</p>
+              </div>
               <p>Das Gehäuse ist spürbar dicker und schwerer als vergleichbare Modelle. Am Handgelenk fühlt es sich eher wie ein kleines Gerät als wie eine Uhr an. Für Nutzer mit schlanken Handgelenken oder Arthritis kann das unbequem werden. Die Menüsteuerung über zwei Seitentasten ist gewöhnungsbedürftig; eine App-Einrichtung ist zwar vorhanden, aber weniger intuitiv als beim Testsieger.</p>
 
               <h3 class="test-section-title">GPS &amp; Sturzerkennung</h3>
@@ -779,7 +846,10 @@
                 <span class="test-verdict-tag eingeschraenkt">✗ Nur für rein häuslichen Einsatz</span>
               </div>
               <div class="test-card-img-wrap">
-                <div class="test-card-img-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Eigenes Foto einsetzen</span></div>
+                <div class="img-ph" style="min-height:220px;width:200px">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <div><p class="img-ph-label">Produktfoto</p><p class="img-ph-desc">Gardia Sender am Armband + Basisgerät daneben auf Tisch – beide Teile des Systems gemeinsam zeigen</p><p class="img-ph-size">440 × 330 px</p></div>
+                </div>
               </div>
             </div>
             <div class="test-card-body">
@@ -787,6 +857,13 @@
               <p>Das Gardia Notrufarmband ist kein Gerät der neuen Generation – es ist ein klassisches, bewährtes Funksystem wie es in dieser Form seit den 1990er Jahren existiert. Das ist keine Kritik per se, sondern eine Einordnung: Wer einen günstigen, zuverlässigen Heimnotruf sucht und nie oder kaum alleine das Haus verlässt, ist hier richtig aufgehoben. Für alle anderen ist es die falsche Wahl.</p>
 
               <h3 class="test-section-title">Technik &amp; Reichweite</h3>
+              <div class="img-inline">
+                <div class="img-ph" style="min-height:165px">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  <div><p class="img-ph-label">Lifestyle</p><p class="img-ph-desc">Basisgerät auf Sideboard oder Kommode im Wohnzimmer, Sender-Armband liegt daneben – häusliche Atmosphäre, natürliches Licht</p><p class="img-ph-size">ca. 260 × 200 px</p></div>
+                </div>
+                <p class="img-caption">Das Gardia-System gehört ins Zuhause – nicht auf die Straße</p>
+              </div>
               <p>Das System besteht aus einem leichten Knopf am Armband und einem Basisgerät, das per Festnetz oder SIM-Karte mit der Notrufzentrale verbunden ist. Die Reichweite beträgt typischerweise 80 bis 150 Meter – genug für Wohnung, Keller und direkten Gartenbereich. Verlässt die Person diesen Radius, funktioniert das System nicht mehr. GPS ist schlichtweg nicht vorhanden.</p>
 
               <h3 class="test-section-title">Sturzerkennung &amp; Sicherheit</h3>
@@ -821,7 +898,10 @@
                 <span class="test-verdict-tag bedingt">~ Für aktive Nutzer ohne Sturzrisiko</span>
               </div>
               <div class="test-card-img-wrap">
-                <div class="test-card-img-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Eigenes Foto einsetzen</span></div>
+                <div class="img-ph" style="min-height:220px;width:200px">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <div><p class="img-ph-label">Produktfoto</p><p class="img-ph-desc">Bembu von oben auf heller Oberfläche – schlankes, flaches Profil betonen. Gerne mit anderen Uhren daneben für Größenvergleich.</p><p class="img-ph-size">440 × 330 px</p></div>
+                </div>
               </div>
             </div>
             <div class="test-card-body">
@@ -829,6 +909,13 @@
               <p>Die Bembu Notrufuhr hinterlässt einen zwiespältigen Eindruck. Optisch und haptisch ist sie das ansprechendste Gerät unter den Nicht-Testsiegern: leicht, dünn, unauffällig. GPS ist vorhanden, die Bedienung ist intuitiv. Doch das Fehlen einer automatischen Sturzerkennung und eines Wasserschutzes sind in dieser Preisklasse keine Kavaliersdelikte – sondern echte Sicherheitslücken.</p>
 
               <h3 class="test-section-title">Design &amp; Tragekomfort</h3>
+              <div class="img-inline">
+                <div class="img-ph" style="min-height:165px">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  <div><p class="img-ph-label">Lifestyle</p><p class="img-ph-desc">Bembu am Handgelenk, Person sitzt entspannt – schlankes Profil im Alltag zeigen, z. B. beim Kaffeetrinken oder Lesen</p><p class="img-ph-size">ca. 260 × 200 px</p></div>
+                </div>
+                <p class="img-caption">Unauffällig im Alltag: kein Notruf-Stigma</p>
+              </div>
               <p>Das Gehäuse misst nur 10 mm in der Dicke und wiegt weniger als 40 Gramm – es ist das leichteste Gerät im Test. Das Armband liegt angenehm an, der Verschluss ist auch mit steiferen Fingern gut zu bedienen. Die Uhr macht im Alltag keinen Notruf-typischen Eindruck, was viele Nutzer als positiv empfinden.</p>
 
               <h3 class="test-section-title">GPS-Ortung</h3>
@@ -1129,15 +1216,15 @@
       <p class="foot-simple">
         <a href="/">Startseite</a> &nbsp;·&nbsp;
         <a href="/editorial/notrufuhr-vs-hausnotruf/">Notrufhilfen Ratgeber</a> &nbsp;·&nbsp;
+        <a href="/editorial/stuerze-im-alter/">Sturzprävention</a> &nbsp;·&nbsp;
         <a href="/impressum/">Impressum</a> &nbsp;·&nbsp;
-        <a href="/datenschutz/">Datenschutz</a> &nbsp;·&nbsp;
-        <a href="https://luada.de" target="_blank" rel="noopener">LUADA eHealth</a>
+        <a href="/datenschutz/">Datenschutz</a>
       </p>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="wrap">
-      <span>© 2026 LUADA eHealth Solutions GmbH · Nordhorn</span>
+      <span>© 2026 Senioren Gesundheit Aktuell</span>
       <div class="foot-bot-links">
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
