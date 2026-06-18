@@ -6,11 +6,11 @@
   <meta name="description" content="Impressum – Angaben gemäß § 5 TMG. Ein Angebot der LUADA eHealth Solutions GmbH.">
   <meta name="robots" content="noindex, follow">  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;color:#1c1c1e;background:#f5f4f0;line-height:1.65;-webkit-font-smoothing:antialiased}
+    body{font-family:'DM Sans',system-ui,sans-serif;color:#1c1c1e;background:#f5f4f0;line-height:1.65;-webkit-font-smoothing:antialiased}
     img{display:block;max-width:100%;height:auto}
     a{color:inherit;text-decoration:none}
     ul{list-style:none}
@@ -19,25 +19,21 @@
       --crimson:#b91c1c;--crimson-d:#991b1b;--navy:#0f2444;--navy-mid:#1e3a5f;
       --txt:#1c1c1e;--txt-2:#4b5563;--txt-3:#9ca3af;--border:#e5e7eb;
       --surface:#fff;--bg:#f5f4f0;--bg-warm:#fdf8f2;
-      --serif:'Playfair Display',Georgia,serif;--w:860px;--r:8px;
+      --serif:'DM Serif Display',Georgia,serif;--w:860px;--r:8px;
       --sh:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
     }
-    .wrap{max-width:var(--w);margin:0 auto;padding:0 1.25rem}
-    /* TOP STRIP */
-    .top-strip{background:var(--navy);color:rgba(255,255,255,.75);font-size:.75rem;padding:.35rem 0}
-    .top-strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
-    .top-strip a{color:rgba(255,255,255,.7);transition:color .15s}.top-strip a:hover{color:#fff}
-    .top-links{display:flex;gap:1.5rem}
-    /* MASTHEAD */
-    .masthead{background:var(--surface);padding:1.1rem 0;border-bottom:3px solid var(--crimson)}
-    .site-logo{display:flex;flex-direction:column;gap:.2rem;line-height:1}
-    .site-logo-name{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--crimson)}
-    .site-logo-claim{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-2);padding-top:.25rem;border-top:1px solid var(--border)}
+    .wrap{max-width:var(--w);margin:0 auto;padding:0 1.25rem}/* MASTHEAD */
+    .masthead{background:var(--surface);padding:.5rem 0;border-bottom:3px solid var(--crimson)}
+    .site-logo{display:flex;align-items:center;gap:.65rem;line-height:1}
+    .logo-svg{flex-shrink:0}
+    .logo-text{display:flex;flex-direction:column;gap:.08rem}
+    .logo-name{font-family:var(--serif);font-size:clamp(.9rem,2vw,1.3rem);font-weight:700;color:var(--crimson);letter-spacing:-.01em}
+    .logo-claim{font-size:.58rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--txt-2)}
     /* NAV */
     .nav-bar{background:var(--navy);position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.25)}
-    .nav-inner{display:flex;align-items:stretch;min-height:46px}
+    .nav-inner{display:flex;align-items:stretch;min-height:40px}
     .nav-links{display:flex;align-items:stretch;flex:1}
-    .nav-links a{display:flex;align-items:center;padding:0 1rem;color:rgba(255,255,255,.85);font-size:.85rem;font-weight:500;white-space:nowrap;transition:background .15s,color .15s;border-bottom:3px solid transparent}
+    .nav-links a{display:flex;align-items:center;padding:0 .85rem;color:rgba(255,255,255,.85);font-size:.85rem;font-weight:500;white-space:nowrap;transition:background .15s,color .15s;border-bottom:3px solid transparent}
     .nav-links a:hover{background:rgba(255,255,255,.07);color:#fff}
     .nav-links a.active{color:#fff;border-bottom-color:var(--crimson)}
     .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.3rem;padding:0 1rem;align-self:stretch;align-items:center}
@@ -71,21 +67,12 @@
   </style>
 </head>
 <body>
-<div class="top-strip">
-  <div class="wrap">
-    <span>Senioren Gesundheit Aktuell</span>
-    <nav class="top-links">
-      <a href="/impressum/">Impressum</a>
-      <a href="/datenschutz/">Datenschutz</a>
-      <a href="https://luada.de" target="_blank" rel="noopener">LUADA eHealth</a>
-    </nav>
-  </div>
-</div>
+
 <header class="masthead">
   <div class="wrap">
-    <a href="/" class="site-logo">
-      <span class="site-logo-name">Senioren Gesundheit Aktuell</span>
-      <span class="site-logo-claim">Ihr unabhängiges Magazin für Gesundheit &amp; Lebensqualität im Alter</span>
+    <a href="/" class="site-logo" aria-label="Senioren Gesundheit Aktuell">
+      <svg class="logo-svg" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#b91c1c"/><rect x="12.5" y="7" width="5" height="16" rx="2.5" fill="white"/><rect x="7" y="12.5" width="16" height="5" rx="2.5" fill="white"/></svg>
+      <div class="logo-text"><span class="logo-name">Senioren Gesundheit Aktuell</span><span class="logo-claim">Magazin für Gesundheit im Alter</span></div>
     </a>
   </div>
 </header>
