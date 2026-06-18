@@ -1,657 +1,315 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <!-- SEO Meta Tags -->
-  <title>Neu in 2026: Wie diese smarte Notrufuhr Leben retten wird | Senioren Gesundheit Aktuell</title>
-  <meta name="description" content="Stürze im Alter sind die unterschätzte Gefahr Nr. 1. Experte enthüllt revolutionäre Lösung: Die neue LUADA Notrufuhr 2026 erkennt Stürze automatisch und rettet Leben.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Stürze im Alter: Ursachen, Risiken und Prävention | Senioren Gesundheit Aktuell</title>
+  <meta name="description" content="Stürze sind die häufigste Unfallursache bei Senioren. Lesen Sie, welche Faktoren das Risiko erhöhen und wie Sie effektiv vorbeugen können.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://senioren-gesundheit-aktuell.de/editorial/stuerze-im-alter/">
-  
-  <!-- Open Graph / Social Media -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Neu in 2026: Wie diese smarte Notrufuhr Leben retten wird">
-  <meta property="og:description" content="Stürze im Alter sind die unterschätzte Gefahr Nr. 1. Experte enthüllt revolutionäre Lösung für mehr Sicherheit.">
-  <meta property="og:url" content="https://senioren-gesundheit-aktuell.de/editorial/stuerze-im-alter/">
-  <meta property="og:site_name" content="Senioren Gesundheit Aktuell">
-  <meta property="og:locale" content="de_DE">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Neu in 2026: Wie diese smarte Notrufuhr Leben retten wird">
-  <meta name="twitter:description" content="Stürze im Alter sind die unterschätzte Gefahr Nr. 1. Experte enthüllt revolutionäre Lösung.">
-  
-  <!-- Preconnect für Performance -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta property="og:title" content="Stürze im Alter: Ursachen, Risiken und Prävention">
+  <meta property="og:description" content="Stürze sind die häufigste Unfallursache bei Senioren – was Sie dagegen tun können.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80">  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../../assets/css/base.css">
-  <link rel="stylesheet" href="../../assets/css/article.css">
-  
-  <!-- Enhanced Audibene-Style CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* ==========================================================================
-       Audibene-Style Layout
-       ========================================================================== */
-    :root {
-      --color-primary: #1a5f7a;
-      --color-accent: #e07b39;
-      --color-text: #1f2937;
-      --color-text-light: #6b7280;
-      --color-background: #ffffff;
-      --color-background-alt: #f9fafb;
-      --color-border: #e5e7eb;
-      --color-highlight: #fef3c7;
-      --color-success: #10b981;
-      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Source Serif Pro', Georgia, serif;
-      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-      --max-width: 800px;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1c1c1e;background:#f5f4f0;line-height:1.65;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    button{font-family:inherit;cursor:pointer}
+    :root{
+      --crimson:#b91c1c;--crimson-d:#991b1b;--navy:#0f2444;--navy-mid:#1e3a5f;
+      --txt:#1c1c1e;--txt-2:#4b5563;--txt-3:#9ca3af;--border:#e5e7eb;
+      --surface:#fff;--bg:#f5f4f0;--bg-warm:#fdf8f2;
+      --serif:'Playfair Display',Georgia,serif;--r:8px;
+      --sh:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
     }
-    
-    body {
-      font-family: var(--font-primary);
-      line-height: 1.7;
-      background: var(--color-background);
+    .wrap{max-width:1260px;margin:0 auto;padding:0 1.25rem}
+    .top-strip{background:var(--navy);color:rgba(255,255,255,.75);font-size:.75rem;padding:.35rem 0}
+    .top-strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .top-strip a{color:rgba(255,255,255,.7);transition:color .15s}.top-strip a:hover{color:#fff}
+    .top-links{display:flex;gap:1.5rem}
+    .masthead{background:var(--surface);padding:1.1rem 0;border-bottom:3px solid var(--crimson)}
+    .site-logo{display:flex;flex-direction:column;gap:.2rem;line-height:1}
+    .site-logo-name{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--crimson)}
+    .site-logo-claim{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-2);padding-top:.25rem;border-top:1px solid var(--border)}
+    .nav-bar{background:var(--navy);position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .nav-inner{display:flex;align-items:stretch;min-height:46px}
+    .nav-links{display:flex;align-items:stretch;flex:1}
+    .nav-links a{display:flex;align-items:center;padding:0 1rem;color:rgba(255,255,255,.85);font-size:.85rem;font-weight:500;white-space:nowrap;transition:background .15s,color .15s;border-bottom:3px solid transparent}
+    .nav-links a:hover{background:rgba(255,255,255,.07);color:#fff}
+    .nav-links a.active{color:#fff;border-bottom-color:var(--crimson)}
+    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.3rem;padding:0 1rem;align-self:stretch;align-items:center}
+    @media(max-width:820px){
+      .nav-toggle{display:flex}
+      .nav-links{display:none;flex-direction:column;align-items:stretch;position:absolute;top:100%;left:0;right:0;background:var(--navy-mid);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:.8rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.06)}
+      .nav-inner{position:relative;flex-direction:row-reverse}
     }
-    
-    /* Header im Audibene-Stil */
-    .magazine-header {
-      background: white;
-      border-bottom: 1px solid var(--color-border);
-      padding: 1rem 0;
-    }
-    
-    .magazine-header .logo {
-      max-width: 200px;
-      height: auto;
-    }
-    
-    .bekannt-aus {
-      font-size: 0.875rem;
-      color: var(--color-text-light);
-      margin-top: 0.5rem;
-    }
-    
-    .article-date {
-      background: var(--color-background-alt);
-      padding: 1rem 0;
-      font-size: 0.875rem;
-      color: var(--color-text-light);
-      border-bottom: 1px solid var(--color-border);
-    }
-    
-    /* Main Article Styles */
-    .audibene-article {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-    
-    .audibene-article h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 700;
-      color: var(--color-text);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-    
-    .expert-intro {
-      background: var(--color-background-alt);
-      padding: 2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-      border-left: 4px solid var(--color-primary);
-    }
-    
-    .expert-profile {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    
-    .expert-avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: var(--color-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2rem;
-      flex-shrink: 0;
-    }
-    
-    .expert-info h3 {
-      margin: 0 0 0.5rem 0;
-      color: var(--color-text);
-      font-weight: 600;
-    }
-    
-    .expert-info p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--color-text-light);
-    }
-    
-    .article-content p {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      color: var(--color-text);
-    }
-    
-    .highlight-stat {
-      background: var(--color-highlight);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border-left: 4px solid var(--color-accent);
-      margin: 2rem 0;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-    
-    .feature-box {
-      background: white;
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-      box-shadow: var(--shadow-sm);
-    }
-    
-    .feature-box h3 {
-      color: var(--color-primary);
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
-    
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .benefit-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    
-    .benefit-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 8px;
-      background: var(--color-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      flex-shrink: 0;
-    }
-    
-    .benefit-text h4 {
-      margin: 0 0 0.5rem 0;
-      color: var(--color-text);
-      font-size: 1rem;
-      font-weight: 600;
-    }
-    
-    .benefit-text p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--color-text-light);
-      line-height: 1.5;
-    }
-    
-    /* Bundesländer Selection */
-    .bundesland-section {
-      background: var(--color-primary);
-      color: white;
-      padding: 3rem 2rem;
-      border-radius: 16px;
-      margin: 3rem 0;
-      text-align: center;
-    }
-    
-    .bundesland-section h2 {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-    }
-    
-    .bundesland-section p {
-      font-size: 1.125rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-    
-    .bundesland-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    
-    .bundesland-button {
-      background: white;
-      color: var(--color-primary);
-      border: none;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-    }
-    
-    .bundesland-button:hover {
-      background: var(--color-background-alt);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .other-state-link {
-      color: white;
-      text-decoration: underline;
-      font-weight: 500;
-      opacity: 0.9;
-    }
-    
-    .other-state-link:hover {
-      opacity: 1;
-    }
-    
-    /* Trust Signals */
-    .trust-section {
-      background: var(--color-background-alt);
-      padding: 2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-    }
-    
-    .trust-section h3 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: var(--color-text);
-    }
-    
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--color-text-light);
-    }
-    
-    .trust-badge::before {
-      content: "✓";
-      color: var(--color-success);
-      font-weight: bold;
-    }
-    
-    /* Footer CTA */
-    .final-cta {
-      background: var(--color-accent);
-      color: white;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      margin: 2rem 0;
-    }
-    
-    .final-cta h3 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-    
-    .cta-button {
-      background: white;
-      color: var(--color-accent);
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.2s ease;
-    }
-    
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .expert-profile {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .benefits-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .bundesland-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .trust-badges {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
+    /* BREADCRUMB */
+    .breadcrumb{padding:.55rem 0;font-size:.75rem;color:var(--txt-3);background:var(--surface);border-bottom:1px solid var(--border)}
+    .breadcrumb a{color:var(--txt-3);transition:color .15s}.breadcrumb a:hover{color:var(--crimson)}
+    /* ARTICLE LAYOUT */
+    .art-layout{display:grid;grid-template-columns:1fr 300px;gap:2rem;max-width:1260px;margin:0 auto;padding:2rem 1.25rem 4rem;align-items:start}
+    @media(max-width:1060px){.art-layout{grid-template-columns:1fr}}
+    /* ARTICLE */
+    .art-hero{border-radius:var(--r);overflow:hidden;margin-bottom:2rem;aspect-ratio:16/9}
+    .art-hero img{width:100%;height:100%;object-fit:cover}
+    .art-header{margin-bottom:1.75rem}
+    .art-badge{display:inline-flex;align-items:center;font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.25em .6em;border-radius:3px;background:var(--crimson);color:#fff;margin-bottom:.75rem}
+    .art-header h1{font-family:var(--serif);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.2;color:var(--txt);margin-bottom:.75rem}
+    .art-header .lead{font-size:1.05rem;color:var(--txt-2);line-height:1.65;font-weight:400}
+    .art-meta-bar{display:flex;gap:1.5rem;flex-wrap:wrap;padding:.75rem 0;margin:.75rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:.78rem;color:var(--txt-3)}
+    .art-body{font-size:.95rem;color:var(--txt-2);line-height:1.8}
+    .art-body h2{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--txt);margin:2.25rem 0 .75rem;padding-bottom:.4rem;border-bottom:2px solid var(--crimson)}
+    .art-body h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--txt);margin:1.75rem 0 .5rem}
+    .art-body p{margin-bottom:1rem}
+    .art-body ul{margin:0 0 1rem 1.25rem;list-style:disc}
+    .art-body ul li{margin-bottom:.4rem}
+    .art-body a{color:var(--crimson);text-decoration:underline;text-underline-offset:2px}
+    .art-body strong{color:var(--txt);font-weight:600}
+    .info-box{background:var(--bg-warm);border-left:4px solid var(--crimson);border-radius:0 var(--r) var(--r) 0;padding:1rem 1.25rem;margin:1.5rem 0}
+    .info-box p{margin-bottom:.4rem;font-size:.88rem}.info-box p:last-child{margin-bottom:0}
+    .info-box-title{font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--crimson);margin-bottom:.5rem}
+    /* SIDEBAR */
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem}
+    .sb-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh)}
+    .sb-head{padding:.6rem 1rem;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--navy);color:#fff}
+    .sb-body{padding:1rem}
+    .rel-item{display:flex;gap:.75rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid var(--border)}
+    .rel-item:last-child{border-bottom:none;padding-bottom:0}
+    .rel-item img{width:72px;height:54px;object-fit:cover;border-radius:4px;flex-shrink:0}
+    .rel-item h4{font-size:.82rem;font-weight:600;line-height:1.3;color:var(--txt);transition:color .15s}
+    .rel-item:hover h4{color:var(--crimson)}
+    .rel-item-meta{font-size:.7rem;color:var(--txt-3);margin-top:.15rem}
+    /* FOOTER */
+    .footer-main{background:var(--surface);border-top:3px solid var(--crimson);padding:2rem 0 1.5rem}
+    .footer-bottom{background:var(--navy);color:rgba(255,255,255,.55);font-size:.75rem;padding:.9rem 0}
+    .footer-bottom .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+    .footer-bottom a{color:rgba(255,255,255,.55);transition:color .15s}.footer-bottom a:hover{color:#fff}
+    .foot-bot-links{display:flex;gap:1.25rem}
+    .foot-simple{text-align:center;font-size:.83rem;color:var(--txt-2)}
+    .foot-simple a{color:var(--crimson)}.foot-simple a:hover{text-decoration:underline}
   </style>
-  
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Neu in 2026: Wie diese smarte Notrufuhr Leben retten wird",
-    "description": "Stürze im Alter sind die unterschätzte Gefahr Nr. 1. Experte enthüllt revolutionäre Lösung: Die neue LUADA Notrufuhr 2026 erkennt Stürze automatisch und rettet Leben.",
-    "author": {
-      "@type": "Person",
-      "name": "Dr. Michael Weber",
-      "jobTitle": "Notfallmediziner und Sicherheitsexperte"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "LUADA eHealth Solutions GmbH",
-      "url": "https://luada.de",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://senioren-gesundheit-aktuell.de/assets/images/logo.svg"
-      }
-    },
-    "datePublished": "2026-01-29",
-    "dateModified": "2026-01-29",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://senioren-gesundheit-aktuell.de/editorial/stuerze-im-alter/"
-    },
-    "articleSection": "Gesundheit & Sicherheit"
-  }
-  </script>
 </head>
 <body>
-  <!-- Skip Link für Accessibility -->
-  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
-
-  <!-- Magazine Header im Audibene-Stil -->
-  <header class="magazine-header">
-    <div style="max-width: 800px; margin: 0 auto; padding: 0 1rem;">
-      <img src="../../assets/images/logo.svg" alt="Senioren Gesundheit Aktuell" class="logo">
-    </div>
-  </header>
-  
-  <!-- Article Date -->
-  <div class="article-date">
-    <div style="max-width: 800px; margin: 0 auto; padding: 0 1rem;">
-      Berlin, 29. Jan. 2026 | <span style="color: #e07b39;">Anzeige</span> vor 2 Stunden aktualisiert
+<div class="top-strip">
+  <div class="wrap">
+    <span>Senioren Gesundheit Aktuell</span>
+    <nav class="top-links">
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+      <a href="https://luada.de" target="_blank" rel="noopener">LUADA eHealth</a>
+    </nav>
+  </div>
+</div>
+<header class="masthead">
+  <div class="wrap">
+    <a href="/" class="site-logo">
+      <span class="site-logo-name">Senioren Gesundheit Aktuell</span>
+      <span class="site-logo-claim">Ihr unabhängiges Magazin für Gesundheit &amp; Lebensqualität im Alter</span>
+    </a>
+  </div>
+</header>
+<nav class="nav-bar" role="navigation" aria-label="Hauptnavigation">
+  <div class="wrap nav-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menü">
+      <span id="nav-icon">☰</span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="/">Startseite</a>
+      <a href="/editorial/stuerze-im-alter/" class="active">Sturzprävention</a>
+      <a href="/editorial/notrufuhr-vs-hausnotruf/">Notrufhilfen</a>
+      <a href="/">Ernährung</a>
+      <a href="/">Bewegung &amp; Fitness</a>
+      <a href="/">Wohnen im Alter</a>
     </div>
   </div>
+</nav>
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="/">Startseite</a> &rsaquo; <a href="/editorial/stuerze-im-alter/">Sturzprävention</a>
+  </div>
+</div>
+<main id="main-content" role="main">
+  <div class="art-layout">
+    <article>
+      <div class="art-hero">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1000&q=80"
+          alt="Ältere Dame bei Gleichgewichtsübungen mit Therapeutin"
+          width="1000" height="562" loading="eager" decoding="async">
+      </div>
+      <header class="art-header">
+        <span class="art-badge">Sturzprävention</span>
+        <h1>Stürze im Alter: Ursachen, Risiken und wie Sie wirksam vorbeugen können</h1>
+        <p class="lead">Stürze sind die häufigste Unfallursache bei Menschen über 65 Jahren und können schwerwiegende Folgen haben. Dieser Ratgeber erklärt, warum ältere Menschen besonders gefährdet sind – und welche konkreten Maßnahmen das Risiko deutlich senken.</p>
+        <div class="art-meta-bar">
+          <time datetime="2026-06-15">15. Juni 2026</time>
+          <span>Lesezeit: ca. 6 Minuten</span>
+          <span>Thema: Sturzprävention</span>
+        </div>
+      </header>
+      <div class="art-body">
 
-  <!-- Main Content -->
-  <main id="main-content">
-    <article class="audibene-article">
-      
-      <!-- Haupttitel -->
-      <h1>Neu in 2026: Wie diese smarte Notrufuhr Leben retten wird</h1>
-      
-      <!-- Untertitel -->
-      <p style="font-size: 1.25rem; color: #6b7280; margin-bottom: 2rem; font-weight: 500;">
-        Experte Dr. Weber enthüllt nächsten Quantensprung in der Notfall-Technologie
-      </p>
-      
-      <!-- Experten-Intro -->
-      <div class="expert-intro">
-        <div class="expert-profile">
-          <div class="expert-avatar">👨‍⚕️</div>
-          <div class="expert-info">
-            <h3>Dr. Michael Weber</h3>
-            <p>arbeitet seit 18 Jahren als Notfallmediziner und ist Sicherheitsexperte bei LUADA eHealth, dem vertrauensvollsten Anbieter für Seniorennotrufsysteme 2026.</p>
-          </div>
+        <h2>Warum sind Stürze im Alter so gefährlich?</h2>
+        <p>Stürze sind unter älteren Menschen eines der ernstesten Gesundheitsprobleme. Laut dem Robert Koch-Institut erleidet etwa jede dritte Person über 65 Jahren mindestens einmal pro Jahr einen Sturz – bei Menschen über 80 Jahren ist es sogar jede zweite. Dabei sind die Folgen häufig gravierend: Knochenbrüche, insbesondere der Hüfte, können für Senioren eine echte Bedrohung für die Selbstständigkeit darstellen.</p>
+        <p>Doch nicht nur körperliche Verletzungen spielen eine Rolle. Viele ältere Menschen entwickeln nach einem Sturz eine ausgeprägte <strong>Sturzangst</strong>, die dazu führt, dass sie sich immer weniger bewegen. Dieser Rückzug schwächt Muskeln und Gleichgewicht weiter – und erhöht damit paradoxerweise das Sturzrisiko erneut.</p>
+
+        <h2>Die häufigsten Ursachen für Stürze</h2>
+        <p>Stürze im Alter haben selten eine einzige Ursache. Meist treffen mehrere Faktoren zusammen:</p>
+
+        <h3>Körperliche Faktoren</h3>
+        <ul>
+          <li><strong>Nachlassende Muskelkraft:</strong> Ab dem 50. Lebensjahr verliert der Körper ohne gezieltes Training schrittweise an Muskelmasse. Besonders die Beinmuskulatur, die für Stabilität beim Gehen wichtig ist, nimmt ab.</li>
+          <li><strong>Gleichgewichtsstörungen:</strong> Das Gleichgewichtssystem im Innenohr und die Koordination zwischen Muskeln und Nervensystem werden im Alter weniger präzise.</li>
+          <li><strong>Sehprobleme:</strong> Eingeschränkte Sehfähigkeit, z.&thinsp;B. durch Grünen oder Grauen Star, kann Hindernisse auf dem Boden übersehen lassen.</li>
+          <li><strong>Chronische Erkrankungen:</strong> Erkrankungen wie Parkinson, Schlaganfall, Arthrose oder Herzrhythmusstörungen erhöhen das Sturzrisiko erheblich.</li>
+          <li><strong>Niedriger Blutdruck beim Aufstehen:</strong> Die sogenannte orthostatische Hypotonie kann beim raschen Aufstehen zu kurzzeitiger Benommenheit führen.</li>
+        </ul>
+
+        <h3>Medikamente als unterschätzter Risikofaktor</h3>
+        <p>Bestimmte Medikamente können das Sturzrisiko erhöhen, oft ohne dass Betroffene dies wissen. Besonders Schlaf- und Beruhigungsmittel (Benzodiazepine), Blutdruckmittel, Antidepressiva und Diuretika stehen in Verdacht, die Reaktionsfähigkeit und das Gleichgewicht zu beeinträchtigen. Wer mehrere solcher Mittel gleichzeitig einnimmt, sollte dies regelmäßig mit dem Hausarzt besprechen.</p>
+
+        <h3>Gefahren in der häuslichen Umgebung</h3>
+        <ul>
+          <li>Lose Teppiche oder Teppichkanten</li>
+          <li>Schlechte Beleuchtung, besonders nachts</li>
+          <li>Glatte Böden im Bad ohne Antirutschmatte</li>
+          <li>Fehlende Haltegriffe an Treppe, Badewanne oder Dusche</li>
+          <li>Ungeeignetes Schuhwerk (zu glatte Sohlen, weite Hausschuhe)</li>
+        </ul>
+
+        <div class="info-box">
+          <div class="info-box-title">Wichtiger Hinweis</div>
+          <p>Dieser Artikel dient ausschließlich der allgemeinen Information und ersetzt keine ärztliche Beratung. Wenn Sie häufig stürzen oder Gleichgewichtsprobleme haben, wenden Sie sich bitte an Ihren Hausarzt.</p>
         </div>
+
+        <h2>Prävention: Was Sie konkret tun können</h2>
+
+        <h3>1. Regelmäßiges Gleichgewichts- und Krafttraining</h3>
+        <p>Der wirksamste Schutz vor Stürzen ist körperliche Aktivität. Übungen, die gezielt Gleichgewicht und Beinmuskulatur stärken, sind besonders effektiv. Hierzu gehören:</p>
+        <ul>
+          <li><strong>Tai-Chi:</strong> Zahlreiche Studien belegen, dass regelmäßiges Tai-Chi das Sturzrisiko bei älteren Menschen deutlich reduziert.</li>
+          <li><strong>Standübungen:</strong> Einbeinstand, Fersengang oder Zehenstand lassen sich täglich zu Hause üben – am besten in der Nähe einer Stuhllehne als Sicherheit.</li>
+          <li><strong>Schwimmen und Wassergymnastik:</strong> Gelenkschonend und effektiv für Kraft und Koordination.</li>
+        </ul>
+
+        <h3>2. Das Zuhause sturzsicher gestalten</h3>
+        <p>Viele Stürze passieren im eigenen Zuhause – und sind damit vermeidbar. Eine schrittweise Anpassung der Wohnung kann das Risiko erheblich senken:</p>
+        <ul>
+          <li>Teppiche entfernen oder sichern, Kabel verlegen</li>
+          <li>Nachtlichter in Schlafzimmer und Flur installieren</li>
+          <li>Haltegriffe im Bad anbringen lassen</li>
+          <li>Antirutschmatten in Dusche und Badewanne verwenden</li>
+          <li>Festes Schuhwerk mit rutschfester Sohle tragen</li>
+        </ul>
+        <p>Die Pflegekasse übernimmt unter bestimmten Voraussetzungen Kosten für Wohnungsanpassungen. Sprechen Sie mit Ihrer Pflegekasse oder einem Pflegestützpunkt in Ihrer Nähe.</p>
+
+        <h3>3. Sehvermögen und Hörvermögen regelmäßig prüfen lassen</h3>
+        <p>Lassen Sie Ihre Augen und – sofern relevant – Ihr Gehör regelmäßig kontrollieren. Eine nicht angepasste Brille oder ein unerkanntes Augenleiden können das Sturzrisiko erhöhen.</p>
+
+        <h3>4. Medikamente überprüfen lassen</h3>
+        <p>Bitten Sie Ihren Hausarzt, Ihre Medikamente regelmäßig auf Wechselwirkungen und sturzfördernde Nebenwirkungen zu überprüfen. Dies wird als <strong>Medikationsreview</strong> bezeichnet und ist bei Hausärzten möglich.</p>
+
+        <h3>5. Notrufmöglichkeit sicherstellen</h3>
+        <p>Wenn trotz aller Vorsicht ein Sturz passiert, ist schnelle Hilfe entscheidend. Wer alleine lebt oder viel Zeit alleine verbringt, sollte sicherstellen, dass im Notfall Hilfe gerufen werden kann – beispielsweise über ein Hausnotrufsystem oder eine Notrufuhr. Mehr dazu erfahren Sie in unserem Artikel über <a href="/editorial/notrufuhr-vs-hausnotruf/">Notrufuhren und Hausnotruf im Vergleich</a>.</p>
+
+        <h2>Was tun, wenn ein Sturz passiert ist?</h2>
+        <p>Nach einem Sturz, selbst wenn keine offensichtlichen Verletzungen vorliegen, sollte ein Arzt aufgesucht werden. Manche Verletzungen – etwa Risse im Oberschenkelknochen – verursachen anfangs wenige Schmerzen und werden erst Stunden oder Tage später deutlich.</p>
+        <p>Wer nach einem Sturz auf Hilfe warten muss und nicht selbst aufstehen kann, sollte versuchen, sich in eine stabile Seitenlage zu rollen und sich warmzuhalten. Panik erhöht den Energieverbrauch und kann gefährlich sein.</p>
+
+        <h2>Zusammenfassung</h2>
+        <p>Stürze im Alter sind kein unvermeidliches Schicksal. Mit regelmäßiger Bewegung, einer angepassten Wohnumgebung und einem aufmerksamen Blick auf Medikamente und Sehvermögen lässt sich das persönliche Risiko deutlich reduzieren. Sprechen Sie auch Ihren Hausarzt offen auf das Thema an – eine individuelle Risikoabschätzung und gegebenenfalls ein Gleichgewichtstraining-Programm kann sehr hilfreich sein.</p>
+
       </div>
-      
-      <!-- Article Content -->
-      <div class="article-content">
-        <p>Sind wir ehrlich: Das beste Notrufsystem wäre eines, das automatisch erkennt, wenn Hilfe gebraucht wird. Und das sofort handelt, ohne dass der Betroffene noch einen Knopf drücken kann.</p>
-        
-        <p>Es wäre ein System, das mich genauso schützt wie ein persönlicher Bodyguard – aber unsichtbar und rund um die Uhr.</p>
-        
-        <p>Bisher musste ich Familien immer ein wenig die Erwartungen dämpfen.</p>
-        
-        <p>Gerade mit Aussagen wie „100% Sicherheit" tat ich mir immer schwer. Denn ich wollte keine falschen Hoffnungen wecken.</p>
-        
-        <p>Bei herkömmlichen Hausnotrufsystemen gab es einfach oft einen kritischen Schwachpunkt: <strong>Was passiert, wenn der Senior bewusstlos ist oder den Notrufknopf nicht mehr drücken kann?</strong></p>
-        
-        <div class="highlight-stat">
-          <strong>Erschreckende Tatsache:</strong> Bei 67% aller Sturzereignisse im Alter können Betroffene keinen Notruf mehr selbst absetzen.
-        </div>
-        
-        <p>Doch das ändert sich jetzt in 2026 endlich grundlegend:</p>
-        
-        <p>Denn jetzt haben die Ingenieure von LUADA ihre neueste Innovation vorgestellt: Die <strong>LUADA Notrufuhr AI 2026</strong>.</p>
-        
-        <p>Ich durfte diese Technologie bereits testen und muss sagen: Diese Innovation hat mich sprichwörtlich aus den Socken gehauen.</p>
-        
-        <p>Hier sehen Sie, wie diskret diese neue Notrufuhr ist. Sie sieht aus wie eine ganz normale Smartwatch!</p>
-        
-        <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: #f9fafb; border-radius: 12px;">
-          <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #1a5f7a, #2563eb); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">⌚</div>
-          <p style="font-style: italic; color: #6b7280; margin: 0;">Die LUADA Notrufuhr AI 2026 - von außen eine elegante Smartwatch, innen ein Lebensretter</p>
-        </div>
-        
-        <p>Die AI-Technologie ist wirklich ein absoluter Quantensprung. Das habe ich so in meinen über 18 Jahren Notfallmedizin noch nicht erlebt.</p>
-        
-        <p>Ich habe in meiner Zeit schon viele Notrufsysteme getestet, aber das ist das erste, das selbst in den kritischsten Situationen dafür sorgt, dass <strong>automatisch und sofort Hilfe kommt</strong>. Und das völlig ohne Zutun des Betroffenen.</p>
-        
-        <!-- Features Box -->
-        <div class="feature-box">
-          <h3>🚨 Das Ganze ist durch bahnbrechende AI-Sturzerkennung möglich:</h3>
-          <p>Diese analysiert Ihre Bewegungen und Körperhaltung in Echtzeit - mit unvorstellbaren <strong>50.000 Datenpunkten pro Sekunde</strong>.</p>
-          <p>Sie können es sich wie einen unsichtbaren Schutzengel vorstellen: Dieser erkennt automatisch Stürze, Bewusstlosigkeit oder medizinische Notfälle und alarmiert sofort professionelle Hilfe.</p>
-          <p>Trotz der genialen High-Tech im Hintergrund bemerken Sie nichts von der Automatik.</p>
-        </div>
-        
-        <p>Sie vergessen sofort, dass Sie ein Notrufsystem tragen, weil es sich einfach so natürlich anfühlt wie eine ganz normale Uhr.</p>
-        
-        <p>Aber das Wichtigste: <strong>Im Ernstfall reagiert die Uhr in unter 30 Sekunden</strong> – automatisch und zuverlässig.</p>
-        
-        <div class="highlight-stat">
-          <strong>Lebensrettend:</strong> Die ersten 10 Minuten nach einem Sturz entscheiden oft über Leben und Tod. Die LUADA AI-Uhr verkürzt die Hilfszeit um durchschnittlich 23 Minuten.
-        </div>
-        
-        <!-- Benefits Grid -->
-        <div class="benefits-grid">
-          <div class="benefit-item">
-            <div class="benefit-icon">🤖</div>
-            <div class="benefit-text">
-              <h4>KI-Sturzerkennung</h4>
-              <p>Erkennt automatisch Stürze und Notfälle in Echtzeit</p>
-            </div>
-          </div>
-          
-          <div class="benefit-item">
-            <div class="benefit-icon">📍</div>
-            <div class="benefit-text">
-              <h4>GPS-Ortung</h4>
-              <p>Funktioniert überall: zu Hause, unterwegs und im Garten</p>
-            </div>
-          </div>
-          
-          <div class="benefit-item">
-            <div class="benefit-icon">💬</div>
-            <div class="benefit-text">
-              <h4>Sprachverbindung</h4>
-              <p>Direkte Kommunikation mit der 24h-Notrufzentrale</p>
-            </div>
-          </div>
-          
-          <div class="benefit-item">
-            <div class="benefit-icon">❤️</div>
-            <div class="benefit-text">
-              <h4>Gesundheitsüberwachung</h4>
-              <p>Kontinuierliche Überwachung von Puls und Aktivität</p>
-            </div>
-          </div>
-        </div>
-        
-        <p>Auch hier ist mein Fazit: Wow. Das habe ich so noch nie erlebt und gibt Senioren endlich die Sicherheit, die sie verdienen.</p>
-        
-        <p>Ich war schon von herkömmlichen Hausnotrufen begeistert, aber die AI-Technologie stellt wirklich alles auf den Kopf.</p>
-        
-        <p>Endlich keine Sorgen mehr über vergessene Notrufknöpfe, Bewusstlosigkeit oder verlorene Sender!</p>
-        
-        <p><strong>Erste Testträger bestätigen:</strong> Die LUADA AI-Uhr ist bequem und unauffällig – funktioniert automatisch rund um die Uhr.</p>
-        
-        <p>Diesen Quantensprung in der Sicherheitstechnik können Sie jetzt selbst erleben.</p>
-        
-        <p>Aber: Nur ausgewählte Regionen haben Zugang zu diesem revolutionären System in einem exklusiven Kontingent.</p>
-        
-        <div class="highlight-stat">
-          Dr. Weber empfiehlt dringend, es selbst auszuprobieren...
-        </div>
-        
-        <p><strong>„Außerdem wird die LUADA AI-Uhr als zertifiziertes Medizinprodukt von den meisten Pflegekassen unterstützt"</strong>, betont Dr. Weber. <strong>„Bei Pflegegrad kann man mit bis zu 23 Euro monatlichem Zuschuss rechnen."</strong></p>
-        
-        <p>Notfallmediziner Dr. Weber und LUADA vergeben ab sofort limitierte Plätze um dieses bahnbrechende Notrufsystem <strong>kostenlos und unverbindlich</strong> zu testen.</p>
-        
-        <p style="font-size: 1.25rem; font-weight: 600; color: #1a5f7a; margin: 2rem 0;">Klicken Sie jetzt auf Ihr Bundesland und sehen Sie direkt, ob ein kostenloses Probetragen der LUADA AI-Uhr in Ihrer Nähe verfügbar ist!</p>
-      </div>
-      
-      <!-- Bundesländer Section -->
-      <section class="bundesland-section">
-        <h2>Prüfen Sie jetzt, ob die LUADA Notrufuhr AI in Ihrer Nähe verfügbar ist!</h2>
-        <p>Wählen Sie Ihr Bundesland aus und erfahren Sie sofort, ob Sie das neue System kostenlos testen können:</p>
-        
-        <div class="bundesland-grid">
-          <a href="/fragebogen?bundesland=nrw" class="bundesland-button">Nordrhein-Westfalen</a>
-          <a href="/fragebogen?bundesland=bayern" class="bundesland-button">Bayern</a>
-          <a href="/fragebogen?bundesland=bw" class="bundesland-button">Baden-Württemberg</a>
-          <a href="/fragebogen?bundesland=berlin" class="bundesland-button">Berlin</a>
-          <a href="/fragebogen?bundesland=niedersachsen" class="bundesland-button">Niedersachsen</a>
-          <a href="/fragebogen?bundesland=hessen" class="bundesland-button">Hessen</a>
-          <a href="/fragebogen?bundesland=sachsen" class="bundesland-button">Sachsen</a>
-          <a href="/fragebogen?bundesland=rlp" class="bundesland-button">Rheinland-Pfalz</a>
-          <a href="/fragebogen?bundesland=hamburg" class="bundesland-button">Hamburg</a>
-          <a href="/fragebogen?bundesland=sh" class="bundesland-button">Schleswig-Holstein</a>
-        </div>
-        
-        <p>
-          <a href="/fragebogen?bundesland=andere" class="other-state-link">
-            Ich lebe in einem anderen Bundesland »
-          </a>
-        </p>
-      </section>
-      
-      <!-- Trust Section -->
-      <section class="trust-section">
-        <h3>Dank LUADA war Sicherheit im Alter noch nie so einfach:</h3>
-        <div class="trust-badges">
-          <div class="trust-badge">Automatische Sturzerkennung durch KI-Technologie</div>
-          <div class="trust-badge">Deutschlandweite 24h-Notrufzentrale</div>
-          <div class="trust-badge">Höchste Kundenzufriedenheit durch einzigartigen Service</div>
-          <div class="trust-badge">Kostenlose Beratung und 30-Tage-Testphase</div>
-        </div>
-        
-        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #6b7280;">
-          <strong>Unterstützt von:</strong> Pflegekassen, Hausärzten und Angehörigen-Verbänden
-        </p>
-      </section>
-      
-      <!-- Final CTA -->
-      <section class="final-cta">
-        <h3>Werden Sie jetzt einer von über 50.000 glücklichen LUADA-Nutzern!</h3>
-        <p style="margin-bottom: 1.5rem; opacity: 0.9;">Sicherheit sollte keine Frage des Alters sein.</p>
-        <a href="/fragebogen" class="cta-button">Jetzt kostenlos testen</a>
-        
-        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.875rem; opacity: 0.8;">
-          <p>✓ 30 Tage kostenlos testen ✓ Keine Vertragsbindung ✓ Deutschlandweit verfügbar</p>
-        </div>
-      </section>
-      
     </article>
-  </main>
 
-  <!-- Footer -->
-  <footer style="background: #1f2937; color: white; padding: 2rem 1rem; text-align: center; margin-top: 3rem;">
-    <div style="max-width: 800px; margin: 0 auto;">
-      <nav style="margin-bottom: 1rem;">
-        <a href="/impressum/" style="color: rgba(255,255,255,0.8); text-decoration: none; margin: 0 1rem;">Impressum</a>
-        <a href="/datenschutz/" style="color: rgba(255,255,255,0.8); text-decoration: none; margin: 0 1rem;">Datenschutz</a>
-        <a href="https://luada.de" style="color: rgba(255,255,255,0.8); text-decoration: none; margin: 0 1rem;" target="_blank" rel="noopener">LUADA eHealth</a>
-      </nav>
-      <p style="opacity: 0.7; font-size: 0.875rem; margin: 0;">
-        © 2026 LUADA eHealth Solutions GmbH. Alle Rechte vorbehalten.
+    <!-- SIDEBAR -->
+    <aside aria-label="Weitere Artikel">
+      <div class="sidebar">
+        <div class="sb-card">
+          <div class="sb-head">Weitere Ratgeber</div>
+          <div class="sb-body">
+            <a href="/editorial/notrufuhr-vs-hausnotruf/" class="rel-item">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=144&q=75"
+                alt="Notrufuhr" width="72" height="54" loading="lazy" decoding="async">
+              <div>
+                <h4>Notrufuhr vs. Hausnotruf – Was passt zu Ihnen?</h4>
+                <div class="rel-item-meta">8 Min. · Notrufhilfen</div>
+              </div>
+            </a>
+            <a href="/" class="rel-item">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=144&q=75"
+                alt="Fitness Senioren" width="72" height="54" loading="lazy" decoding="async">
+              <div>
+                <h4>Gleichgewicht stärken: 10 Übungen für jeden Tag</h4>
+                <div class="rel-item-meta">7 Min. · Fitness</div>
+              </div>
+            </a>
+            <a href="/" class="rel-item">
+              <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=144&q=75"
+                alt="Wohnzimmer" width="72" height="54" loading="lazy" decoding="async">
+              <div>
+                <h4>Altersgerecht wohnen: Kleine Maßnahmen, große Wirkung</h4>
+                <div class="rel-item-meta">6 Min. · Wohnen</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="sb-card">
+          <div class="sb-head">ℹ️ Hinweis</div>
+          <div class="sb-body">
+            <p style="font-size:.82rem;color:var(--txt-2);line-height:1.6">Diese Informationen ersetzen keine ärztliche Beratung. Bei konkreten Beschwerden wenden Sie sich bitte an Ihren Arzt.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="footer-main">
+    <div class="wrap">
+      <p class="foot-simple">
+        <a href="/">Startseite</a> &nbsp;·&nbsp;
+        <a href="/impressum/">Impressum</a> &nbsp;·&nbsp;
+        <a href="/datenschutz/">Datenschutz</a> &nbsp;·&nbsp;
+        <a href="https://luada.de" target="_blank" rel="noopener">LUADA eHealth</a>
       </p>
     </div>
-  </footer>
-
-  <!-- Tracking Script -->
-  <script src="../../assets/js/tracking.js"></script>
-  
-  <!-- Enhanced Analytics -->
-  <script>
-    // Bundesland Click Tracking
-    document.querySelectorAll('.bundesland-button').forEach(button => {
-      button.addEventListener('click', function(e) {
-        const bundesland = this.textContent.trim();
-        // Hier würde normalerweise ein Analytics-Event getrackt
-        console.log('Bundesland geklickt:', bundesland);
-      });
-    });
-    
-    // CTA Button Tracking
-    document.querySelectorAll('.cta-button').forEach(button => {
-      button.addEventListener('click', function() {
-        console.log('CTA Button geklickt');
-      });
-    });
-    
-    // Scroll Depth Tracking
-    let maxScroll = 0;
-    window.addEventListener('scroll', () => {
-      const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-      if (scrollPercent > maxScroll) {
-        maxScroll = scrollPercent;
-        if (maxScroll % 25 === 0) { // Track at 25%, 50%, 75%, 100%
-          console.log('Scroll depth:', maxScroll + '%');
-        }
-      }
-    });
-  </script>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">
+      <span>© 2026 LUADA eHealth Solutions GmbH · Nordhorn</span>
+      <div class="foot-bot-links">
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('nav-toggle');
+  var links=document.getElementById('nav-links');
+  var icon=document.getElementById('nav-icon');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',String(open));
+    icon.textContent=open?'✕':'☰';
+  });
+  document.addEventListener('click',function(e){
+    if(!btn.contains(e.target)&&!links.contains(e.target)){
+      links.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      icon.textContent='☰';
+    }
+  });
+})();
+</script>
 </body>
 </html>

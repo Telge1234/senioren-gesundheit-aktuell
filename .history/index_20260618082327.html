@@ -710,6 +710,7 @@ input{font-family:inherit}
               alt="Fitness für Senioren" width="400" height="300" loading="lazy" decoding="async">
             <div class="cat-label">
               <span class="cat-label-name">Ernährung &amp; Fitness</span>
+              <span class="cat-label-count">56 Artikel</span>
             </div>
           </a>
           <a href="#" class="cat-card" role="listitem">
@@ -717,6 +718,7 @@ input{font-family:inherit}
               alt="Wohnen im Alter" width="400" height="300" loading="lazy" decoding="async">
             <div class="cat-label">
               <span class="cat-label-name">Wohnen &amp; Pflege</span>
+              <span class="cat-label-count">40 Artikel</span>
             </div>
           </a>
         </div>
@@ -819,12 +821,16 @@ input{font-family:inherit}
       <aside aria-label="Ergänzende Inhalte">
         <div class="sidebar">
 
-          <!-- Über uns -->
-          <div class="sb-card">
-            <div class="sb-head">ℹ️ Über dieses Magazin</div>
+          <!-- Newsletter -->
+          <div class="sb-card" id="newsletter">
+            <div class="sb-head sb-head-red">📬 Kostenloser Newsletter</div>
             <div class="sb-body">
-              <p style="font-size:.84rem;color:var(--txt-2);line-height:1.6">Senioren Gesundheit Aktuell ist ein Informationsangebot der <strong>LUADA eHealth Solutions GmbH</strong> aus Nordhorn. Wir veröffentlichen Ratgeber zu Gesundheit und Sicherheit im Alter.</p>
-              <a href="https://luada.de" target="_blank" rel="noopener" style="display:inline-block;margin-top:.75rem;font-size:.82rem;font-weight:600;color:var(--crimson)">luada.de →</a>
+              <form class="nl-form" onsubmit="handleNL(event)">
+                <p>Wöchentliche Gesundheitstipps und neue Ratgeber – gratis in Ihr Postfach.</p>
+                <input type="email" placeholder="Ihre E-Mail-Adresse" required aria-label="E-Mail-Adresse">
+                <button type="submit" class="nl-btn">Jetzt kostenlos abonnieren</button>
+                <p class="nl-fine">✓ Kostenlos &nbsp;·&nbsp; ✓ Kein Spam &nbsp;·&nbsp; ✓ Jederzeit kündbar</p>
+              </form>
             </div>
           </div>
 
@@ -917,10 +923,12 @@ input{font-family:inherit}
           </ul>
         </div>
         <div class="foot-col">
-          <h4>Rechtliches</h4>
+          <h4>Magazin</h4>
           <ul>
             <li><a href="/impressum/">Impressum</a></li>
             <li><a href="/datenschutz/">Datenschutz</a></li>
+            <li><a href="#">Über die Redaktion</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
             <li><a href="https://luada.de" target="_blank" rel="noopener">LUADA eHealth</a></li>
           </ul>
         </div>
@@ -933,6 +941,7 @@ input{font-family:inherit}
       <div class="foot-bot-links">
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
+        <a href="#">Cookie-Einstellungen</a>
       </div>
     </div>
   </div>

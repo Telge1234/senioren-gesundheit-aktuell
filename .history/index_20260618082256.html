@@ -567,6 +567,10 @@ input{font-family:inherit}
       <span class="site-logo-name">Senioren Gesundheit Aktuell</span>
       <span class="site-logo-claim">Ihr unabhängiges Magazin für Gesundheit &amp; Lebensqualität im Alter</span>
     </a>
+    <div class="masthead-cta">
+      <strong>Kostenloser Newsletter</strong>
+      <span>Jeden Freitag die besten Gesundheitstipps</span>
+    </div>
   </div>
 </header>
 
@@ -612,6 +616,7 @@ input{font-family:inherit}
           <div class="hero-meta">
             <time datetime="2026-06-15">15. Juni 2026</time>
             <span>· 6 Min. Lesezeit</span>
+            <span>· Dr. med. Sabine Krüger</span>
           </div>
         </div>
       </a>
@@ -663,7 +668,17 @@ input{font-family:inherit}
   </div>
 </section>
 
-
+<!-- ===== STATS ===== -->
+<div class="stats-section" aria-label="Magazin in Zahlen">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div><div class="stat-n">50.000+</div><div class="stat-l">Leser monatlich</div></div>
+      <div><div class="stat-n">200+</div><div class="stat-l">geprüfte Artikel</div></div>
+      <div><div class="stat-n">25 J.</div><div class="stat-l">Erfahrung</div></div>
+      <div><div class="stat-n">98 %</div><div class="stat-l">Weiterempfehlung</div></div>
+    </div>
+  </div>
+</div>
 
 <!-- ===== MAIN CONTENT ===== -->
 <main id="main-content" role="main">
@@ -696,6 +711,7 @@ input{font-family:inherit}
               alt="Arzt mit Patient" width="400" height="300" loading="lazy" decoding="async">
             <div class="cat-label">
               <span class="cat-label-name">Gesundheit &amp; Vorsorge</span>
+              <span class="cat-label-count">48 Artikel</span>
             </div>
           </a>
           <a href="#" class="cat-card" role="listitem">
@@ -703,6 +719,7 @@ input{font-family:inherit}
               alt="Notfall und Sicherheit" width="400" height="300" loading="lazy" decoding="async">
             <div class="cat-label">
               <span class="cat-label-name">Sicherheit &amp; Notfall</span>
+              <span class="cat-label-count">31 Artikel</span>
             </div>
           </a>
           <a href="#" class="cat-card" role="listitem">
@@ -710,6 +727,7 @@ input{font-family:inherit}
               alt="Fitness für Senioren" width="400" height="300" loading="lazy" decoding="async">
             <div class="cat-label">
               <span class="cat-label-name">Ernährung &amp; Fitness</span>
+              <span class="cat-label-count">56 Artikel</span>
             </div>
           </a>
           <a href="#" class="cat-card" role="listitem">
@@ -717,11 +735,16 @@ input{font-family:inherit}
               alt="Wohnen im Alter" width="400" height="300" loading="lazy" decoding="async">
             <div class="cat-label">
               <span class="cat-label-name">Wohnen &amp; Pflege</span>
+              <span class="cat-label-count">40 Artikel</span>
             </div>
           </a>
         </div>
 
-
+        <!-- Expertenzitat -->
+        <blockquote class="quote-block">
+          <p>„Die meisten Stürze im Alter sind vermeidbar. Mit der richtigen Umgebungsanpassung und gezieltem Gleichgewichtstraining lässt sich das Risiko um bis zu 50 Prozent senken."</p>
+          <cite><strong>Prof. Dr. Andreas Voss</strong> · Geriatrie, Universitätsklinikum Köln</cite>
+        </blockquote>
 
         <!-- Artikel -->
         <div class="sec-head"><div class="sec-head-accent"></div><span>Aktuelle Ratgeber</span></div>
@@ -739,6 +762,7 @@ input{font-family:inherit}
               <div class="art-meta">
                 <time datetime="2026-06-15">15. Juni 2026</time>
                 <span>⏱ 6 Min.</span>
+                <span>Dr. S. Krüger</span>
               </div>
             </div>
           </a>
@@ -819,12 +843,16 @@ input{font-family:inherit}
       <aside aria-label="Ergänzende Inhalte">
         <div class="sidebar">
 
-          <!-- Über uns -->
-          <div class="sb-card">
-            <div class="sb-head">ℹ️ Über dieses Magazin</div>
+          <!-- Newsletter -->
+          <div class="sb-card" id="newsletter">
+            <div class="sb-head sb-head-red">📬 Kostenloser Newsletter</div>
             <div class="sb-body">
-              <p style="font-size:.84rem;color:var(--txt-2);line-height:1.6">Senioren Gesundheit Aktuell ist ein Informationsangebot der <strong>LUADA eHealth Solutions GmbH</strong> aus Nordhorn. Wir veröffentlichen Ratgeber zu Gesundheit und Sicherheit im Alter.</p>
-              <a href="https://luada.de" target="_blank" rel="noopener" style="display:inline-block;margin-top:.75rem;font-size:.82rem;font-weight:600;color:var(--crimson)">luada.de →</a>
+              <form class="nl-form" onsubmit="handleNL(event)">
+                <p>Wöchentliche Gesundheitstipps und neue Ratgeber – gratis in Ihr Postfach.</p>
+                <input type="email" placeholder="Ihre E-Mail-Adresse" required aria-label="E-Mail-Adresse">
+                <button type="submit" class="nl-btn">Jetzt kostenlos abonnieren</button>
+                <p class="nl-fine">✓ Kostenlos &nbsp;·&nbsp; ✓ Kein Spam &nbsp;·&nbsp; ✓ Jederzeit kündbar</p>
+              </form>
             </div>
           </div>
 
@@ -917,10 +945,12 @@ input{font-family:inherit}
           </ul>
         </div>
         <div class="foot-col">
-          <h4>Rechtliches</h4>
+          <h4>Magazin</h4>
           <ul>
             <li><a href="/impressum/">Impressum</a></li>
             <li><a href="/datenschutz/">Datenschutz</a></li>
+            <li><a href="#">Über die Redaktion</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
             <li><a href="https://luada.de" target="_blank" rel="noopener">LUADA eHealth</a></li>
           </ul>
         </div>
@@ -933,6 +963,7 @@ input{font-family:inherit}
       <div class="foot-bot-links">
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
+        <a href="#">Cookie-Einstellungen</a>
       </div>
     </div>
   </div>
