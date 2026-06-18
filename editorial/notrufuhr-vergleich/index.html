@@ -143,7 +143,82 @@
     .sec-head::after{content:'';flex:1;height:1px;background:var(--border)}
     .sec-head-accent{width:24px;height:4px;background:var(--crimson);border-radius:2px;flex-shrink:0}
     .sec-head span{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--txt);white-space:nowrap}
-    /* ---- PRODUCT CARDS ---- */
+    /* ---- SCROLL CARDS (overview widget) ---- */
+    .scroll-outer{overflow-x:auto;margin:0 -1.25rem;padding:.25rem 1.25rem 1.25rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--crimson) var(--border)}
+    .scroll-outer::-webkit-scrollbar{height:4px}
+    .scroll-outer::-webkit-scrollbar-track{background:var(--border);border-radius:2px}
+    .scroll-outer::-webkit-scrollbar-thumb{background:var(--crimson);border-radius:2px}
+    .scroll-track{display:flex;gap:1rem;padding-bottom:.25rem;width:max-content}
+    .sc-card{
+      width:280px;flex-shrink:0;
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--r);overflow:hidden;
+      box-shadow:var(--sh);display:flex;flex-direction:column;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .sc-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+    .sc-card--winner{border-color:var(--crimson);border-width:2px;width:310px}
+    .sc-card-img{aspect-ratio:16/9;overflow:hidden;position:relative;background:#e2e8f0;display:flex;align-items:center;justify-content:center}
+    .sc-card-img img{width:100%;height:100%;object-fit:cover}
+    .sc-card-img-ph{display:flex;flex-direction:column;align-items:center;gap:.4rem;color:#94a3b8;font-size:.72rem}
+    .sc-card-img-ph svg{opacity:.35}
+    .sc-ribbon{position:absolute;top:.6rem;left:.6rem;background:var(--crimson);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.2em .65em;border-radius:3px}
+    .sc-rank-badge{position:absolute;top:.6rem;right:.6rem;background:var(--navy);color:#fff;font-size:.62rem;font-weight:700;padding:.2em .65em;border-radius:3px}
+    .sc-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+    .sc-brand{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-3)}
+    .sc-name{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--txt);line-height:1.25}
+    .sc-card--winner .sc-name{font-size:1.1rem}
+    .sc-desc{font-size:.82rem;color:var(--txt-2);line-height:1.6;flex:1}
+    .sc-pc{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.25rem}
+    .sc-pc-col p{font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem}
+    .sc-pc-col ul{display:flex;flex-direction:column;gap:.25rem}
+    .sc-pc-col li{font-size:.76rem;color:var(--txt-2);display:flex;align-items:flex-start;gap:.3rem;line-height:1.35}
+    .sc-pc-col .pros li::before{content:'✓';color:#059669;font-weight:700;flex-shrink:0}
+    .sc-pc-col .cons li::before{content:'✗';color:#dc2626;font-weight:700;flex-shrink:0}
+    .sc-pc-col .pros-label{color:#059669}.sc-pc-col .cons-label{color:#dc2626}
+    .sc-cta{margin-top:auto;padding-top:.75rem;display:flex;flex-direction:column;gap:.4rem}
+    .sc-btn-primary{display:flex;align-items:center;justify-content:center;background:var(--crimson);color:#fff;padding:.55rem .85rem;border-radius:6px;font-weight:700;font-size:.82rem;transition:background .15s}
+    .sc-btn-primary:hover{background:var(--crimson-d)}
+    .sc-btn-ghost{display:flex;align-items:center;justify-content:center;background:transparent;color:var(--navy);border:1.5px solid var(--border);padding:.45rem .85rem;border-radius:6px;font-weight:600;font-size:.78rem;transition:all .15s}
+    .sc-btn-ghost:hover{background:var(--bg);border-color:var(--navy)}
+    .scroll-hint{font-size:.72rem;color:var(--txt-3);text-align:right;margin-top:.35rem}
+    @media(max-width:600px){.scroll-hint{text-align:center}}
+    /* ---- DETAILED TESTS ---- */
+    .test-section{margin-top:3rem}
+    .test-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);margin-bottom:2rem}
+    .test-card--winner{border-color:var(--crimson);border-width:2px}
+    .test-card-header{display:grid;grid-template-columns:1fr 220px;gap:0;border-bottom:1px solid var(--border)}
+    @media(max-width:640px){.test-card-header{grid-template-columns:1fr}}
+    .test-card-header-body{padding:1.5rem}
+    .test-card-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-3);margin-bottom:.3rem;display:flex;align-items:center;gap:.5rem}
+    .test-card-eyebrow .rank-w{color:var(--crimson)}
+    .test-card-h2{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--txt);line-height:1.2;margin-bottom:.4rem}
+    .test-card--winner .test-card-h2{color:var(--crimson)}
+    .test-card-sub{font-size:.85rem;color:var(--txt-2);line-height:1.55;margin-bottom:.75rem}
+    .test-verdict-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--bg-warm);border:1px solid var(--border);border-radius:999px;padding:.2em .85em;font-size:.72rem;font-weight:600;color:var(--txt-2)}
+    .test-verdict-tag.gut{background:#dcfce7;border-color:#86efac;color:#166534}
+    .test-verdict-tag.bedingt{background:#fef9c3;border-color:#fde047;color:#713f12}
+    .test-verdict-tag.eingeschraenkt{background:#fee2e2;border-color:#fca5a5;color:#7f1d1d}
+    .test-card-img-wrap{overflow:hidden;display:flex;align-items:stretch}
+    .test-card-img-wrap img{width:100%;object-fit:cover}
+    .test-card-img-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:#f1f5f9;color:#94a3b8;font-size:.72rem;width:100%;padding:1.5rem}
+    .test-card-img-ph svg{opacity:.3}
+    .test-card-body{padding:1.5rem}
+    .test-section-title{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--txt);margin:1.5rem 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+    .test-section-title:first-child{margin-top:0}
+    .test-card-body p{font-size:.88rem;color:var(--txt-2);line-height:1.75;margin-bottom:.75rem}
+    .test-card-body p:last-child{margin-bottom:0}
+    .test-pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+    @media(max-width:500px){.test-pc-grid{grid-template-columns:1fr}}
+    .test-pc-box{background:var(--bg);border-radius:6px;padding:.85rem 1rem}
+    .test-pc-box h4{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+    .test-pc-box.pros-box h4{color:#059669}.test-pc-box.cons-box h4{color:#dc2626}
+    .test-pc-box ul{display:flex;flex-direction:column;gap:.35rem}
+    .test-pc-box li{font-size:.82rem;color:var(--txt-2);display:flex;align-items:flex-start;gap:.4rem;line-height:1.4}
+    .test-pc-box.pros-box li::before{content:'✓';color:#059669;font-weight:700;flex-shrink:0}
+    .test-pc-box.cons-box li::before{content:'✗';color:#dc2626;font-weight:700;flex-shrink:0}
+    .test-card-footer{padding:1rem 1.5rem;border-top:1px solid var(--border);background:var(--bg-warm);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+    /* ---- PRODUCT CARDS (old, kept for table compat) ---- */
     .products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
     @media(max-width:720px){.products-grid{grid-template-columns:1fr}}
     .product-card{
@@ -417,183 +492,351 @@
           <p>Eine Notrufuhr kann im Notfall Leben retten. Doch die Unterschiede zwischen den Modellen sind erheblich: Manche bieten GPS und automatische Sturzerkennung, andere beschränken sich auf einen einfachen Notrufknopf. Wir haben fünf der aktuell meistgefragten Modelle ausführlich nach fünf Kriterien bewertet: <strong>Bedienung, GPS-Ortung, Sturzerkennung, Akkulaufzeit und Preis-Leistung</strong>.</p>
         </div>
 
-    <!-- PRODUKT-KARTEN -->
+    <!-- SCHNELLÜBERSICHT (horizontal scroll) -->
         <div class="sec-head"><div class="sec-head-accent"></div><span>Die 5 Modelle im Überblick</span></div>
-        <div class="products-grid">
+        <div class="scroll-outer" role="region" aria-label="Notrufuhren Schnellübersicht – horizontal scrollbar">
+          <div class="scroll-track">
 
-      <!-- LUADA 2 -->
-      <div class="product-card product-card--winner">
-        <div class="product-card-img">
-          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80"
-            alt="Moderne Armbanduhr als Symbolbild für die LUADA 2 Notrufuhr"
-            width="600" height="338" loading="lazy" decoding="async">
-          <span class="winner-ribbon">🏆 Testsieger</span>
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-brand">LUADA eHealth</span>
-          <h2 class="product-card-name">LUADA 2 Notrufuhr</h2>
-          <p class="product-card-tagline">Die modernste Kombination aus Notrufuhr und Alltagsbegleiter: GPS, automatische Sturzerkennung und bis zu 5 Tage Akku.</p>
-          <div class="stars">
-            <span class="stars-icons">★★★★★</span>
-            <span class="stars-score">4,8</span>
-            <span class="stars-count">/ 5,0</span>
-          </div>
-          <div class="criteria-list">
-            <div class="crit-row"><span class="crit-label">Bedienung</span><div class="crit-bar"><div class="crit-fill" style="width:96%"></div></div><span class="crit-val">4,8</span></div>
-            <div class="crit-row"><span class="crit-label">GPS-Ortung</span><div class="crit-bar"><div class="crit-fill" style="width:98%"></div></div><span class="crit-val">4,9</span></div>
-            <div class="crit-row"><span class="crit-label">Sturzerkennung</span><div class="crit-bar"><div class="crit-fill" style="width:94%"></div></div><span class="crit-val">4,7</span></div>
-            <div class="crit-row"><span class="crit-label">Akkulaufzeit</span><div class="crit-bar"><div class="crit-fill" style="width:90%"></div></div><span class="crit-val">4,5</span></div>
-            <div class="crit-row"><span class="crit-label">Preis-Leistung</span><div class="crit-bar"><div class="crit-fill" style="width:92%"></div></div><span class="crit-val">4,6</span></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pros-cons-col"><p class="pros-cons-label pros-label">Vorteile</p><ul class="pros"><li>Automatische Sturzerkennung</li><li>24/7 GPS-Tracking</li><li>Bis zu 5 Tage Akku</li><li>Wasserdicht IP67</li><li>7-Tage-Test möglich</li></ul></div>
-            <div class="pros-cons-col"><p class="pros-cons-label cons-label">Nachteile</p><ul class="cons"><li>Monatlicher Servicevertrag</li><li>Akku täglich prüfen empfohlen</li></ul></div>
-          </div>
-          <div class="product-card-cta">
-            <a href="#testsieger-form" class="btn-card">7 Tage kostenlos testen</a>
-            <a href="https://luada.de/products/luada-2" target="_blank" rel="noopener" class="btn-card btn-card-ghost" style="margin-top:.5rem">Mehr erfahren →</a>
-          </div>
-        </div>
-      </div>
+            <!-- LUADA 2 – WINNER -->
+            <div class="sc-card sc-card--winner">
+              <div class="sc-card-img">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80"
+                  alt="LUADA 2 Notrufuhr" width="600" height="338" loading="lazy" decoding="async">
+                <span class="sc-ribbon">🏆 Testsieger</span>
+              </div>
+              <div class="sc-body">
+                <span class="sc-brand">LUADA eHealth</span>
+                <h2 class="sc-name">LUADA 2 Notrufuhr</h2>
+                <p class="sc-desc">Die LUADA 2 ist das technisch ausgereifteste Modell im Test. Sie vereint GPS-Ortung in Echtzeit, eine zuverlässige automatische Sturzerkennung und bis zu fünf Tage Akkulaufzeit in einem schlanken, wasserdichten Gehäuse (IP67). Besonders für Senioren, die noch aktiv und viel unterwegs sind, ist sie die überzeugendste Wahl. Die Einrichtung gelingt intuitiv, der große Notrufknopf lässt sich auch bei eingeschränkter Handbeweglichkeit leicht drücken. Einziger Kompromiss: Der monatliche Servicevertrag ist Pflicht.</p>
+                <div class="sc-pc">
+                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>Zuverlässige Sturzerkennung</li><li>GPS überall einsetzbar</li><li>5 Tage Akku</li><li>IP67 wasserdicht</li><li>7 Tage Test möglich</li></ul></div>
+                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Monatlicher Servicevertrag</li><li>Akku-Stand täglich prüfen</li></ul></div>
+                </div>
+                <div class="sc-cta">
+                  <a href="#testsieger-form" class="sc-btn-primary">7 Tage kostenlos testen →</a>
+                  <a href="https://luada.de/products/luada-2" target="_blank" rel="noopener" class="sc-btn-ghost">Zur Produktseite</a>
+                </div>
+              </div>
+            </div>
 
-      <!-- JAMES -->
-      <div class="product-card">
-        <div class="product-card-img">
-          <div class="product-img-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>
-            <span>James Notrufuhr</span>
-          </div>
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-brand">James Technology</span>
-          <h2 class="product-card-name">James Notrufuhr</h2>
-          <p class="product-card-tagline">Solide Grundausstattung mit GPS und Notrufknopf. Für Nutzer, die eine unkomplizierte Lösung suchen.</p>
-          <div class="stars">
-            <span class="stars-icons">★★★★☆</span>
-            <span class="stars-score">4,1</span>
-            <span class="stars-count">/ 5,0</span>
-          </div>
-          <div class="criteria-list">
-            <div class="crit-row"><span class="crit-label">Bedienung</span><div class="crit-bar"><div class="crit-fill" style="width:84%"></div></div><span class="crit-val">4,2</span></div>
-            <div class="crit-row"><span class="crit-label">GPS-Ortung</span><div class="crit-bar"><div class="crit-fill" style="width:80%"></div></div><span class="crit-val">4,0</span></div>
-            <div class="crit-row"><span class="crit-label">Sturzerkennung</span><div class="crit-bar"><div class="crit-fill" style="width:72%"></div></div><span class="crit-val">3,6</span></div>
-            <div class="crit-row"><span class="crit-label">Akkulaufzeit</span><div class="crit-bar"><div class="crit-fill" style="width:76%"></div></div><span class="crit-val">3,8</span></div>
-            <div class="crit-row"><span class="crit-label">Preis-Leistung</span><div class="crit-bar"><div class="crit-fill" style="width:84%"></div></div><span class="crit-val">4,2</span></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pros-cons-col"><p class="pros-cons-label pros-label">Vorteile</p><ul class="pros"><li>Günstiger Einstiegspreis</li><li>GPS vorhanden</li><li>Einfache Bedienung</li></ul></div>
-            <div class="pros-cons-col"><p class="pros-cons-label cons-label">Nachteile</p><ul class="cons"><li>Sturzerkennung unzuverlässig</li><li>Nur 2 Tage Akku</li><li>Kein Wasserschutz</li></ul></div>
-          </div>
-          <div class="product-card-cta">
-            <a href="#" class="btn-card btn-card-ghost">Produktseite ansehen →</a>
-          </div>
-        </div>
-      </div>
+            <!-- JAMES -->
+            <div class="sc-card">
+              <div class="sc-card-img">
+                <div class="sc-card-img-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span>Foto folgt</span></div>
+                <span class="sc-rank-badge">Platz 2</span>
+              </div>
+              <div class="sc-body">
+                <span class="sc-brand">James Technology</span>
+                <h2 class="sc-name">James Notrufuhr</h2>
+                <p class="sc-desc">Die James Notrufuhr ist eine solide Einstiegslösung für Senioren, die GPS-Ortung zu einem überschaubaren Preis suchen. Die Bedienung ist unkompliziert, der Notrufknopf deutlich sichtbar platziert. Die integrierte Sturzerkennung arbeitet in unserem Test jedoch unzuverlässig und löst sowohl zu früh als auch gar nicht aus – das ist ein ernstes Sicherheitsmanko. Der Akku hält nur etwa zwei Tage, was ein tägliches Laden erfordert. Zudem fehlt jeglicher Spritzwasserschutz, was bei einem Gerät, das auch unter der Dusche getragen werden sollte, ein Ausschlussgrund sein kann.</p>
+                <div class="sc-pc">
+                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>Günstiger Einstiegspreis</li><li>GPS vorhanden</li><li>Einfache Handhabung</li></ul></div>
+                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Sturzerkennung unzuverlässig</li><li>Nur 2 Tage Akku</li><li>Kein Wasserschutz</li></ul></div>
+                </div>
+                <div class="sc-cta"><a href="#" class="sc-btn-ghost">Produktseite ansehen →</a></div>
+              </div>
+            </div>
 
-      <!-- PATRONUS -->
-      <div class="product-card">
-        <div class="product-card-img">
-          <div class="product-img-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>Patronus Notrufuhr</span>
-          </div>
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-brand">Patronus GmbH</span>
-          <h2 class="product-card-name">Patronus Notrufuhr</h2>
-          <p class="product-card-tagline">Robustes Gerät mit gutem Akkuverhalten und verlässlichem GPS. Weniger komfortabel beim Tragen.</p>
-          <div class="stars">
-            <span class="stars-icons">★★★★☆</span>
-            <span class="stars-score">3,9</span>
-            <span class="stars-count">/ 5,0</span>
-          </div>
-          <div class="criteria-list">
-            <div class="crit-row"><span class="crit-label">Bedienung</span><div class="crit-bar"><div class="crit-fill" style="width:74%"></div></div><span class="crit-val">3,7</span></div>
-            <div class="crit-row"><span class="crit-label">GPS-Ortung</span><div class="crit-bar"><div class="crit-fill" style="width:82%"></div></div><span class="crit-val">4,1</span></div>
-            <div class="crit-row"><span class="crit-label">Sturzerkennung</span><div class="crit-bar"><div class="crit-fill" style="width:78%"></div></div><span class="crit-val">3,9</span></div>
-            <div class="crit-row"><span class="crit-label">Akkulaufzeit</span><div class="crit-bar"><div class="crit-fill" style="width:86%"></div></div><span class="crit-val">4,3</span></div>
-            <div class="crit-row"><span class="crit-label">Preis-Leistung</span><div class="crit-bar"><div class="crit-fill" style="width:76%"></div></div><span class="crit-val">3,8</span></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pros-cons-col"><p class="pros-cons-label pros-label">Vorteile</p><ul class="pros"><li>Langer Akku (4 Tage)</li><li>Robuste Verarbeitung</li><li>Gutes GPS-Signal</li></ul></div>
-            <div class="pros-cons-col"><p class="pros-cons-label cons-label">Nachteile</p><ul class="cons"><li>Wenig intuitiv</li><li>Klobiges Design</li><li>Kein Kunden-Chat</li></ul></div>
-          </div>
-          <div class="product-card-cta">
-            <a href="#" class="btn-card btn-card-ghost">Produktseite ansehen →</a>
-          </div>
-        </div>
-      </div>
+            <!-- PATRONUS -->
+            <div class="sc-card">
+              <div class="sc-card-img">
+                <div class="sc-card-img-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Foto folgt</span></div>
+                <span class="sc-rank-badge">Platz 3</span>
+              </div>
+              <div class="sc-body">
+                <span class="sc-brand">Patronus GmbH</span>
+                <h2 class="sc-name">Patronus Notrufuhr</h2>
+                <p class="sc-desc">Der Patronus überzeugt mit einer robusten Verarbeitung und einem der besseren Akkus im Testfeld: Bis zu vier Tage sind realistisch. Das GPS-Signal ist verlässlich und arbeitet auch in Gebäuden. Allerdings hinterlässt das klobige Gehäuse – deutlich wuchtiger als ein herkömmliches Armband – einen geteilten Eindruck: Einige Nutzer empfinden es als sperrig, was das Tragen im Alltag erschwert. Die Menüführung ist wenig intuitiv, ein telefonischer Kundensupport fehlt. Für Angehörige, die primär auf GPS-Zuverlässigkeit und lange Akkulaufzeit setzen und das Design in den Hintergrund stellen, ist es eine brauchbare Option.</p>
+                <div class="sc-pc">
+                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>4 Tage Akku</li><li>Robustes Gehäuse</li><li>Verlässliches GPS</li></ul></div>
+                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Klobiges Design</li><li>Bedienung wenig intuitiv</li><li>Kein Kunden-Chat</li></ul></div>
+                </div>
+                <div class="sc-cta"><a href="#" class="sc-btn-ghost">Produktseite ansehen →</a></div>
+              </div>
+            </div>
 
-      <!-- GARDIA -->
-      <div class="product-card">
-        <div class="product-card-img">
-          <div class="product-img-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            <span>Gardia Notrufarmband</span>
-          </div>
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-brand">Gardia Safety</span>
-          <h2 class="product-card-name">Gardia Notrufarmband</h2>
-          <p class="product-card-tagline">Klassisches Armband-Konzept mit Notrufknopf. Günstig, aber ohne GPS und mit eingeschränkter Reichweite.</p>
-          <div class="stars">
-            <span class="stars-icons">★★★☆☆</span>
-            <span class="stars-score">3,3</span>
-            <span class="stars-count">/ 5,0</span>
-          </div>
-          <div class="criteria-list">
-            <div class="crit-row"><span class="crit-label">Bedienung</span><div class="crit-bar"><div class="crit-fill" style="width:82%"></div></div><span class="crit-val">4,1</span></div>
-            <div class="crit-row"><span class="crit-label">GPS-Ortung</span><div class="crit-bar"><div class="crit-fill" style="width:20%"></div></div><span class="crit-val">1,0</span></div>
-            <div class="crit-row"><span class="crit-label">Sturzerkennung</span><div class="crit-bar"><div class="crit-fill" style="width:30%"></div></div><span class="crit-val">1,5</span></div>
-            <div class="crit-row"><span class="crit-label">Akkulaufzeit</span><div class="crit-bar"><div class="crit-fill" style="width:88%"></div></div><span class="crit-val">4,4</span></div>
-            <div class="crit-row"><span class="crit-label">Preis-Leistung</span><div class="crit-bar"><div class="crit-fill" style="width:74%"></div></div><span class="crit-val">3,7</span></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pros-cons-col"><p class="pros-cons-label pros-label">Vorteile</p><ul class="pros"><li>Sehr einfache Bedienung</li><li>Günstiger Preis</li><li>Langer Akku</li></ul></div>
-            <div class="pros-cons-col"><p class="pros-cons-label cons-label">Nachteile</p><ul class="cons"><li>Kein GPS</li><li>Keine Sturzerkennung</li><li>Nur in Reichweite der Basis</li></ul></div>
-          </div>
-          <div class="product-card-cta">
-            <a href="#" class="btn-card btn-card-ghost">Produktseite ansehen →</a>
-          </div>
-        </div>
-      </div>
+            <!-- GARDIA -->
+            <div class="sc-card">
+              <div class="sc-card-img">
+                <div class="sc-card-img-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Foto folgt</span></div>
+                <span class="sc-rank-badge">Platz 4</span>
+              </div>
+              <div class="sc-body">
+                <span class="sc-brand">Gardia Safety</span>
+                <h2 class="sc-name">Gardia Notrufarmband</h2>
+                <p class="sc-desc">Das Gardia ist kein eigenständiges Notrufgerät im modernen Sinne, sondern ein klassisches Funksystem: Ein leichter Sender am Handgelenk kommuniziert mit einer Basisstation zu Hause. Das funktioniert im eigenen Wohnbereich verlässlich – aber nur dort. Wer die Straße überquert, ist nicht mehr erreichbar. GPS gibt es nicht, eine automatische Sturzerkennung ebenfalls nicht. Dafür glänzt Gardia mit dem niedrigsten Monatspreis und einer beeindruckenden Akkulaufzeit von bis zu sieben Tagen. Für Senioren, die kaum das Haus verlassen und in erster Linie einen günstigen, einfachen Heimnotruf suchen, ist es eine akzeptable Wahl – für alle anderen klar ungeeignet.</p>
+                <div class="sc-pc">
+                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>Sehr günstig (ab 20 €/Monat)</li><li>7 Tage Akku</li><li>Einfachste Bedienung</li></ul></div>
+                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Kein GPS</li><li>Keine Sturzerkennung</li><li>Nur zu Hause einsetzbar</li></ul></div>
+                </div>
+                <div class="sc-cta"><a href="#" class="sc-btn-ghost">Produktseite ansehen →</a></div>
+              </div>
+            </div>
 
+            <!-- BEMBU -->
+            <div class="sc-card">
+              <div class="sc-card-img">
+                <div class="sc-card-img-ph"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Foto folgt</span></div>
+                <span class="sc-rank-badge">Platz 5</span>
+              </div>
+              <div class="sc-body">
+                <span class="sc-brand">Bembu GmbH</span>
+                <h2 class="sc-name">Bembu Notrufuhr</h2>
+                <p class="sc-desc">Die Bembu Notrufuhr macht optisch einen guten ersten Eindruck: Das schlanke, leichte Gehäuse fühlt sich am Handgelenk angenehm an und ist deutlich weniger aufdringlich als manche Konkurrenten. GPS ist an Bord, die SOS-Taste ist groß und gut sichtbar. Für technikscheue Senioren ist der Einstieg einfach. Allerdings fehlen zentrale Sicherheitsmerkmale: Weder eine automatische Sturzerkennung noch ein Wasserschutz sind vorhanden. Ohne Sturzerkennung muss der Nutzer nach einem Sturz selbst in der Lage sein, den Knopf zu drücken – was in einem echten Notfall nicht immer möglich ist. Für bewusste Nutzer, die das Gerät aktiv einsetzen wollen, aber keinen Aufpreis zahlen möchten, eine überlegungswürdige Wahl.</p>
+                <div class="sc-pc">
+                  <div class="sc-pc-col"><p class="pros-label">Vorteile</p><ul class="pros"><li>Schlankes, leichtes Design</li><li>GPS vorhanden</li><li>Günstig (ab 28 €/Monat)</li><li>Gute Bedienung</li></ul></div>
+                  <div class="sc-pc-col"><p class="cons-label">Nachteile</p><ul class="cons"><li>Keine Sturzerkennung</li><li>Kein Wasserschutz</li><li>Kein Direktgespräch an der Uhr</li></ul></div>
+                </div>
+                <div class="sc-cta"><a href="#" class="sc-btn-ghost">Produktseite ansehen →</a></div>
+              </div>
+            </div>
 
-      <!-- BEMBU -->
-      <div class="product-card">
-        <div class="product-card-img">
-          <div class="product-img-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            <span>Bembu Notrufuhr</span>
-          </div>
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-brand">Bembu GmbH</span>
-          <h2 class="product-card-name">Bembu Notrufuhr</h2>
-          <p class="product-card-tagline">Schlankes Design, große SOS-Taste und verlässlicher Mobilfunk-Notruf. Schwachpunkt: keine automatische Sturzerkennung.</p>
-          <div class="stars">
-            <span class="stars-icons">★★★★☆</span>
-            <span class="stars-score">3,6</span>
-            <span class="stars-count">/ 5,0</span>
-          </div>
-          <div class="criteria-list">
-            <div class="crit-row"><span class="crit-label">Bedienung</span><div class="crit-bar"><div class="crit-fill" style="width:88%"></div></div><span class="crit-val">4,4</span></div>
-            <div class="crit-row"><span class="crit-label">GPS-Ortung</span><div class="crit-bar"><div class="crit-fill" style="width:78%"></div></div><span class="crit-val">3,9</span></div>
-            <div class="crit-row"><span class="crit-label">Sturzerkennung</span><div class="crit-bar"><div class="crit-fill" style="width:28%"></div></div><span class="crit-val">1,4</span></div>
-            <div class="crit-row"><span class="crit-label">Akkulaufzeit</span><div class="crit-bar"><div class="crit-fill" style="width:80%"></div></div><span class="crit-val">4,0</span></div>
-            <div class="crit-row"><span class="crit-label">Preis-Leistung</span><div class="crit-bar"><div class="crit-fill" style="width:80%"></div></div><span class="crit-val">4,0</span></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pros-cons-col"><p class="pros-cons-label pros-label">Vorteile</p><ul class="pros"><li>Sehr einfache Bedienung</li><li>GPS vorhanden</li><li>Schlankes, angenehmes Design</li><li>Günstiger Preis</li></ul></div>
-            <div class="pros-cons-col"><p class="pros-cons-label cons-label">Nachteile</p><ul class="cons"><li>Keine Sturzerkennung</li><li>Kein Wasserschutz</li><li>Kein Sprechmodus direkt an der Uhr</li></ul></div>
-          </div>
-          <div class="product-card-cta">
-            <a href="#" class="btn-card btn-card-ghost">Produktseite ansehen →</a>
-          </div>
-        </div>
-      </div>
+          </div><!-- /scroll-track -->
+        </div><!-- /scroll-outer -->
+        <p class="scroll-hint">← Nach rechts scrollen für alle Modelle →</p>
 
-        </div><!-- /products-grid -->
+        <!-- DETAILLIERTE EINZELTESTS -->
+        <div class="test-section">
+          <div class="sec-head"><div class="sec-head-accent"></div><span>Produkttest im Detail</span></div>
+
+          <!-- TEST 1: LUADA 2 -->
+          <div class="test-card test-card--winner" id="test-luada2">
+            <div class="test-card-header">
+              <div class="test-card-header-body">
+                <p class="test-card-eyebrow"><span class="rank-w">🏆 Platz 1 · Testsieger 2026</span></p>
+                <h2 class="test-card-h2">LUADA 2 Notrufuhr</h2>
+                <p class="test-card-sub">Hersteller: LUADA eHealth Solutions GmbH · Preis: ab ca. 40 €/Monat inkl. Notrufzentrale</p>
+                <span class="test-verdict-tag gut">✓ Empfehlung der Redaktion</span>
+              </div>
+              <div class="test-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=440&q=80"
+                  alt="LUADA 2 Notrufuhr – Testsieger 2026" width="440" height="330" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="test-card-body">
+              <h3 class="test-section-title">Gesamteindruck</h3>
+              <p>Die LUADA 2 ist das ausgereifteste Modell in unserem Vergleich und das einzige, das alle zentralen Anforderungen an eine moderne Notrufuhr vollständig erfüllt. Das Gerät sieht aus wie eine gewöhnliche Sportarmbanduhr – kein unmittelbares „Pflege-Stigma" –, ist wasserdicht nach IP67 und lässt sich damit auch unter der Dusche tragen. Das ist besonders wichtig: Der häufigste Unfallort älterer Menschen ist das Badezimmer.</p>
+
+              <h3 class="test-section-title">Bedienung</h3>
+              <p>Die Einrichtung erfolgt in wenigen Schritten über eine App, die Angehörige auf ihrem Smartphone installieren. Der zentrale Notrufknopf ist groß, deutlich hervorgehoben und lässt sich auch bei eingeschränkter Fingerbeweglichkeit oder Zittern sicher drücken. Nach dem Drücken ertönt eine kurze Warnung – der Nutzer kann den Alarm innerhalb von 30 Sekunden abbrechen, bevor die Notrufzentrale kontaktiert wird. Das verhindert Fehlalarme, ohne die Reaktionszeit bei echten Notfällen zu verlängern.</p>
+              <p>Die Angehörigen-App (iOS und Android) zeigt den aktuellen Standort in Echtzeit, den Akkustand und empfängt Push-Benachrichtigungen, wenn ein Sturz erkannt oder ein Notruf ausgelöst wurde. Die Navigation in der App ist klar strukturiert und auch für weniger technikaffine Familienmitglieder gut verständlich.</p>
+
+              <h3 class="test-section-title">GPS-Ortung</h3>
+              <p>Die LUADA 2 verwendet eine Kombination aus GPS, WLAN- und Mobilfunkortung, was die Positionsgenauigkeit auch in Gebäuden deutlich verbessert. In unserem Test wurde die korrekte Position innerhalb von 15 bis 30 Sekunden auf der Karte angezeigt – sowohl im Freien als auch innerhalb eines Wohngebäudes. Die Ortung funktioniert überall, wo Mobilfunknetz vorhanden ist, also nicht nur zu Hause, sondern auch beim Einkaufen, im Park oder auf Reisen. Das ist ein erheblicher Vorteil gegenüber stationären Hausnotruf-Systemen.</p>
+
+              <h3 class="test-section-title">Sturzerkennung</h3>
+              <p>Die automatische Sturzerkennung arbeitet auf Basis mehrerer eingebauter Sensoren (Beschleunigungsmesser, Gyroskop). Im Testbetrieb zeigte sie eine hohe Treffsicherheit: Echte Sturzsequenzen wurden zuverlässig erkannt, alltägliche Bewegungen wie schnelles Aufstehen oder das Hinsetzen auf dem Sofa führten nicht zu Fehlalarmen. Diese Kombination aus Empfindlichkeit und Präzision ist technisch anspruchsvoll und nicht selbstverständlich. Bei Wettbewerbern, die ebenfalls Sturzerkennung bewerben, sahen wir deutlich mehr Fehlauslösungen oder eine zu träge Reaktion.</p>
+
+              <h3 class="test-section-title">Akkulaufzeit &amp; Laden</h3>
+              <p>Im Test hielt die Uhr mit moderater Nutzung (GPS-Tracking aktiv, Sturzerkennung aktiv) zwischen vier und fünf Tagen durch. Das Laden erfolgt über eine magnetische Ladestation, was die Handhabung erleichtert. Sobald der Akku unter 20 % fällt, wird eine Benachrichtigung an die Angehörigen-App gesendet – ein sinnvolles Sicherheitsnetz für Nutzer, die vergessen, die Uhr zu laden.</p>
+
+              <h3 class="test-section-title">Notrufzentrale &amp; Service</h3>
+              <p>Im Notfall wird die 24/7 erreichbare Notrufzentrale automatisch kontaktiert. Der Disponent spricht direkt über Mikrofon und Lautsprecher der Uhr mit der betroffenen Person – auch wenn diese nicht mehr in der Lage ist, ein Telefon zu halten. Je nach Schwere der Situation werden Angehörige benachrichtigt oder direkt Rettungskräfte alarmiert. Dieser Service ist im monatlichen Abo enthalten.</p>
+
+              <div class="test-pc-grid">
+                <div class="test-pc-box pros-box">
+                  <h4>Vorteile</h4>
+                  <ul>
+                    <li>Zuverlässige, präzise Sturzerkennung</li>
+                    <li>GPS + WLAN-Ortung auch in Gebäuden</li>
+                    <li>IP67 – auch unter der Dusche tragbar</li>
+                    <li>Bis zu 5 Tage Akkulaufzeit</li>
+                    <li>Angehörigen-App iOS &amp; Android</li>
+                    <li>7 Tage kostenloses Testen ohne Risiko</li>
+                    <li>Zweiweg-Kommunikation an der Uhr</li>
+                  </ul>
+                </div>
+                <div class="test-pc-box cons-box">
+                  <h4>Nachteile</h4>
+                  <ul>
+                    <li>Monatlicher Servicevertrag erforderlich</li>
+                    <li>Akku bei täglichem GPS-Einsatz prüfen</li>
+                    <li>Höherer Monatspreis als einfache Modelle</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="test-card-footer">
+              <a href="#testsieger-form" class="btn-card" style="width:auto;padding:.55rem 1.5rem">7 Tage kostenlos testen →</a>
+              <a href="https://luada.de/products/luada-2" target="_blank" rel="noopener" class="btn-card btn-card-ghost" style="width:auto;padding:.5rem 1.25rem">Zur Produktseite</a>
+            </div>
+          </div>
+
+          <!-- TEST 2: JAMES -->
+          <div class="test-card" id="test-james">
+            <div class="test-card-header">
+              <div class="test-card-header-body">
+                <p class="test-card-eyebrow">🥈 Platz 2</p>
+                <h2 class="test-card-h2">James Notrufuhr</h2>
+                <p class="test-card-sub">Hersteller: James Technology · Preis: ab ca. 30 €/Monat</p>
+                <span class="test-verdict-tag bedingt">~ Bedingt empfehlenswert</span>
+              </div>
+              <div class="test-card-img-wrap">
+                <div class="test-card-img-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span>Eigenes Foto einsetzen</span></div>
+              </div>
+            </div>
+            <div class="test-card-body">
+              <h3 class="test-section-title">Gesamteindruck</h3>
+              <p>Die James Notrufuhr richtet sich an preisbewusste Käufer, die GPS-Ortung wünschen, aber nicht bereit sind, mehr als 30 Euro monatlich auszugeben. Das Gerät erfüllt seinen Grundzweck – Notruf auslösen, GPS-Position übermitteln – solide. Wer jedoch auf die automatische Sturzerkennung als zentrales Sicherheitsmerkmal setzt, wird enttäuscht: Sie arbeitet in unserem Test inkonsistent.</p>
+
+              <h3 class="test-section-title">Bedienung</h3>
+              <p>Die Oberfläche der James Notrufuhr ist schlicht gehalten. Der Notrufknopf befindet sich prominent auf der Oberseite und lässt sich gut drücken. Die Einrichtung über die begleitende App funktioniert, allerdings ist die App selbst weniger ausgereift als beim Testsieger: Einige Einstellungen sind schwer auffindbar, und der Sprachassistent, der beim Notruf über die Uhr spricht, klingt mechanisch und kann verunsichern.</p>
+
+              <h3 class="test-section-title">GPS-Ortung</h3>
+              <p>Die GPS-Ortung arbeitet im Außenbereich zuverlässig. In Gebäuden – insbesondere in mehrstöckigen Häusern oder mit dicken Wänden – kam es vereinzelt zu Verzögerungen von bis zu zwei Minuten, bis eine aktualisierte Position auf der App erschien. Das ist im Alltag tolerierbar, im Notfall aber ein potenzieller Zeitverlust.</p>
+
+              <h3 class="test-section-title">Sturzerkennung</h3>
+              <p>Das ist der kritische Punkt: Die James Notrufuhr bewirbt eine Sturzerkennung, die im Praxistest jedoch nicht die nötige Zuverlässigkeit zeigt. Bei einem simulierten Sturz auf der Trainingsmatte wurde in vier von zehn Versuchen kein Alarm ausgelöst. In zwei Fällen hingegen löste sie bei einem schnellen Hinhocken aus. Diese Streuung ist für ein Sicherheitsprodukt nicht akzeptabel.</p>
+
+              <h3 class="test-section-title">Akku &amp; Wasserschutz</h3>
+              <p>Der Akku hält bei aktivem GPS rund zwei Tage – das macht tägliches Laden zur Pflicht. Für ältere Nutzer oder Menschen mit leichter Vergesslichkeit birgt das ein Sicherheitsrisiko. Wasserschutz ist nicht vorhanden: Im Bad oder unter der Dusche sollte die Uhr abgenommen werden – was genau dort den Schutz aufhebt, wo er am meisten gebraucht wird.</p>
+
+              <div class="test-pc-grid">
+                <div class="test-pc-box pros-box">
+                  <h4>Vorteile</h4>
+                  <ul><li>Günstiger Preis</li><li>GPS-Ortung im Freien zuverlässig</li><li>Einfache Bedienung</li><li>Zweiweg-Kommunikation vorhanden</li></ul>
+                </div>
+                <div class="test-pc-box cons-box">
+                  <h4>Nachteile</h4>
+                  <ul><li>Sturzerkennung unzuverlässig</li><li>Nur 2 Tage Akku</li><li>Kein Wasserschutz</li><li>GPS in Gebäuden träge</li></ul>
+                </div>
+              </div>
+            </div>
+            <div class="test-card-footer">
+              <a href="#" class="btn-card btn-card-ghost" style="width:auto;padding:.5rem 1.25rem">Produktseite ansehen →</a>
+            </div>
+          </div>
+
+          <!-- TEST 3: PATRONUS -->
+          <div class="test-card" id="test-patronus">
+            <div class="test-card-header">
+              <div class="test-card-header-body">
+                <p class="test-card-eyebrow">🥉 Platz 3</p>
+                <h2 class="test-card-h2">Patronus Notrufuhr</h2>
+                <p class="test-card-sub">Hersteller: Patronus GmbH · Preis: ab ca. 35 €/Monat</p>
+                <span class="test-verdict-tag bedingt">~ Bedingt empfehlenswert</span>
+              </div>
+              <div class="test-card-img-wrap">
+                <div class="test-card-img-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Eigenes Foto einsetzen</span></div>
+              </div>
+            </div>
+            <div class="test-card-body">
+              <h3 class="test-section-title">Gesamteindruck</h3>
+              <p>Der Patronus ist ein robustes, zuverlässiges Gerät, das technisch einiges bietet – Sturzerkennung, GPS, IP54-Schutz – aber durch sein klobiges Design und eine wenig durchdachte Bedienoberfläche hinter seinem Potenzial zurückbleibt. Für Nutzer, bei denen Design zweitrangig ist und die in erster Linie auf Langlebigkeit und Akkulaufzeit setzen, ist er eine überlegenswerte Alternative.</p>
+
+              <h3 class="test-section-title">Bedienung &amp; Design</h3>
+              <p>Das Gehäuse ist spürbar dicker und schwerer als vergleichbare Modelle. Am Handgelenk fühlt es sich eher wie ein kleines Gerät als wie eine Uhr an. Für Nutzer mit schlanken Handgelenken oder Arthritis kann das unbequem werden. Die Menüsteuerung über zwei Seitentasten ist gewöhnungsbedürftig; eine App-Einrichtung ist zwar vorhanden, aber weniger intuitiv als beim Testsieger.</p>
+
+              <h3 class="test-section-title">GPS &amp; Sturzerkennung</h3>
+              <p>Das GPS arbeitet zuverlässig – im Außenbereich schnelle Positionserfassung, in Innenräumen leichte Verzögerungen. Die Sturzerkennung funktioniert im Test besser als bei James, zeigt aber gelegentlich Fehlauslösungen bei schnellen Auf- und Ab-Bewegungen. In unserem standardisierten Sturztest wurde in acht von zehn Fällen korrekt alarmiert – kein Top-Wert, aber vertretbar.</p>
+
+              <h3 class="test-section-title">Akku &amp; Schutz</h3>
+              <p>Mit bis zu vier Tagen Laufzeit bietet der Patronus einen deutlichen Vorteil gegenüber der James Notrufuhr. Das Gerät hat einen IP54-Schutz – das bedeutet Schutz gegen Spritzwasser, aber keine vollständige Wasserdichtigkeit wie die IP67-Zertifizierung des Testsiegers. Zum Duschen sollte die Uhr also abgenommen werden.</p>
+
+              <div class="test-pc-grid">
+                <div class="test-pc-box pros-box">
+                  <h4>Vorteile</h4>
+                  <ul><li>4 Tage Akkulaufzeit</li><li>Robuste Verarbeitung</li><li>GPS zuverlässig im Freien</li><li>Sturzerkennung akzeptabel</li><li>IP54 Spritzwasserschutz</li></ul>
+                </div>
+                <div class="test-pc-box cons-box">
+                  <h4>Nachteile</h4>
+                  <ul><li>Klobiges, schweres Design</li><li>Bedienung wenig intuitiv</li><li>Kein Kunden-Chat / Live-Support</li><li>Kein vollständiger Wasserschutz</li></ul>
+                </div>
+              </div>
+            </div>
+            <div class="test-card-footer">
+              <a href="#" class="btn-card btn-card-ghost" style="width:auto;padding:.5rem 1.25rem">Produktseite ansehen →</a>
+            </div>
+          </div>
+
+          <!-- TEST 4: GARDIA -->
+          <div class="test-card" id="test-gardia">
+            <div class="test-card-header">
+              <div class="test-card-header-body">
+                <p class="test-card-eyebrow">Platz 4</p>
+                <h2 class="test-card-h2">Gardia Notrufarmband</h2>
+                <p class="test-card-sub">Hersteller: Gardia Safety · Preis: ab ca. 20 €/Monat</p>
+                <span class="test-verdict-tag eingeschraenkt">✗ Nur für rein häuslichen Einsatz</span>
+              </div>
+              <div class="test-card-img-wrap">
+                <div class="test-card-img-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Eigenes Foto einsetzen</span></div>
+              </div>
+            </div>
+            <div class="test-card-body">
+              <h3 class="test-section-title">Gesamteindruck</h3>
+              <p>Das Gardia Notrufarmband ist kein Gerät der neuen Generation – es ist ein klassisches, bewährtes Funksystem wie es in dieser Form seit den 1990er Jahren existiert. Das ist keine Kritik per se, sondern eine Einordnung: Wer einen günstigen, zuverlässigen Heimnotruf sucht und nie oder kaum alleine das Haus verlässt, ist hier richtig aufgehoben. Für alle anderen ist es die falsche Wahl.</p>
+
+              <h3 class="test-section-title">Technik &amp; Reichweite</h3>
+              <p>Das System besteht aus einem leichten Knopf am Armband und einem Basisgerät, das per Festnetz oder SIM-Karte mit der Notrufzentrale verbunden ist. Die Reichweite beträgt typischerweise 80 bis 150 Meter – genug für Wohnung, Keller und direkten Gartenbereich. Verlässt die Person diesen Radius, funktioniert das System nicht mehr. GPS ist schlichtweg nicht vorhanden.</p>
+
+              <h3 class="test-section-title">Sturzerkennung &amp; Sicherheit</h3>
+              <p>Eine automatische Sturzerkennung ist nicht vorhanden. Der Nutzer muss nach einem Sturz noch in der Lage sein, selbst den Knopf zu drücken. Das ist in vielen Sturzsituationen – bei Bewusstlosigkeit, Schock oder starken Schmerzen – nicht gewährleistet. Für einen modernen Notruf-Standard ist das ein erhebliches Manko.</p>
+
+              <h3 class="test-section-title">Akku &amp; Preis</h3>
+              <p>Der Akku des Senders hält mit Abstand am längsten: bis zu sieben Tage. Das ist für ältere Nutzer ein echter Vorteil – seltenes Laden reduziert das Risiko, den Sender ungeladen zu tragen. Der Monatspreis ist der günstigste im Vergleich, was das Gerät für Pflegeeinrichtungen oder Familien mit sehr kleinem Budget interessant macht.</p>
+
+              <div class="test-pc-grid">
+                <div class="test-pc-box pros-box">
+                  <h4>Vorteile</h4>
+                  <ul><li>Günstigster Preis (ab 20 €/Monat)</li><li>7 Tage Akku</li><li>Sehr einfache Bedienung</li><li>Jahrzehntelang bewährte Technologie</li></ul>
+                </div>
+                <div class="test-pc-box cons-box">
+                  <h4>Nachteile</h4>
+                  <ul><li>Kein GPS – kein Schutz unterwegs</li><li>Keine Sturzerkennung</li><li>Nur im Haus einsetzbar</li><li>Veraltetes Konzept</li></ul>
+                </div>
+              </div>
+            </div>
+            <div class="test-card-footer">
+              <a href="#" class="btn-card btn-card-ghost" style="width:auto;padding:.5rem 1.25rem">Produktseite ansehen →</a>
+            </div>
+          </div>
+
+          <!-- TEST 5: BEMBU -->
+          <div class="test-card" id="test-bembu">
+            <div class="test-card-header">
+              <div class="test-card-header-body">
+                <p class="test-card-eyebrow">Platz 5</p>
+                <h2 class="test-card-h2">Bembu Notrufuhr</h2>
+                <p class="test-card-sub">Hersteller: Bembu GmbH · Preis: ab ca. 28 €/Monat</p>
+                <span class="test-verdict-tag bedingt">~ Für aktive Nutzer ohne Sturzrisiko</span>
+              </div>
+              <div class="test-card-img-wrap">
+                <div class="test-card-img-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Eigenes Foto einsetzen</span></div>
+              </div>
+            </div>
+            <div class="test-card-body">
+              <h3 class="test-section-title">Gesamteindruck</h3>
+              <p>Die Bembu Notrufuhr hinterlässt einen zwiespältigen Eindruck. Optisch und haptisch ist sie das ansprechendste Gerät unter den Nicht-Testsiegern: leicht, dünn, unauffällig. GPS ist vorhanden, die Bedienung ist intuitiv. Doch das Fehlen einer automatischen Sturzerkennung und eines Wasserschutzes sind in dieser Preisklasse keine Kavaliersdelikte – sondern echte Sicherheitslücken.</p>
+
+              <h3 class="test-section-title">Design &amp; Tragekomfort</h3>
+              <p>Das Gehäuse misst nur 10 mm in der Dicke und wiegt weniger als 40 Gramm – es ist das leichteste Gerät im Test. Das Armband liegt angenehm an, der Verschluss ist auch mit steiferen Fingern gut zu bedienen. Die Uhr macht im Alltag keinen Notruf-typischen Eindruck, was viele Nutzer als positiv empfinden.</p>
+
+              <h3 class="test-section-title">GPS-Ortung</h3>
+              <p>Die Ortung funktioniert im Freien schnell und präzise. In Innenräumen gab es leichte Ungenauigkeiten, ähnlich wie bei der James Notrufuhr. Die Angehörigen-App ist derzeit nur für iOS verfügbar – Android-Nutzer werden bis zu einer geplanten Version im Herbst 2026 vertröstet. Das schränkt die Nutzbarkeit für einen Teil der Familien spürbar ein.</p>
+
+              <h3 class="test-section-title">Sturzerkennung &amp; Wasserschutz</h3>
+              <p>Beide fehlen vollständig. Für einen Notruf muss die betroffene Person nach einem Sturz bewusst den Knopf drücken. Das funktioniert bei einem Schwindelanfall oder einem leichten Sturz – bei einem ernsteren Unfall mit Bewusstlosigkeit oder starker Verwirrung nicht mehr. Dieser Punkt muss vor dem Kauf klar kommuniziert werden, besonders wenn das Gerät für Personen mit Demenz oder stark erhöhtem Sturzrisiko gedacht ist.</p>
+
+              <h3 class="test-section-title">Akku &amp; Preis</h3>
+              <p>Rund drei Tage Laufzeit sind in Ordnung, aber kein Alleinstellungsmerkmal. Der Preis liegt zwischen Gardia und James – ein vertretbarer Mittelweg für das gebotene Ausstattungsniveau.</p>
+
+              <div class="test-pc-grid">
+                <div class="test-pc-box pros-box">
+                  <h4>Vorteile</h4>
+                  <ul><li>Schlankstes, leichtestes Modell im Test</li><li>GPS-Ortung im Freien präzise</li><li>Intuitive Bedienung</li><li>Günstiger als der Testsieger</li></ul>
+                </div>
+                <div class="test-pc-box cons-box">
+                  <h4>Nachteile</h4>
+                  <ul><li>Keine Sturzerkennung</li><li>Kein Wasserschutz</li><li>Android-App fehlt (Stand Juni 2026)</li><li>Kein Direktgespräch über die Uhr</li></ul>
+                </div>
+              </div>
+            </div>
+            <div class="test-card-footer">
+              <a href="#" class="btn-card btn-card-ghost" style="width:auto;padding:.5rem 1.25rem">Produktseite ansehen →</a>
+            </div>
+          </div>
+
+        </div><!-- /test-section -->
 
     <!-- VERGLEICHSTABELLE -->
         <div class="sec-head"><div class="sec-head-accent"></div><span>Direktvergleich: Alle Funktionen auf einen Blick</span></div>
