@@ -89,8 +89,8 @@
       background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
       color:#fff;padding:3rem 0 2.5rem;
     }
-    .hero-lp .wrap{display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:center}
-    @media(max-width:900px){.hero-lp .wrap{grid-template-columns:1fr}}
+    .hero-lp .wrap{max-width:820px}
+    .hero-lp h1{max-width:none}
     .hero-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fde68a;margin-bottom:.6rem}
     .hero-lp h1{font-family:var(--serif);font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:700;line-height:1.15;margin-bottom:.85rem}
     .hero-lp p{font-size:.95rem;opacity:.88;line-height:1.7;max-width:560px}
@@ -327,12 +327,12 @@
     @media(max-width:768px){.sticky-cta{display:block}}
     .sticky-cta a{color:#fff}
     /* PAGE CONTENT GRID */
-    .page-content-grid{display:grid;grid-template-columns:1fr 300px;gap:2rem;align-items:start}
+    .page-content-grid{display:grid;grid-template-columns:1fr 300px;gap:2rem}
     @media(max-width:1100px){.page-content-grid{grid-template-columns:1fr}}
-    .winner-sidebar{display:block}
+    .winner-sidebar{display:block;align-self:start}
     @media(max-width:1100px){.winner-sidebar{display:none}}
     /* STICKY WINNER BOX */
-    .winner-sticky-box{position:sticky;top:52px;background:var(--surface);border:2px solid var(--crimson);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-lg)}
+    .winner-sticky-box{position:sticky;top:48px;background:var(--surface);border:2px solid var(--crimson);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-lg)}
     .wsb-img{aspect-ratio:16/9;background:#e2e8f0;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
     .wsb-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
     .winner-sticky-box:hover .wsb-img img{transform:scale(1.03)}
@@ -401,23 +401,6 @@
         <span class="hero-badge">📅 Aktualisiert: Juni 2026</span>
         <span class="hero-badge">🔍 5 Modelle getestet</span>
         <span class="hero-badge">✓ Redaktionell unabhängig</span>
-      </div>
-    </div>
-    <div class="winner-box">
-      <div class="winner-box-img">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=760&q=80"
-          alt="LUADA 2 Notrufuhr – Testsieger 2026"
-          width="760" height="428" loading="eager" decoding="async">
-        <span class="winner-box-img-badge">🏆 Testsieger 2026</span>
-      </div>
-      <div class="winner-box-body">
-        <p class="winner-box-label">Empfehlung der Redaktion</p>
-        <h2>LUADA 2 Notrufuhr</h2>
-        <p>Überzeugt mit automatischer Sturzerkennung, 24/7-GPS, langer Akkulaufzeit und einfachster Bedienung. Besonders für aktive Senioren empfohlen.</p>
-        <div style="display:flex;gap:.65rem;flex-wrap:wrap">
-          <a href="#testsieger-form" class="btn-primary">7 Tage kostenlos testen</a>
-          <a href="https://luada.de/products/luada-2" target="_blank" rel="noopener" class="btn-secondary">Produktseite ansehen</a>
-        </div>
       </div>
     </div>
   </div>
