@@ -1267,22 +1267,79 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
   });
 });
 
-// Lead form
-document.getElementById('lead-form-el').addEventListener('submit',function(e){
+// ── Helpers ──────────────────────────────────────────────────────────────────
+function getCookie(name) {
+  var m = document.cookie.match('(?:^|;)\\s*' + name + '=([^;]*)');
+  return m ? decodeURIComponent(m[1]) : '';
+}
+function getUtm(key) {
+  try { return new URLSearchParams(window.location.search).get(key) || ''; } catch(e){ return ''; }
+}
+function splitName(full) {
+  var parts = full.trim().split(/\s+/);
+  return { vorname: parts.slice(0,-1).join(' ') || parts[0] || '', nachname: parts.length > 1 ? parts[parts.length-1] : '' };
+}
+
+// ── Lead form ─────────────────────────────────────────────────────────────────
+document.getElementById('lead-form-el').addEventListener('submit', function(e) {
   e.preventDefault();
-  var name=document.getElementById('lf-name').value.trim();
-  var email=document.getElementById('lf-email').value.trim();
-  var consent=document.getElementById('lf-consent').checked;
-  if(!name||!email||!consent){
+
+  var fullName = document.getElementById('lf-name').value.trim();
+  var email    = document.getElementById('lf-email').value.trim();
+  var phone    = (document.getElementById('lf-phone').value || '').trim();
+  var consent  = document.getElementById('lf-consent').checked;
+  var btn      = document.getElementById('lead-submit');
+
+  if (!fullName || !email || !consent) {
     alert('Bitte füllen Sie alle Pflichtfelder aus und stimmen Sie den Datenschutzbedingungen zu.');
     return;
   }
-  var btn=document.getElementById('lead-submit');
-  btn.textContent='✓ Anfrage gesendet – wir melden uns bald!';
-  btn.style.background='#059669';
-  btn.disabled=true;
-  this.querySelector('input[type="text"]').value='';
-  this.querySelector('input[type="email"]').value='';
+
+  btn.textContent = 'Wird gesendet …';
+  btn.disabled = true;
+
+  var name = splitName(fullName);
+
+  var payload = {
+    source:        'senioren-gesundheit-aktuell-notrufuhr-vergleich',
+    lead_type:     '7-tage-testphase',
+    email:         email,
+    phone:         phone,
+    vorname:       name.vorname,
+    nachname:      name.nachname,
+    utm_source:    getUtm('utm_source'),
+    utm_medium:    getUtm('utm_medium'),
+    utm_campaign:  getUtm('utm_campaign'),
+    utm_content:   getUtm('utm_content'),
+    utm_term:      getUtm('utm_term'),
+    fbc:           getCookie('_fbc'),
+    fbp:           getCookie('_fbp'),
+    page_url:      window.location.href,
+    consent:       true
+  };
+
+  fetch('https://dokument.luada.de/api/leads', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify(payload)
+  })
+  .then(function(res) {
+    if (!res.ok) { throw new Error('HTTP ' + res.status); }
+    return res.json().catch(function(){ return {}; });
+  })
+  .then(function() {
+    btn.textContent = '✓ Anfrage gesendet – wir melden uns bald!';
+    btn.style.background = '#059669';
+    document.getElementById('lf-name').value  = '';
+    document.getElementById('lf-email').value = '';
+    if (document.getElementById('lf-phone')) document.getElementById('lf-phone').value = '';
+  })
+  .catch(function(err) {
+    console.error('Lead-Übertragung fehlgeschlagen:', err);
+    btn.textContent = 'Fehler – bitte erneut versuchen';
+    btn.style.background = '#dc2626';
+    btn.disabled = false;
+  });
 });
 </script>
 </body>
