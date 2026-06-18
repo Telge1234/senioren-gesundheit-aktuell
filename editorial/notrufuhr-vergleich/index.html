@@ -40,7 +40,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;font-size:16px}
@@ -54,7 +54,7 @@
       --gold:#b45309;--green:#065f46;--green-l:#d1fae5;
       --txt:#1c1c1e;--txt-2:#4b5563;--txt-3:#9ca3af;
       --border:#e5e7eb;--surface:#fff;--bg:#f5f4f0;--bg-warm:#fdf8f2;
-      --serif:'DM Serif Display',Georgia,serif;--r:8px;
+      --serif:'Syne',system-ui,sans-serif;--r:8px;
       --sh:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
       --sh-lg:0 8px 24px rgba(0,0,0,.13),0 2px 8px rgba(0,0,0,.06);
     }
@@ -64,7 +64,7 @@
     .site-logo{display:flex;align-items:center;gap:.65rem;line-height:1}
     .logo-svg{flex-shrink:0}
     .logo-text{display:flex;flex-direction:column;gap:.08rem}
-    .logo-name{font-family:var(--serif);font-size:clamp(.9rem,2vw,1.3rem);font-weight:700;color:#1e2d3d;letter-spacing:-.01em}
+    .logo-name{font-family:'Syne',system-ui,sans-serif;font-size:clamp(.9rem,2vw,1.2rem);font-weight:700;color:#1e2d3d;letter-spacing:-.02em}
     .logo-claim{font-size:.58rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--txt-2)}
     /* ---- NAV ---- */
     .nav-bar{background:#1e2d3d;position:sticky;top:0;z-index:200;box-shadow:0 1px 4px rgba(0,0,0,.18)}
@@ -86,16 +86,33 @@
     .breadcrumb a{color:var(--txt-3)}.breadcrumb a:hover{color:var(--crimson)}
     /* ---- HERO BANNER ---- */
     .hero-lp{
-      background:linear-gradient(160deg,#1e2d3d 0%,#2c3e52 60%,#3a4e62 100%);
-      color:#fff;padding:3rem 0 2.5rem;
+      background:linear-gradient(160deg,#1a2737 0%,#243447 65%,#2d4157 100%);
+      color:#fff;padding:2.75rem 0 2.5rem;
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .hero-lp .wrap{max-width:820px}
-    .hero-lp h1{max-width:none}
-    .hero-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fde68a;margin-bottom:.6rem}
-    .hero-lp h1{font-family:var(--serif);font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:700;line-height:1.15;margin-bottom:.85rem}
-    .hero-lp p{font-size:.95rem;opacity:.88;line-height:1.7;max-width:560px}
-    .hero-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
-    .hero-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.25em .85em;font-size:.75rem;font-weight:500;display:flex;align-items:center;gap:.3rem}
+    .hero-lp .wrap{max-width:1200px;display:grid;grid-template-columns:1fr 340px;gap:3rem;align-items:center}
+    @media(max-width:960px){.hero-lp .wrap{grid-template-columns:1fr}}
+    .hero-content{max-width:680px}
+    .hero-eyebrow{
+      font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+      color:rgba(255,255,255,.55);margin-bottom:.75rem;
+      display:flex;align-items:center;gap:.6rem;
+    }
+    .hero-eyebrow::before{content:'';display:block;width:20px;height:1px;background:rgba(255,255,255,.35);flex-shrink:0}
+    .hero-lp h1{
+      font-family:'Syne',system-ui,sans-serif;
+      font-size:clamp(1.8rem,3.2vw,2.75rem);
+      font-weight:800;line-height:1.1;
+      letter-spacing:-.03em;
+      margin-bottom:1rem;
+    }
+    .hero-lp p{font-size:.93rem;opacity:.78;line-height:1.75;max-width:540px}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.5rem}
+    .hero-badge{
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+      border-radius:3px;padding:.2em .7em;font-size:.72rem;font-weight:500;
+      color:rgba(255,255,255,.7);display:flex;align-items:center;gap:.3rem;
+    }
     /* Winner box */
     .winner-box{
       background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);
@@ -142,7 +159,7 @@
     .sec-head{display:flex;align-items:center;gap:.75rem;margin:2.5rem 0 1.5rem}
     .sec-head::after{content:'';flex:1;height:1px;background:var(--border)}
     .sec-head-accent{width:24px;height:4px;background:#c5a882;border-radius:2px;flex-shrink:0}
-    .sec-head span{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--txt);white-space:nowrap}
+    .sec-head span{font-family:'Syne',system-ui,sans-serif;font-size:1.2rem;font-weight:700;color:var(--txt);white-space:nowrap;letter-spacing:-.02em}
     /* ---- SCROLL CARDS (overview widget) ---- */
     .scroll-outer{overflow-x:auto;margin:0 -1.25rem;padding:.25rem 1.25rem 1rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#9ca3af #e5e7eb}
     .scroll-outer::-webkit-scrollbar{height:3px}
@@ -164,7 +181,7 @@
     .sc-rank-badge{position:absolute;top:.5rem;right:.5rem;background:#374151;color:#fff;font-size:.58rem;font-weight:700;padding:.15em .5em}
     .sc-body{padding:.85rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
     .sc-brand{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af}
-    .sc-name{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--txt);line-height:1.25}
+    .sc-name{font-family:'Syne',system-ui,sans-serif;font-size:.9rem;font-weight:700;color:var(--txt);line-height:1.25;letter-spacing:-.015em}
     .sc-card--winner .sc-name{color:var(--crimson)}
     .sc-verdict{font-size:.68rem;font-weight:600;padding:.15em .55em;border-radius:2px;display:inline-block;width:fit-content}
     .sc-verdict.gut{background:#dcfce7;color:#166534}
@@ -191,7 +208,7 @@
     .test-card-header-body{padding:1.5rem 1.75rem 1.25rem}
     .test-card-eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b7280;margin-bottom:.35rem}
     .test-card-eyebrow .rank-w{color:var(--crimson)}
-    .test-card-h2{font-family:var(--serif);font-size:1.45rem;font-weight:700;color:#111827;line-height:1.2;margin-bottom:.35rem}
+    .test-card-h2{font-family:'Syne',system-ui,sans-serif;font-size:1.4rem;font-weight:800;color:#111827;line-height:1.15;letter-spacing:-.025em;margin-bottom:.35rem}
     .test-card--winner .test-card-h2{color:var(--crimson)}
     .test-card-sub{font-size:.8rem;color:#6b7280;margin-bottom:.85rem}
     .test-verdict-tag{display:inline-flex;align-items:center;gap:.3rem;border:1px solid;border-radius:2px;padding:.2em .75em;font-size:.7rem;font-weight:700;letter-spacing:.03em}
@@ -436,7 +453,7 @@
     .wsb-badge-r{position:absolute;top:.6rem;left:.6rem;background:var(--crimson);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2em .65em;border-radius:3px}
     .wsb-body{padding:1.1rem}
     .wsb-label{font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson);margin-bottom:.3rem}
-    .wsb-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--txt);margin-bottom:.7rem;line-height:1.25}
+    .wsb-title{font-family:'Syne',system-ui,sans-serif;font-size:1.05rem;font-weight:700;color:var(--txt);margin-bottom:.7rem;line-height:1.25;letter-spacing:-.02em}
     .wsb-pluslist{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem;padding:0}
     .wsb-pluslist li{font-size:.79rem;color:var(--txt-2);display:flex;align-items:flex-start;gap:.4rem;line-height:1.4}
     .wsb-pluslist li::before{content:"✓";color:#059669;font-weight:700;flex-shrink:0;font-size:.84rem;margin-top:.05em}
@@ -487,16 +504,27 @@
 <!-- HERO -->
 <section class="hero-lp" aria-labelledby="page-title">
   <div class="wrap">
-    <div>
-      <p class="hero-eyebrow">Unabhängiger Test · Juni 2026</p>
-      <h1 id="page-title">Notrufuhr Vergleich 2026: 5 Modelle im unabhängigen Test</h1>
-      <p>Wir haben LUADA 2, James, Patronus, Gardia und Bembu unter die Lupe genommen – nach Bedienung, Ortung, Sturzerkennung, Akkulaufzeit und Alltagstauglichkeit. Damit Sie und Ihre Angehörigen die richtige Entscheidung treffen.</p>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Unabhängiger Produkttest &nbsp;·&nbsp; Juni 2026</p>
+      <h1 id="page-title">Notrufuhr Vergleich 2026: 5 Modelle im Test</h1>
+      <p>LUADA 2, James, Patronus, Gardia und Bembu – geprüft nach Bedienung, GPS-Ortung, Sturzerkennung, Akkulaufzeit und Preis-Leistung. Für Senioren und ihre Angehörigen.</p>
       <div class="hero-badges">
-        <span class="hero-badge">⏱ Lesezeit: 12 Min.</span>
-        <span class="hero-badge">📅 Aktualisiert: Juni 2026</span>
-        <span class="hero-badge">🔍 5 Modelle getestet</span>
-        <span class="hero-badge">✓ Redaktionell unabhängig</span>
+        <span class="hero-badge">12 Min. Lesezeit</span>
+        <span class="hero-badge">Juni 2026</span>
+        <span class="hero-badge">5 Modelle getestet</span>
+        <span class="hero-badge">Redaktionell unabhängig</span>
       </div>
+    </div>
+    <div class="hero-meta-col" style="display:flex;flex-direction:column;align-items:flex-start;gap:.85rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px">
+      <p style="font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">Testsieger 2026</p>
+      <p style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.2">LUADA 2 Notrufuhr</p>
+      <ul style="display:flex;flex-direction:column;gap:.35rem">
+        <li style="font-size:.78rem;color:rgba(255,255,255,.7);display:flex;gap:.4rem;align-items:flex-start"><span style="color:#7fc47f;font-weight:700;flex-shrink:0">✓</span>Sturzerkennung zuverlässig</li>
+        <li style="font-size:.78rem;color:rgba(255,255,255,.7);display:flex;gap:.4rem;align-items:flex-start"><span style="color:#7fc47f;font-weight:700;flex-shrink:0">✓</span>GPS – auch unterwegs</li>
+        <li style="font-size:.78rem;color:rgba(255,255,255,.7);display:flex;gap:.4rem;align-items:flex-start"><span style="color:#7fc47f;font-weight:700;flex-shrink:0">✓</span>IP67 wasserdicht · 5 Tage Akku</li>
+      </ul>
+      <a href="#testsieger-form" style="display:block;width:100%;background:var(--crimson);color:#fff;text-align:center;padding:.6rem .85rem;font-size:.82rem;font-weight:700;border-radius:3px;transition:background .15s">7 Tage kostenlos testen →</a>
+      <p style="font-size:.62rem;color:rgba(255,255,255,.35);text-align:center;width:100%">Kein Risiko · Kein Abo</p>
     </div>
   </div>
 </section>
