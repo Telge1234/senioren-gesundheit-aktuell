@@ -165,8 +165,10 @@
     .winner-header-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: #fff; }
     .winner-body { display: grid; grid-template-columns: 180px 1fr; gap: 0; }
     @media (max-width: 560px) { .winner-body { grid-template-columns: 1fr; } }
-    .winner-img { background: #f3f4f6; display: flex; align-items: center; justify-content: center; padding: 16px; border-right: 1px solid #fce8ea; }
+    .winner-img { background: #f3f4f6; display: flex; align-items: center; justify-content: center; padding: 16px; border-right: 1px solid #fce8ea; min-width: 0; }
     .winner-img img { width: 100%; max-width: 140px; height: 140px; object-fit: contain; }
+    .winner-body { min-width: 0; }
+    .winner-content { min-width: 0; }
     .winner-content { padding: 20px 22px; }
     .winner-score { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
     .score-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--red); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -181,6 +183,7 @@
     /* === VERGLEICHSTABELLE === */
     .comparison-table-wrap { overflow-x: auto; margin: 1.5rem 0 2rem; border: 1px solid var(--border); border-radius: var(--r); background: var(--surface); }
     .comparison-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+    .comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .comparison-table th { background: var(--navy); color: #fff; font-size: 0.8rem; font-weight: 600; padding: 12px 14px; text-align: left; white-space: nowrap; }
     .comparison-table th:first-child { width: 180px; }
     .comparison-table th.winner-col { background: var(--red); }
@@ -206,7 +209,7 @@
     .pr-place-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; color: #fff; font-family: var(--serif); font-weight: 700; }
     .pr-place-inner .pl-num { font-size: 1.1rem; line-height: 1; }
     .pr-place-inner .pl-text { font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.85; }
-    .pr-title-block { flex: 1; min-width: 160px; }
+    .pr-title-block { flex: 1; min-width: 0; }
     .pr-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 8px; border-radius: 3px; margin-bottom: 4px; }
     .pr-badge.testsieger { background: var(--red); color: #fff; }
     .pr-badge.preis-tipp { background: var(--green); color: #fff; }
@@ -302,27 +305,29 @@
        ========================================= */
 
     /* Basis: Überlauf global verhindern */
-    * { max-width: 100%; }
+    html { overflow-x: hidden; }
+    body { overflow-x: hidden; }
+    * { box-sizing: border-box; }
     img { max-width: 100%; height: auto; }
 
     @media (max-width: 900px) {
       /* Sidebar ausblenden → TOC nur Desktop */
       .page-grid { grid-template-columns: 1fr !important; }
       .sidebar { display: none !important; }
+      /* Verhindern dass Kindelemente Grid aufblähen */
+      main { min-width: 0; overflow-x: hidden; width: 100%; }
+      .wrap, .wrap-narrow { max-width: 100% !important; overflow-x: hidden; }
     }
 
     @media (max-width: 760px) {
-      /* Hero: 2-spaltig → 1-spaltig */
-      .article-hero section,
-      .article-hero > div > div[style*="grid-template-columns"] {
-        grid-template-columns: 1fr !important;
-      }
       /* Hero-Innenpadding */
-      .article-hero .wrap { padding: 0 16px !important; }
+      .article-hero .wrap { padding: 0 14px !important; }
 
       /* Produktkarten: 2-spaltig → 1-spaltig */
       .winner-body { grid-template-columns: 1fr !important; }
       .winner-img { border-right: none !important; border-bottom: 1px solid #fce8ea; }
+      .winner-header { flex-wrap: wrap !important; gap: 8px !important; }
+      .winner-header-title { font-size: 0.95rem !important; }
 
       .pr-body { grid-template-columns: 1fr !important; }
       .pr-img-col { border-right: none !important; border-bottom: 1px solid var(--border); }
@@ -331,21 +336,30 @@
       .pr-pros-cons { grid-template-columns: 1fr !important; }
 
       /* Score-Label kürzen */
-      .pr-score-label { width: 110px !important; font-size: 0.68rem !important; }
+      .pr-score-label { width: 100px !important; font-size: 0.68rem !important; }
 
-      /* Tabellen: horizontal scrollbar */
-      .comparison-table-wrap, .cost-table-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
-      .comparison-table, .cost-table { min-width: 560px !important; }
+      /* Tabellen: horizontal scrollbar – kein min-width mehr */
+      .comparison-table-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+      .comparison-table { min-width: 480px !important; font-size: 0.78rem !important; }
+      .comparison-table th, .comparison-table td { padding: 8px !important; }
 
       /* Kaufberatung-Grid */
       .kb-grid { grid-template-columns: 1fr !important; }
 
       /* Fazit-Box */
-      .fazit-box { padding: 22px 18px !important; }
+      .fazit-box { padding: 22px 16px !important; }
 
       /* Allgemein */
       .wrap, .wrap-narrow { padding: 0 14px !important; }
       .article-hero { padding: 0 !important; }
+
+      /* Winner/Product Tags umbrechen */
+      .winner-tags { flex-wrap: wrap !important; }
+      .tag { font-size: 0.7rem !important; }
+
+      /* Alle Grids mit fester Spaltenbreite aufbrechen */
+      [style*="grid-template-columns:1fr 380px"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns: 1fr 380px"] { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 640px) {
@@ -411,8 +425,23 @@
       .prose h2 { font-size: 1.3rem !important; margin: 2.2rem 0 0.8rem !important; }
       .prose h3 { font-size: 1rem !important; }
 
-      /* Allgemeine Tabellen-Wrapper */
+      /* Allgemeine Tabellen-Wrapper und inline-Tabellen */
       div[style*="overflow-x:auto"] { -webkit-overflow-scrolling: touch !important; }
+      div[style*="overflow-x:auto"] table { min-width: 460px !important; font-size: 0.78rem !important; }
+      div[style*="overflow-x:auto"] table th,
+      div[style*="overflow-x:auto"] table td { padding: 8px 10px !important; }
+
+      /* Alle inline grid-template-columns mit fester Breite aufbrechen */
+      div[style*="grid-template-columns:1fr 1fr"] { gap: 6px !important; }
+      div[style*="grid-template-columns:200px 1fr"] { grid-template-columns: 1fr !important; }
+
+      /* Produkt-Header Score-Block */
+      .pr-score-block { flex-shrink: 0; }
+      .pr-header { gap: 10px !important; }
+
+      /* Notrufablauf Schritte */
+      div[style*="display:flex;gap:16px;align-items:flex-start"] { gap: 10px !important; }
+      div[style*="flex-shrink:0;width:36px;height:36px"] { width: 28px !important; height: 28px !important; font-size: 0.75rem !important; }
 
       /* Methodik-Box: Grid → 1 Spalte */
       .methodik-grid {
@@ -1911,7 +1940,7 @@
       </div>
 
       <div style="overflow-x:auto;margin:1rem 0 2rem;border:1px solid var(--border);border-radius:8px;background:#fff;">
-        <table style="width:100%;border-collapse:collapse;min-width:560px;font-size:0.9rem;">
+        <table style="width:100%;border-collapse:collapse;min-width:400px;font-size:0.85rem;">
           <thead>
             <tr>
               <th style="background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-size:0.8rem;width:200px;">Merkmal</th>
@@ -2143,7 +2172,7 @@
       </div>
 
       <div style="overflow-x:auto;margin:1rem 0 2rem;border:1px solid var(--border);border-radius:8px;background:#fff;">
-        <table style="width:100%;border-collapse:collapse;min-width:600px;font-size:0.88rem;">
+        <table style="width:100%;border-collapse:collapse;min-width:380px;font-size:0.85rem;">
           <thead>
             <tr>
               <th style="background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-size:0.78rem;">Modell</th>
