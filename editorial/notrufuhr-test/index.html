@@ -296,6 +296,38 @@
     .fazit-box p:last-child { margin: 0; }
     .fazit-box a { color: var(--gold); }
 
+    /* === BILDPLATZHALTER === */
+    .img-placeholder {
+      background: #f0f4f8;
+      border: 1px dashed #93c5fd;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      padding: 20px;
+      color: #6b7280;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+    .img-placeholder.landscape { aspect-ratio: 16/9; width: 100%; margin: 1.5rem 0 0.5rem; }
+    .img-placeholder.square { width: 160px; height: 160px; }
+    .img-placeholder.wide { aspect-ratio: 3/1; width: 100%; margin: 1.5rem 0 0.5rem; }
+    .img-placeholder svg { flex-shrink: 0; }
+    .img-placeholder code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-size: 0.72rem; color: #334155; }
+
+    /* Mehrfach-Bildgalerie pro Modell */
+    .model-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 1rem 0 1.5rem;
+    }
+    @media (max-width: 500px) { .model-gallery { grid-template-columns: 1fr; } }
+    .model-gallery .img-placeholder { aspect-ratio: 4/3; width: 100%; margin: 0; }
+
     /* === FOOTER === */
     .site-footer { background: var(--navy); color: rgba(255,255,255,0.65); text-align: center; padding: 28px 20px; font-size: 0.82rem; }
     .site-footer a { color: rgba(255,255,255,0.8); text-decoration: underline; }
@@ -964,6 +996,36 @@
           </div>
           <a href="https://luada.de/products/luada-2" class="pr-btn" target="_blank" rel="noopener sponsored">Zur LUADA 2 → luada.de</a>
         </div>
+        <!-- BILDERGALERIE LUADA 2 -->
+        <div style="padding:16px 20px;border-top:1px solid var(--border);background:#fff5f5;">
+          <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--red);margin:0 0 10px;">Produktbilder – LUADA 2 (Testsieger)</p>
+          <div class="model-gallery">
+            <div class="img-placeholder" style="border-color:#fca5a5;background:#fff5f5;">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Frontansicht freigestellt</strong><br><code>LUADA2_front.jpg</code><br>800 × 800 px · weißer Hintergrund<br>Schwarzes/weißes Gehäuse, SOS-Knopf sichtbar</div>
+            </div>
+            <div class="img-placeholder" style="border-color:#fca5a5;background:#fff5f5;">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Am Handgelenk – Lifestyle</strong><br><code>LUADA2_wrist_lifestyle.jpg</code><br>800 × 600 px · warm, natürlich<br>Person trägt Uhr, aktiv (Spaziergang/Garten)</div>
+            </div>
+            <div class="img-placeholder" style="border-color:#fca5a5;background:#fff5f5;">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>SOS-Knopf Nahaufnahme</strong><br><code>LUADA2_button.jpg</code><br>800 × 600 px<br>Seitlicher SOS-Knopf, deutlich sichtbar</div>
+            </div>
+            <div class="img-placeholder" style="border-color:#fca5a5;background:#fff5f5;">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Ladeschale</strong><br><code>LUADA2_charger.jpg</code><br>800 × 600 px<br>Uhr in magnetischer Ladeschale</div>
+            </div>
+            <div class="img-placeholder" style="border-color:#fca5a5;background:#fff5f5;">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Display Nahaufnahme</strong><br><code>LUADA2_display.jpg</code><br>800 × 600 px<br>Uhrzeit, Akkuanzeige, Signalstärke</div>
+            </div>
+            <div class="img-placeholder" style="border-color:#fca5a5;background:#fff5f5;">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Lieferumfang</strong><br><code>LUADA2_box.jpg</code><br>800 × 600 px<br>Verpackung + Uhr + Ladeschale + Anleitung</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- EINZELTEST 2: JAMES -->
@@ -1062,6 +1124,28 @@
           </div>
           <div style="font-size:0.82rem;color:var(--txt-3);">Erhältlich im Fachhandel</div>
         </div>
+        <!-- BILDERGALERIE JAMES -->
+        <div style="padding:16px 20px;border-top:1px solid var(--border);background:#fafaf9;">
+          <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--txt-3);margin:0 0 10px;">Produktbilder – James Wearable Pro</p>
+          <div class="model-gallery">
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Frontansicht</strong><br><code>James_front.jpg</code><br>800 × 600 px · weißer Hintergrund<br>Zifferblatt, SOS-Knopf sichtbar</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Am Handgelenk</strong><br><code>James_wrist.jpg</code><br>800 × 600 px · Lifestyle<br>Getragen, natürliches Licht</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Rückseite</strong><br><code>James_back.jpg</code><br>800 × 600 px · weißer Hintergrund<br>Sensor, Ladestifte sichtbar</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Ladeschale</strong><br><code>James_charger.jpg</code><br>800 × 600 px · neutral<br>Uhr in Ladeschale</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- EINZELTEST 3: PATRONUS -->
@@ -1156,6 +1240,28 @@
             <div class="pr-price-note">Abo Notrufzentrale: ab 14,95 €/Monat</div>
           </div>
           <div style="font-size:0.82rem;color:var(--txt-3);">Erhältlich im Fachhandel</div>
+        </div>
+        <!-- BILDERGALERIE PATRONUS -->
+        <div style="padding:16px 20px;border-top:1px solid var(--border);background:#fafaf9;">
+          <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--txt-3);margin:0 0 10px;">Produktbilder – Patronus GPS Plus</p>
+          <div class="model-gallery">
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Frontansicht</strong><br><code>Patronus_front.jpg</code><br>800 × 600 px · weißer Hintergrund<br>Display, Gehäuse, Knopf</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Am Handgelenk</strong><br><code>Patronus_wrist.jpg</code><br>800 × 600 px · Lifestyle<br>Getragen, natürliches Licht</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Rückseite / Sensor</strong><br><code>Patronus_back.jpg</code><br>800 × 600 px<br>Ladestifte, Sensor-Bereich</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Lieferumfang</strong><br><code>Patronus_box.jpg</code><br>800 × 600 px<br>Verpackung + Zubehör</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1254,6 +1360,28 @@
           </div>
           <div style="font-size:0.82rem;color:var(--txt-3);">Erhältlich im Fachhandel</div>
         </div>
+        <!-- BILDERGALERIE GARDIA -->
+        <div style="padding:16px 20px;border-top:1px solid var(--border);background:#fafaf9;">
+          <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--txt-3);margin:0 0 10px;">Produktbilder – Gardia One Notrufarmband</p>
+          <div class="model-gallery">
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Draufsicht Armband</strong><br><code>Gardia_top.jpg</code><br>800 × 600 px<br>Breites Band, Knopf oben mittig</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Am Handgelenk</strong><br><code>Gardia_wrist.jpg</code><br>800 × 600 px<br>Getragen, zeigt Armband-Format</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Basisstation</strong><br><code>Gardia_base.jpg</code><br>800 × 600 px<br>DECT-Basisstation, Stecker</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Lieferumfang</strong><br><code>Gardia_box.jpg</code><br>800 × 600 px<br>Armband + Basisstation + Zubehör</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- EINZELTEST 5: BEMBU -->
@@ -1349,6 +1477,28 @@
             <div class="pr-price-note">inkl. integrierter SIM (Abo ~6 €/Monat)</div>
           </div>
           <div style="font-size:0.82rem;color:var(--txt-3);">Erhältlich im Fachhandel</div>
+        </div>
+        <!-- BILDERGALERIE BEMBU -->
+        <div style="padding:16px 20px;border-top:1px solid var(--border);background:#fafaf9;">
+          <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--txt-3);margin:0 0 10px;">Produktbilder – Bembu Active</p>
+          <div class="model-gallery">
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Frontansicht</strong><br><code>Bembu_front.jpg</code><br>800 × 600 px · weißer Hintergrund<br>Farb-Display, größeres Gehäuse</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Rückseite – Herzfrequenzsensor</strong><br><code>Bembu_back.jpg</code><br>800 × 600 px<br>HF-Sensor-Öffnungen deutlich sichtbar</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Am Handgelenk</strong><br><code>Bembu_wrist.jpg</code><br>800 × 600 px · Lifestyle<br>Zeigt Größenverhältnis am Arm</div>
+            </div>
+            <div class="img-placeholder">
+              <svg width="24" height="24" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div><strong>Lieferumfang</strong><br><code>Bembu_box.jpg</code><br>800 × 600 px<br>Verpackung + SIM-Karte inklusive</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1591,6 +1741,13 @@
         <p>Aktueller Standard. Breitere Netzabdeckung, bessere Verbindungsqualität, schnellerer GPS-Verbindungsaufbau. Alle Testsieger-Kandidaten in unserem Test unterstützen 4G. Für künftige Sicherheit empfehlen wir ausschließlich 4G-fähige Geräte.</p>
 
         <h2 id="einrichtung">Einrichtung Schritt für Schritt: So richtet man eine Notrufuhr ein</h2>
+      </div>
+      <div class="img-placeholder landscape" style="margin-bottom:0.5rem;">
+        <svg width="32" height="32" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <div><strong>Einrichtung der LUADA 2 – Schritt für Schritt</strong><br><code>LUADA2_setup.jpg</code> · 1200 × 675 px (16:9)<br>Zeigt: Hand legt SIM-Karte ein, dann Smartphone mit App, dann Uhr leuchtet auf. Mehrteilig oder Collage.</div>
+      </div>
+      <p style="font-size:0.8rem;color:#9ca3af;font-style:italic;margin-bottom:1.5rem;">Einrichtung in 3 Schritten: SIM einlegen, App verbinden, Kontakte eintragen. (Redaktionsbild)</p>
+      <div class="prose">
 
         <p>Die Einrichtung einer modernen Notrufuhr ist einfacher als viele denken – und wird in der Regel von den Angehörigen einmalig übernommen. Danach muss der Senior selbst nichts mehr konfigurieren.</p>
 
@@ -1934,6 +2091,13 @@
       <!-- NOTRUFUHR VS HAUSNOTRUF TIEFGEHEND -->
       <div class="prose">
         <h2 id="hausnotruf-vs-notrufuhr">Notrufuhr vs. Hausnotruf: Der vollständige Vergleich</h2>
+      </div>
+      <!-- BILD: Alle 5 Uhren nebeneinander auf Holztisch -->
+      <img src="../../assets/images/notrufuhr-alle-modelle.jpg"
+        alt="Fünf Notrufuhren im Vergleich nebeneinander auf einem Holztisch"
+        loading="lazy" style="width:100%;border-radius:8px;margin:1rem 0 0.5rem;aspect-ratio:1/1;object-fit:cover;">
+      <p style="font-size:0.8rem;color:#9ca3af;font-style:italic;margin-bottom:1.5rem;">Die fünf getesteten Modelle: LUADA 2, James Wearable Pro, Patronus GPS Plus, Gardia One und Bembu Active. (Redaktionsbild)</p>
+      <div class="prose">
 
         <p>Die Wahl zwischen einem klassischen Hausnotruf-System und einer mobilen Notrufuhr ist eine der wichtigsten Entscheidungen beim Thema Seniorensicherheit. Beide Systeme haben berechtigt Ihren Platz – aber für unterschiedliche Lebenssituationen.</p>
       </div>
@@ -2006,6 +2170,13 @@
         <p><strong>Unser Rat:</strong> Wenn die betreffende Person regelmäßig das Haus verlässt – auch nur für den Briefkasten oder den Garten –, empfehlen wir eine mobile Notrufuhr. Die ca. 5–15 Euro Mehrkosten pro Monat für die SIM-Karte sind angesichts des deutlich umfassenderen Schutzes gut investiert.</p>
 
         <h2 id="tipps-tragkomfort">Tragekomfort und Akzeptanz: Die unterschätzte Schlüsselfrage</h2>
+      </div>
+      <div class="img-placeholder landscape" style="margin-bottom:0.5rem;">
+        <svg width="32" height="32" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <div><strong>Alle 5 Uhren am Handgelenk im Vergleich</strong><br><code>notrufuhren_vergleich_wrist.jpg</code> · 1200 × 500 px (breit)<br>Fünf Arme/Handgelenke nebeneinander, je eine Uhr. Zeigt Größenunterschiede und Trageoptik.<br>Gleiche Beleuchtung, gleicher Hintergrund – sachlicher Vergleich.</div>
+      </div>
+      <p style="font-size:0.8rem;color:#9ca3af;font-style:italic;margin-bottom:1.5rem;">Größenvergleich: Alle 5 Testmodelle am Handgelenk. (Redaktionsbild)</p>
+      <div class="prose">
 
         <p>Die beste Notrufuhr schützt genau dann nicht, wenn sie gerade nicht getragen wird. Das ist keine Trivialität – es ist das häufigste Versagensmuster in der Praxis. Studien zeigen, dass ein erheblicher Teil der Stürze bei Senioren ohne getragene Notrufuhr passiert, obwohl eines vorhanden wäre.</p>
 
@@ -2092,6 +2263,13 @@
       <!-- GEOZAUN TIEFER -->
       <div class="prose">
         <h2 id="geozaun">Geo-Zaun / Sicherheitszone: Was ist das und wie funktioniert es?</h2>
+      </div>
+      <div class="img-placeholder landscape" style="margin-bottom:0.5rem;">
+        <svg width="32" height="32" fill="none" stroke="#9ca3af" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <div><strong>App-Screenshot: Geo-Zaun / Sicherheitszone</strong><br><code>geozaun_app_screenshot.jpg</code> · 1200 × 675 px (16:9)<br>Smartphone-Bildschirm zeigt Kartenansicht mit Kreis (Sicherheitszone) um eine Wohnadresse.<br>GPS-Pin der Notrufuhr innerhalb und außerhalb der Zone – beide Zustände zeigen.</div>
+      </div>
+      <p style="font-size:0.8rem;color:#9ca3af;font-style:italic;margin-bottom:1.5rem;">App-Ansicht: Sicherheitszone (Geo-Zaun) einrichten und überwachen. (Redaktionsbild)</p>
+      <div class="prose">
 
         <p>Der Geo-Zaun (englisch: Geo-Fence) ist eine der nützlichsten, aber am wenigsten bekannten Funktionen moderner Notrufuhren. Er ermöglicht es, einen digitalen Sicherheitsbereich rund um einen Ort zu definieren – und automatisch eine Benachrichtigung zu erhalten, wenn die Person diesen verlässt.</p>
 
