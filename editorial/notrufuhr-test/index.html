@@ -304,9 +304,8 @@
        MOBILE OPTIMIERUNGEN – alle Breakpoints
        ========================================= */
 
-    /* Basis: Überlauf global verhindern */
-    html { overflow-x: hidden; }
-    body { overflow-x: hidden; }
+    /* Basis: Überlauf global verhindern – NUR body, nicht html (html overflow:hidden bricht sticky!) */
+    body { overflow-x: clip; } /* clip statt hidden – bricht kein sticky position */
     * { box-sizing: border-box; }
     img { max-width: 100%; height: auto; }
 
