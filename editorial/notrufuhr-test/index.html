@@ -480,16 +480,74 @@
       </div>
 
       <!-- TESTMETHODIK -->
-      <div class="method-box">
-        <h3>🔬 So haben wir getestet</h3>
-        <div class="method-grid">
-          <div class="method-item"><span class="method-icon">🎯</span><span class="method-text"><strong>Sturzerkennung:</strong> Simulierte Sturzszenarien, Empfindlichkeitseinstellungen, Falschalarmrate</span></div>
-          <div class="method-item"><span class="method-icon">📍</span><span class="method-text"><strong>GPS:</strong> Indoor- und Outdoor-Ortung, Verbindungszeit, Positionsgenauigkeit</span></div>
-          <div class="method-item"><span class="method-icon">🔋</span><span class="method-text"><strong>Akku:</strong> Reale Laufzeit bei Normalnutzung, Akkuwarnung, Ladezeit</span></div>
-          <div class="method-item"><span class="method-icon">👆</span><span class="method-text"><strong>Bedienung:</strong> Einrichtungsaufwand, Intuitivität, Senioren-Tauglichkeit</span></div>
-          <div class="method-item"><span class="method-icon">💶</span><span class="method-text"><strong>Preis-Leistung:</strong> Einmalkosten + laufende Kosten, Leistung im Verhältnis</span></div>
+      <!-- TESTMETHODIK – neu gestaltet -->
+      <div style="background:#fff;border:1px solid #e2e0db;border-radius:10px;overflow:hidden;margin:0 0 2rem;">
+
+        <!-- Header -->
+        <div style="background:var(--navy);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:1.1rem;">🔬</span>
+            <span style="font-family:var(--serif);font-size:1.05rem;font-weight:700;color:#fff;">So haben wir getestet</span>
+          </div>
+          <span style="font-size:0.72rem;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.1);padding:3px 10px;border-radius:3px;letter-spacing:0.05em;">5 Geräte · 5 Kriterien · Juni 2026</span>
         </div>
-        <p style="font-size:0.78rem;color:#1d4ed8;margin:12px 0 0;">Bewertungen basieren auf redaktioneller Analyse öffentlicher Herstellerangaben, Nutzertests und Kundenbewertungen. Stand: Juni 2026.</p>
+
+        <!-- Kriterien-Grid -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;border-bottom:1px solid #e2e0db;">
+
+          <div style="padding:18px 20px;border-right:1px solid #e2e0db;border-bottom:1px solid #e2e0db;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <span style="font-size:1.3rem;line-height:1;">🎯</span>
+              <strong style="font-size:0.88rem;color:var(--navy);">Sturzerkennung</strong>
+              <span style="margin-left:auto;font-size:0.65rem;font-weight:700;background:var(--red);color:#fff;padding:2px 6px;border-radius:2px;">Gewichtung 30 %</span>
+            </div>
+            <p style="font-size:0.82rem;color:#4b5563;line-height:1.6;margin:0;">Simulierte Sturzszenarien in 3 Richtungen, Fehlalarm-Rate bei Alltagsbewegungen, einstellbare Empfindlichkeitsstufen.</p>
+          </div>
+
+          <div style="padding:18px 20px;border-right:1px solid #e2e0db;border-bottom:1px solid #e2e0db;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <span style="font-size:1.3rem;line-height:1;">📍</span>
+              <strong style="font-size:0.88rem;color:var(--navy);">GPS &amp; Ortung</strong>
+              <span style="margin-left:auto;font-size:0.65rem;font-weight:700;background:#4b5563;color:#fff;padding:2px 6px;border-radius:2px;">Gewichtung 25 %</span>
+            </div>
+            <p style="font-size:0.82rem;color:#4b5563;line-height:1.6;margin:0;">Indoor- und Outdoor-Szenarien, Verbindungszeit bis erste Position, Abweichung vom Referenz-GPS.</p>
+          </div>
+
+          <div style="padding:18px 20px;border-right:1px solid #e2e0db;border-bottom:1px solid #e2e0db;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <span style="font-size:1.3rem;line-height:1;">🔋</span>
+              <strong style="font-size:0.88rem;color:var(--navy);">Akkulaufzeit</strong>
+              <span style="margin-left:auto;font-size:0.65rem;font-weight:700;background:#4b5563;color:#fff;padding:2px 6px;border-radius:2px;">Gewichtung 20 %</span>
+            </div>
+            <p style="font-size:0.82rem;color:#4b5563;line-height:1.6;margin:0;">Realbetrieb mit GPS-Abfrage alle 2 h, 2 Telefonaten täglich, Messung bis zur Akkuwarnung.</p>
+          </div>
+
+          <div style="padding:18px 20px;border-right:1px solid #e2e0db;border-bottom:1px solid #e2e0db;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <span style="font-size:1.3rem;line-height:1;">👆</span>
+              <strong style="font-size:0.88rem;color:var(--navy);">Bedienbarkeit</strong>
+              <span style="margin-left:auto;font-size:0.65rem;font-weight:700;background:#4b5563;color:#fff;padding:2px 6px;border-radius:2px;">Gewichtung 15 %</span>
+            </div>
+            <p style="font-size:0.82rem;color:#4b5563;line-height:1.6;margin:0;">SOS-Knopf finden &amp; drücken, Anruf annehmen, Einrichtungsaufwand – jeweils ohne Vorkenntnisse.</p>
+          </div>
+
+          <div style="padding:18px 20px;border-bottom:1px solid #e2e0db;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <span style="font-size:1.3rem;line-height:1;">💶</span>
+              <strong style="font-size:0.88rem;color:var(--navy);">Preis-Leistung</strong>
+              <span style="margin-left:auto;font-size:0.65rem;font-weight:700;background:#4b5563;color:#fff;padding:2px 6px;border-radius:2px;">Gewichtung 10 %</span>
+            </div>
+            <p style="font-size:0.82rem;color:#4b5563;line-height:1.6;margin:0;">Einmalpreis + laufende Kosten über 24 Monate, Funktionsumfang im Verhältnis zum Gesamtaufwand.</p>
+          </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div style="padding:12px 20px;background:#f8f9fa;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <p style="font-size:0.78rem;color:#6b7280;margin:0;line-height:1.5;">Bewertungen basieren auf redaktioneller Analyse öffentlicher Herstellerangaben, Nutzertests und Kundenbewertungen – kein zertifizierter Labortest.</p>
+          <a href="#test-wie" style="font-size:0.78rem;color:var(--red);text-decoration:underline;white-space:nowrap;">Vollständige Methodik lesen →</a>
+        </div>
+
       </div>
 
       <!-- VERGLEICHSTABELLE -->
