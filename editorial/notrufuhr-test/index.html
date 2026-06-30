@@ -2513,8 +2513,15 @@
                 activeGroupBtn.nextElementSibling.classList.add('open');
                 activeGroupBtn.classList.add('open', 'active');
               }
-              // Aktiven Link in Sicht scrollen
-              active.link.scrollIntoView({ block: 'nearest' });
+              // Aktiven Link im TOC sichtbar halten (nur TOC-Nav scrollen, nicht die Seite)
+              const tocNav = document.getElementById('toc-nav');
+              if (tocNav) {
+                const linkTop = active.link.offsetTop - tocNav.offsetTop;
+                const linkBottom = linkTop + active.link.offsetHeight;
+                if (linkTop < tocNav.scrollTop || linkBottom > tocNav.scrollTop + tocNav.clientHeight) {
+                  tocNav.scrollTop = linkTop - tocNav.clientHeight / 2;
+                }
+              }
             }
 
             lastGroupBtn = activeGroupBtn;
