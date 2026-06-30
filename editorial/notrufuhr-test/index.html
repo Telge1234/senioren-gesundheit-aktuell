@@ -2452,6 +2452,8 @@
         }
 
         let ticking = false;
+        let lastGroupBtn = null;
+
         function onScroll() {
           if (ticking) return;
           ticking = true;
@@ -2465,22 +2467,29 @@
               }
             }
 
-            // Alle deaktivieren
+            // Alle Links deaktivieren
             links.forEach(l => l.classList.remove('active'));
             document.querySelectorAll('.toc-group-btn').forEach(b => b.classList.remove('active'));
 
+            const activeGroupBtn = active ? getGroupBtn(active.link) : null;
+
+            // Vorherige Gruppe schließen, wenn Gruppe gewechselt hat
+            if (lastGroupBtn && lastGroupBtn !== activeGroupBtn) {
+              lastGroupBtn.nextElementSibling.classList.remove('open');
+              lastGroupBtn.classList.remove('open');
+            }
+
             if (active) {
               active.link.classList.add('active');
-              const groupBtn = getGroupBtn(active.link);
-              if (groupBtn) {
-                // Gruppe öffnen
-                const sub = groupBtn.nextElementSibling;
-                sub.classList.add('open');
-                groupBtn.classList.add('open', 'active');
+              if (activeGroupBtn) {
+                activeGroupBtn.nextElementSibling.classList.add('open');
+                activeGroupBtn.classList.add('open', 'active');
               }
               // Aktiven Link in Sicht scrollen
               active.link.scrollIntoView({ block: 'nearest' });
             }
+
+            lastGroupBtn = activeGroupBtn;
             ticking = false;
           });
         }
