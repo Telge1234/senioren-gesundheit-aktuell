@@ -2052,51 +2052,252 @@
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
-      <div class="sidebar-card">
-        <div class="sidebar-title">Inhalt</div>
-        <ul class="toc-list">
-          <li><a href="#testsieger"><span class="toc-num">★</span> Testsieger: LUADA 2</a></li>
-          <li><a href="#vergleich"><span class="toc-num">1</span> Schnellvergleich</a></li>
-          <li><a href="#luada-test"><span class="toc-num">2</span> Einzeltests (5 Modelle)</a></li>
-          <li><a href="#kaufberatung"><span class="toc-num">3</span> Kaufberatung</a></li>
-          <li><a href="#notrufzentrale"><span class="toc-num">4</span> Notrufzentrale</a></li>
-          <li><a href="#sim-ratgeber"><span class="toc-num">5</span> SIM-Karte: Was tun?</a></li>
-          <li><a href="#demenzbeitrag"><span class="toc-num">6</span> Notrufuhr bei Demenz</a></li>
-          <li><a href="#pflegekasse"><span class="toc-num">7</span> Pflegekasse</a></li>
-          <li><a href="#5gnetz"><span class="toc-num">8</span> 4G / Netzgenerationen</a></li>
-          <li><a href="#einrichtung"><span class="toc-num">9</span> Einrichtung Schritt-für-Schritt</a></li>
-          <li><a href="#fehler"><span class="toc-num">10</span> 7 häufige Fehler</a></li>
-          <li><a href="#angeh"><span class="toc-num">11</span> Ratgeber Angehörige</a></li>
-          <li><a href="#faq"><span class="toc-num">12</span> FAQ</a></li>
-          <li><a href="#sturzrisiko"><span class="toc-num">13</span> Sturzrisiko im Alter</a></li>
-          <li><a href="#sturzpraevention"><span class="toc-num">14</span> Sturzprävention</a></li>
-          <li><a href="#hausnotruf-vs-notrufuhr"><span class="toc-num">15</span> Notrufuhr vs. Hausnotruf</a></li>
-          <li><a href="#tipps-tragkomfort"><span class="toc-num">16</span> Tragekomfort</a></li>
-          <li><a href="#test-wie"><span class="toc-num">17</span> Unsere Testmethodik</a></li>
-          <li><a href="#geozaun"><span class="toc-num">18</span> Geo-Zaun erklärt</a></li>
-          <li><a href="#app-ratgeber"><span class="toc-num">19</span> Die Begleit-App</a></li>
-          <li><a href="#kosten-vergleich"><span class="toc-num">20</span> Kosten über 3 Jahre</a></li>
-          <li><a href="#notruf-ablauf"><span class="toc-num">21</span> Notfallablauf Schritt-für-Schritt</a></li>
-        </ul>
+
+      <!-- TESTSIEGER CTA oben -->
+      <div class="sidebar-card" style="padding:16px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <img src="../../assets/images/LUADA_Notrufuhr.webp" alt="LUADA 2" loading="lazy"
+            style="width:56px;height:56px;object-fit:contain;background:#f3f4f6;border-radius:6px;flex-shrink:0;border:1px solid var(--border);">
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--red);margin-bottom:2px;">★ Testsieger 2026</div>
+            <div style="font-size:0.92rem;font-weight:700;color:#111;line-height:1.2;">LUADA 2</div>
+            <div style="font-size:0.78rem;color:#4b5563;">Note <strong>9,2</strong> / 10 &nbsp;·&nbsp; ab 199,95 €</div>
+          </div>
+        </div>
+        <a href="https://luada.de/products/luada-2" target="_blank" rel="noopener sponsored"
+          style="display:block;background:var(--red);color:#fff;text-align:center;font-size:0.82rem;font-weight:700;padding:10px;border-radius:4px;margin-bottom:6px;">
+          Jetzt ansehen →
+        </a>
+        <p style="font-size:0.7rem;color:var(--txt-3);text-align:center;margin:0;">30 Tage Rückgabe · kostenloser Versand</p>
       </div>
 
-      <div class="sidebar-card">
-        <div class="sidebar-title">Testsieger</div>
-        <img src="../../assets/images/LUADA_Notrufuhr.webp" alt="LUADA 2" loading="lazy" style="width:100%;max-height:140px;object-fit:contain;margin-bottom:12px;background:#f3f4f6;border-radius:4px;">
-        <p style="font-size:0.85rem;font-weight:700;color:#111;margin:0 0 4px;">LUADA 2</p>
-        <p style="font-size:0.8rem;color:#4b5563;margin:0 0 12px;">Gesamtnote: <strong>9,2 / 10</strong></p>
-        <a href="https://luada.de/products/luada-2" target="_blank" rel="noopener sponsored" style="display:block;background:var(--red);color:#fff;text-align:center;font-size:0.82rem;font-weight:700;padding:10px;border-radius:4px;">Zum Hersteller →</a>
+      <!-- INHALTSVERZEICHNIS mit Gruppen + Scrollspy -->
+      <div class="sidebar-card" style="padding:0;overflow:hidden;" id="toc-card">
+        <div style="padding:12px 16px;background:var(--navy);display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.8);">Inhalt</span>
+          <span style="font-size:0.7rem;color:rgba(255,255,255,0.45);">21 Abschnitte</span>
+        </div>
+
+        <nav id="toc-nav" style="max-height:calc(100vh - 200px);overflow-y:auto;padding:4px 0;">
+
+          <!-- GRUPPE 1: Testergebnisse -->
+          <div class="toc-group" data-group="ergebnisse">
+            <button class="toc-group-btn" onclick="toggleGroup(this)">
+              <span class="toc-group-icon">▶</span>
+              <span>Testergebnisse</span>
+            </button>
+            <ul class="toc-sub open">
+              <li><a href="#testsieger" class="toc-link">★ Testsieger: LUADA 2</a></li>
+              <li><a href="#vergleich" class="toc-link">Schnellvergleich alle 5</a></li>
+              <li><a href="#luada-test" class="toc-link">Einzeltests im Detail</a></li>
+            </ul>
+          </div>
+
+          <!-- GRUPPE 2: Kaufberatung -->
+          <div class="toc-group" data-group="kauf">
+            <button class="toc-group-btn" onclick="toggleGroup(this)">
+              <span class="toc-group-icon">▶</span>
+              <span>Kaufberatung</span>
+            </button>
+            <ul class="toc-sub">
+              <li><a href="#kaufberatung" class="toc-link">Worauf achten?</a></li>
+              <li><a href="#hausnotruf-vs-notrufuhr" class="toc-link">Hausnotruf vs. Notrufuhr</a></li>
+              <li><a href="#notrufzentrale" class="toc-link">Notrufzentrale nötig?</a></li>
+              <li><a href="#sim-ratgeber" class="toc-link">SIM-Karte: Was tun?</a></li>
+              <li><a href="#5gnetz" class="toc-link">4G / Netzgenerationen</a></li>
+              <li><a href="#kosten-vergleich" class="toc-link">Kosten über 3 Jahre</a></li>
+              <li><a href="#fehler" class="toc-link">7 häufige Kauffehler</a></li>
+            </ul>
+          </div>
+
+          <!-- GRUPPE 3: Spezialthemen -->
+          <div class="toc-group" data-group="spezial">
+            <button class="toc-group-btn" onclick="toggleGroup(this)">
+              <span class="toc-group-icon">▶</span>
+              <span>Spezialthemen</span>
+            </button>
+            <ul class="toc-sub">
+              <li><a href="#demenzbeitrag" class="toc-link">Notrufuhr bei Demenz</a></li>
+              <li><a href="#pflegekasse" class="toc-link">Pflegekasse & Erstattung</a></li>
+              <li><a href="#geozaun" class="toc-link">Geo-Zaun erklärt</a></li>
+              <li><a href="#app-ratgeber" class="toc-link">Die Begleit-App</a></li>
+              <li><a href="#tipps-tragkomfort" class="toc-link">Tragekomfort & Akzeptanz</a></li>
+            </ul>
+          </div>
+
+          <!-- GRUPPE 4: Nutzung & Praxis -->
+          <div class="toc-group" data-group="praxis">
+            <button class="toc-group-btn" onclick="toggleGroup(this)">
+              <span class="toc-group-icon">▶</span>
+              <span>Einrichtung & Praxis</span>
+            </button>
+            <ul class="toc-sub">
+              <li><a href="#einrichtung" class="toc-link">Einrichtung Schritt-für-Schritt</a></li>
+              <li><a href="#notruf-ablauf" class="toc-link">Notfallablauf erklärt</a></li>
+              <li><a href="#tipps-alltag" class="toc-link">Alltags-Tipps</a></li>
+              <li><a href="#angeh" class="toc-link">Ratgeber für Angehörige</a></li>
+            </ul>
+          </div>
+
+          <!-- GRUPPE 5: Hintergrundwissen -->
+          <div class="toc-group" data-group="wissen">
+            <button class="toc-group-btn" onclick="toggleGroup(this)">
+              <span class="toc-group-icon">▶</span>
+              <span>Hintergrundwissen</span>
+            </button>
+            <ul class="toc-sub">
+              <li><a href="#sturzrisiko" class="toc-link">Sturzrisiko im Alter</a></li>
+              <li><a href="#sturzpraevention" class="toc-link">Sturzprävention</a></li>
+              <li><a href="#test-wie" class="toc-link">Unsere Testmethodik</a></li>
+              <li><a href="#zertifikate" class="toc-link">Zertifikate & IP-Schutz</a></li>
+              <li><a href="#erfahrungsberichte" class="toc-link">Erfahrungsberichte</a></li>
+            </ul>
+          </div>
+
+          <!-- GRUPPE 6: FAQ -->
+          <div class="toc-group" data-group="faq">
+            <button class="toc-group-btn" onclick="toggleGroup(this)">
+              <span class="toc-group-icon">▶</span>
+              <span>FAQ</span>
+            </button>
+            <ul class="toc-sub">
+              <li><a href="#faq" class="toc-link">Alle Fragen & Antworten</a></li>
+            </ul>
+          </div>
+
+        </nav>
       </div>
 
+      <!-- Ähnliche Artikel -->
       <div class="sidebar-card" style="background:#f0fdf4;border-color:#bbf7d0;">
-        <div class="sidebar-title" style="color:#1a6b3a;">Ähnliche Artikel</div>
+        <div class="sidebar-title" style="color:#1a6b3a;">Weitere Ratgeber</div>
         <ul style="list-style:none;padding:0;">
           <li style="padding:6px 0;border-bottom:1px solid #bbf7d0;"><a href="/editorial/notrufuhr-vergleich/" style="font-size:0.85rem;color:#1a6b3a;text-decoration:underline;">Notrufuhr Vergleich 2026</a></li>
+          <li style="padding:6px 0;border-bottom:1px solid #bbf7d0;"><a href="/editorial/luada-2-notrufuhr/" style="font-size:0.85rem;color:#1a6b3a;text-decoration:underline;">LUADA 2 im Detail</a></li>
           <li style="padding:6px 0;border-bottom:1px solid #bbf7d0;"><a href="/editorial/notrufuhr-vs-hausnotruf/" style="font-size:0.85rem;color:#1a6b3a;text-decoration:underline;">Notrufuhr vs. Hausnotruf</a></li>
           <li style="padding:6px 0;"><a href="/editorial/stuerze-im-alter/" style="font-size:0.85rem;color:#1a6b3a;text-decoration:underline;">Stürze im Alter: Risiken</a></li>
         </ul>
       </div>
+
     </aside>
+
+    <!-- SCROLLSPY + TOC STYLES + JS -->
+    <style>
+      .toc-group { border-bottom: 1px solid var(--border); }
+      .toc-group:last-child { border-bottom: none; }
+      .toc-group-btn {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 9px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--txt-2);
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.12s;
+      }
+      .toc-group-btn:hover { background: #f5f4f0; }
+      .toc-group-btn.active { color: var(--red); background: #fff5f5; }
+      .toc-group-icon {
+        font-size: 0.55rem;
+        transition: transform 0.2s;
+        flex-shrink: 0;
+        color: var(--txt-3);
+      }
+      .toc-group-btn.open .toc-group-icon { transform: rotate(90deg); }
+      .toc-sub {
+        display: none;
+        padding: 0 0 4px 0;
+        margin: 0;
+        list-style: none;
+      }
+      .toc-sub.open { display: block; }
+      .toc-sub li { margin: 0; }
+      .toc-link {
+        display: block;
+        padding: 5px 16px 5px 32px;
+        font-size: 0.8rem;
+        color: var(--txt-2);
+        line-height: 1.4;
+        border-left: 2px solid transparent;
+        transition: color 0.12s, border-color 0.12s, background 0.12s;
+      }
+      .toc-link:hover { color: var(--red); background: #fff5f5; }
+      .toc-link.active {
+        color: var(--red);
+        border-left-color: var(--red);
+        background: #fff5f5;
+        font-weight: 600;
+      }
+    </style>
+
+    <script>
+      // Gruppe auf-/zuklappen
+      function toggleGroup(btn) {
+        const sub = btn.nextElementSibling;
+        const isOpen = sub.classList.contains('open');
+        sub.classList.toggle('open', !isOpen);
+        btn.classList.toggle('open', !isOpen);
+      }
+
+      // Scrollspy: aktiven Link + Gruppe hervorheben
+      (function() {
+        // Alle Abschnitts-IDs aus den Links sammeln
+        const links = document.querySelectorAll('.toc-link');
+        const sections = [];
+        links.forEach(l => {
+          const id = l.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if (el) sections.push({ id, el, link: l });
+        });
+
+        // Gruppen-Buttons nach Abschnitt-Link zuordnen
+        function getGroupBtn(link) {
+          return link.closest('.toc-group')?.querySelector('.toc-group-btn');
+        }
+
+        let ticking = false;
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            const scrollY = window.scrollY + 100;
+            let active = null;
+            for (let i = sections.length - 1; i >= 0; i--) {
+              if (sections[i].el.offsetTop <= scrollY) {
+                active = sections[i];
+                break;
+              }
+            }
+
+            // Alle deaktivieren
+            links.forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.toc-group-btn').forEach(b => b.classList.remove('active'));
+
+            if (active) {
+              active.link.classList.add('active');
+              const groupBtn = getGroupBtn(active.link);
+              if (groupBtn) {
+                // Gruppe öffnen
+                const sub = groupBtn.nextElementSibling;
+                sub.classList.add('open');
+                groupBtn.classList.add('open', 'active');
+              }
+              // Aktiven Link in Sicht scrollen
+              active.link.scrollIntoView({ block: 'nearest' });
+            }
+            ticking = false;
+          });
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll(); // Initial
+      })();
+    </script>
 
   </div><!-- /page-grid -->
 </div><!-- /wrap -->
